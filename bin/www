@@ -4,30 +4,37 @@
  * Module dependencies.
  */
 
+ require('dotenv').config();
 var app = require('../app');
 var debug = require('debug')('501recipe:server');
 var http = require('http');
 
-/**
- * Get port from environment and store in Express.
- */
-
-var port = normalizePort(process.env.PORT || '3000');
-app.set('port', port);
-
-/**
- * Create HTTP server.
- */
-
-var server = http.createServer(app);
-
-/**
- * Listen on provided port, on all network interfaces.
- */
-
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
+//#region CONNECT DATABASE
+const mongoose = require('mongoose')
+mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true})
+const con = mongoose.connection;
+con.on('disconnected', () => console.log('Database is disconnected successfully!'))
+con.on('error', console.error.bind(console, 'connection error:'))
+con.on('connected', function() {
+    console.log('Database is connected succesfully!');
+    var port = normalizePort(process.env.PORT || '3000');
+    app.set('port', port);
+    
+    /**
+     * Create HTTP server.
+     */
+    
+    var server = http.createServer(app);
+    
+    /**
+     * Listen on provided port, on all network interfaces.
+     */
+    
+    server.listen(port);
+    server.on('error', onError);
+    server.on('listening', () => onListening(server, debug));
+})
+//#endregion
 
 /**
  * Normalize a port into a number, string, or false.
@@ -81,7 +88,7 @@ function onError(error) {
  * Event listener for HTTP server "listening" event.
  */
 
-function onListening() {
+function onListening(server, debug) {
   var addr = server.address();
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr

@@ -30,4 +30,12 @@ router.get('/contact', function(req, res, next) {
   res.render('contact');
 });
 
+router.get('/login', function(req, res, next) {
+  res.render('auth/views/login', {layout: false});
+});
+
+router.get('/register', function(req, res, next) {
+  res.render('auth/views/register', {layout: false});
+});
+
 module.exports = router;
