@@ -1,10 +1,10 @@
-var express = require('express');
-var router = express.Router();
-const productController = require('./productController')
+const express = require('express');
+const router = express.Router();
+const recipeController = require('./recipeController')
 
 
-router.get('/', productController.listRecipe);
-router.get('/recipe?page=', productController.category);
-router.get('/recipe/:recipeID', productController.getProductBySlug);
+router.get('/recipes', recipeController.recipesInPage);
+router.get('/recipes?page=', recipeController.recipesInPage);
+router.get('/recipes/:slug', recipeController.getRecipeBySlug);
 
 module.exports = router;

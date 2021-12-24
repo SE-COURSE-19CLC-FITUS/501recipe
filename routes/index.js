@@ -6,14 +6,6 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
-router.get('/recipes', function(req, res, next) {
-  res.render('recipes/views/recipes');
-});
-
-router.get('/detail', function(req, res, next) {
-  res.render('recipes/views/recipeDetail');
-});
-
 router.get('/submit-recipe', function(req, res, next) {
   res.render('recipes/views/submitRecipe');
 });

@@ -102,7 +102,7 @@
                         <div class="single-recipe-detail">
                             <div class="wrapper-recipe-heading">
                                 <div class="heading">
-                                    <h2>Chocolate Earl Gray Pots de Creme Recipe</h2>
+                                    <h2>{{recipe.titleRecipe}}</h2>
 
                                 </div>
                                 <div class="recipe-media">
@@ -115,15 +115,15 @@
                                     <div class="recipe-slider">
                                         <div class="slider-detail2">
                                             <div>
-                                                <a href="images/temp-images/slide-recipe2-detail.jpg" class="swipebox"
+                                                <a href="/images/temp-images/slide-recipe2-detail.jpg" class="swipebox"
                                                     rel="recipe-gallery"><img
-                                                        src="images/temp-images/slide-recipe2-detail.jpg"
+                                                        src="/images/temp-images/slide-recipe2-detail.jpg"
                                                         alt="slide" /></a>
                                             </div>
                                             <div>
-                                                <a href="images/temp-images/slide-recipe2-detail.jpg" class="swipebox"
+                                                <a href="/images/temp-images/slide-recipe2-detail.jpg" class="swipebox"
                                                     rel="recipe-gallery"><img
-                                                        src="images/temp-images/slide-recipe2-detail.jpg"
+                                                        src="/images/temp-images/slide-recipe2-detail.jpg"
                                                         alt="slide" /></a>
                                             </div>
                                             <div>
@@ -155,8 +155,8 @@
 
                                     <ul class="recipe-specs-2">
                                         <li><span>Yield : </span>5 Grills</li>
-                                        <li><span>Servings : </span>5</li>
-                                        <li><span>Prep Time : </span>30m</li>
+                                        <li><span>Servings : </span>{{recipe.servings}}</li>
+                                        <li><span>Prep Time : </span>{{recipe.timePrep}}</li>
                                         <li><span>Cook Time : </span>40m</li>
                                         <li><span>Ready In : </span>1:40h</li>
                                     </ul>
@@ -258,50 +258,21 @@
                                 <div class="ingredients">
                                     <h3>Ingredients</h3>
                                     <ul>
+                                        {{#each recipe.ingredients}}
                                         <li>
                                             <label>
                                                 <input type="checkbox" />
-                                                60 ml extra virgin olive oil
+                                                {{text}}
                                             </label>
                                         </li>
-                                        <li>
-                                            <label>
-                                                <input type="checkbox" />
-                                                230 g bacon, diced into 1/4 -inch pieces
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label>
-                                                <input type="checkbox" />
-                                                120 ml dry white wine
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label>
-                                                <input type="checkbox" />
-                                                3 large eggs
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label>
-                                                <input type="checkbox" />
-                                                180 ml grated parmesan cheese
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label>
-                                                <input type="checkbox" />
-                                                1 Spoon Salt
-                                            </label>
-                                        </li>
-
+                                        {{/each}}
                                     </ul>
                                 </div>
                                 <div class="nutritional">
                                     <h3>Nutritional</h3>
                                     <div class="nutrition-detail">
                                         <div class="left-box">
-                                            Protine
+                                            Protein
                                             <br />
                                             <span>6.60g</span>
                                         </div>
@@ -357,133 +328,24 @@
                             <div class="recipe-steps">
                                 <h3 class="lined">Step by Step method</h3>
                                 <dl class="accordion clearfix">
-                                    <dt class="current"><span class="arrow"><i class="fa fa-minus"></i><i
-                                                class="fa fa-minus stand"></i></span><strong>Step 1: </strong>Rinse the
+                                    {{#each recipe.instructions}}
+                                    <dt class=""><span class="arrow"><i class="fa fa-minus"></i><i
+                                                class="fa fa-minus stand"></i></span><strong>Step {{@index}}: </strong>Rinse the
                                         chicken pieces in cold
                                         water and pat dry.</dt>
                                     <dd>
                                         <div class="row">
                                             <div class="col-sm-7">
                                                 <p>
-                                                    Rinse the chicken pieces in cold water and pat dry. Place the
-                                                    chicken in a large, resealable zip-top bag and pour in the marinade.
-                                                </p>
-                                                <br />
-                                                <p>
-                                                    Toss the chicken inside the bag to cover evenly with the marinade
-                                                    and refrigerate for 12 hours or as long as overnight.
+                                                    {{text}}
                                                 </p>
                                             </div>
                                             <div class="col-sm-5">
-                                                <img src="images/temp-images/steps-tab1.jpg" alt="image" />
+                                                <img src="/images/temp-images/steps-tab1.jpg" alt="image" />
                                             </div>
                                         </div>
                                     </dd>
-
-                                    <dt><span class="arrow"><i class="fa fa-minus"></i><i
-                                                class="fa fa-minus stand"></i></span>Put the chicken pieces in cold
-                                        resealable zip-top bag and pour in the marinade
-                                        .</dt>
-                                    <dd>
-                                        <div class="row">
-                                            <div class="col-sm-7">
-                                                <p>
-                                                    Rinse the chicken pieces in cold resealable zip-top bag and pour in
-                                                    the marinade.
-                                                </p>
-                                                <br />
-                                                <p>
-                                                    Toss the chicken inside the bag to cover evenly with the marinade
-                                                    and refrigerate for 12 hours or as long as overnight.
-                                                </p>
-                                            </div>
-                                            <div class="col-sm-5">
-                                                <img src="images/temp-images/steps-tab1.jpg" alt="image" />
-                                            </div>
-                                        </div>
-                                    </dd>
-
-                                    <dt><span class="arrow"><i class="fa fa-minus"></i><i
-                                                class="fa fa-minus stand"></i></span>Sed rutrum lorem magna, non
-                                        venenatis ligula.</dt>
-                                    <dd>
-                                        <div class="row">
-                                            <div class="col-sm-7">
-                                                <p>
-                                                    Rinse the chicken pieces in cold and pour in the marinade.
-                                                </p>
-                                                <br />
-                                                <p>
-                                                    Toss the chicken inside the bag to cover evenly with the marinade
-                                                    and refrigerate for 12 hours or as long as overnight.
-                                                </p>
-                                            </div>
-                                            <div class="col-sm-5">
-                                                <img src="images/temp-images/steps-tab1.jpg" alt="image" />
-                                            </div>
-                                        </div>
-                                    </dd>
-
-                                    <dt><span class="arrow"><i class="fa fa-minus"></i><i
-                                                class="fa fa-minus stand"></i></span>Rutrum lorem magna, non venenatis
-                                        ligula.</dt>
-                                    <dd>
-                                        <div class="row">
-                                            <div class="col-sm-7">
-                                                <p>
-                                                    Rinse the chicken pieces in cold water and pat dry.
-                                                </p>
-                                                <br />
-                                                <p>
-                                                    Toss the chicken inside the bag to cover evenly with the marinade
-                                                    and refrigerate for 12 hours or as long as overnight.
-                                                </p>
-                                            </div>
-                                            <div class="col-sm-5">
-                                                <img src="images/temp-images/steps-tab1.jpg" alt="image" />
-                                            </div>
-                                        </div>
-                                    </dd>
-
-                                    <dt><span class="arrow"><i class="fa fa-minus"></i><i
-                                                class="fa fa-minus stand"></i></span>Sed rutrum lorem magna, non
-                                        venenatis ligula.</dt>
-                                    <dd>
-                                        <div class="row">
-                                            <div class="col-sm-7">
-                                                <p>
-                                                    Toss the chicken inside the bag to cover evenly with the marinade
-                                                    and refrigerate for 12 hours or as long as overnight.
-                                                </p>
-                                            </div>
-                                            <div class="col-sm-5">
-                                                <img src="images/temp-images/steps-tab1.jpg" alt="image" />
-                                            </div>
-                                        </div>
-                                    </dd>
-
-                                    <dt><span class="arrow"><i class="fa fa-minus"></i><i
-                                                class="fa fa-minus stand"></i></span>Sed rutrum lorem magna, non
-                                        venenatis ligula.</dt>
-                                    <dd>
-                                        <div class="row">
-                                            <div class="col-sm-7">
-                                                <p>
-                                                    Rinse the chicken pieces in cold water and pat dry. Place the
-                                                    chicken in a large, resealable zip-top bag and pour in the marinade.
-                                                </p>
-                                                <br />
-                                                <p>
-                                                    Toss the chicken inside the bag to cover evenly with the marinade
-                                                    and refrigerate for 12 hours or as long as overnight.
-                                                </p>
-                                            </div>
-                                            <div class="col-sm-5">
-                                                <img src="images/temp-images/steps-tab1.jpg" alt="image" />
-                                            </div>
-                                        </div>
-                                    </dd>
-
+                                    {{/each}}
                                 </dl>
 
                             </div>

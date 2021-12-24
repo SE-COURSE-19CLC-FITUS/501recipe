@@ -16,7 +16,7 @@ const con = mongoose.connection;
 con.on('disconnected', () => console.log('Database is disconnected successfully!'))
 con.on('error', console.error.bind(console, 'connection error:'))
 con.on('connected', function() {
-    console.log('Database is connected succesfully!');
+    console.log('Database is connected successfully!');
     var port = normalizePort(process.env.PORT || '3000');
     app.set('port', port);
 

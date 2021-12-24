@@ -12,6 +12,7 @@ const recipeSchema = Schema({
   tags: [{ text: String }],
   timePrep: String,
   titleRecipe: String,
+  slug: String
 });
 
-module.exports = mongoose.model("Recipe", recipeSchema, "recipe");
+module.exports = mongoose.model("Recipe", recipeSchema, "recipes");

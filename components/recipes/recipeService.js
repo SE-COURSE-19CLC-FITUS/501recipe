@@ -1,3 +1,7 @@
 const Recipe = require('./recipeModel.js');
 
-exports.listRecipe = () => Recipe
+exports.list = () => Recipe.find({});
+
+exports.findByPage = (page, itemPerPage) => Recipe.find({}).skip(page * itemPerPage).limit(itemPerPage);
+
+exports.findBySlug = (slug) => Recipe.findOne({slug: slug});
