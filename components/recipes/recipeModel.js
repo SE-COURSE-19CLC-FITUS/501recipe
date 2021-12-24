@@ -1,16 +1,17 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
-const schema = mongoose.Schema({
-    titile: String,
-    image: Buffer,
-    image2: String,
-    material: String,
-    care: String,
-    brand: String,
-    color: String,
-    size: Array,
-    imageType: String,
-    description: String
-})
+const Schema = mongoose.Schema;
 
-module.exports = mongoose.model('Recipes', schema, 'recipes')
+const recipeSchema = Schema({
+  imageUrl: String,
+  ingredients: [{ text: String }],
+  instructions: [{ text: String }],
+  publisher: String,
+  servings: { type: Number, min: [1, "Must at least 1, got {VALUE}"] },
+  source: String,
+  tags: [{ text: String }],
+  timePrep: String,
+  titleRecipe: String,
+});
+
+module.exports = mongoose.model("Recipe", recipeSchema, "recipe");
