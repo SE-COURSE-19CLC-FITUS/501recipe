@@ -115,35 +115,30 @@
                                     <div class="recipe-slider">
                                         <div class="slider-detail2">
                                             <div>
-                                                <a href="/images/temp-images/slide-recipe2-detail.jpg" class="swipebox"
+                                                <a href="#" class="swipebox"
                                                     rel="recipe-gallery"><img
-                                                        src="/images/temp-images/slide-recipe2-detail.jpg"
+                                                        src="{{recipe.imageUrl}}"
                                                         alt="slide" /></a>
                                             </div>
                                             <div>
-                                                <a href="/images/temp-images/slide-recipe2-detail.jpg" class="swipebox"
+                                                <a href="#" class="swipebox"
                                                     rel="recipe-gallery"><img
-                                                        src="/images/temp-images/slide-recipe2-detail.jpg"
+                                                        src="{{recipe.imageUrl}}"
                                                         alt="slide" /></a>
                                             </div>
                                             <div>
-                                                <a href="images/temp-images/slide-recipe2-detail.jpg" class="swipebox"
+                                                <a href="#" class="swipebox"
                                                     rel="recipe-gallery"><img
-                                                        src="images/temp-images/slide-recipe2-detail.jpg"
+                                                        src="{{recipe.imageUrl}}"
                                                         alt="slide" /></a>
                                             </div>
                                             <div>
-                                                <a href="images/temp-images/slide-recipe2-detail.jpg" class="swipebox"
+                                                <a href="#" class="swipebox"
                                                     rel="recipe-gallery"><img
-                                                        src="images/temp-images/slide-recipe2-detail.jpg"
+                                                        src="{{recipe.imageUrl}}"
                                                         alt="slide" /></a>
                                             </div>
-                                            <div>
-                                                <a href="images/temp-images/slide-recipe2-detail.jpg" class="swipebox"
-                                                    rel="recipe-gallery"><img
-                                                        src="images/temp-images/slide-recipe2-detail.jpg"
-                                                        alt="slide" /></a>
-                                            </div>
+                                        
                                         </div>
                                         <span class="custom-arrows wider">
                                             <span class="left-arrow slick-arrow" data-direction="prev"
@@ -329,7 +324,7 @@
                                 <h3 class="lined">Step by Step method</h3>
                                 <dl class="accordion clearfix">
                                     {{#each recipe.instructions}}
-                                    <dt class=""><span class="arrow"><i class="fa fa-minus"></i><i
+                                    <dt><span class="arrow"><i class="fa fa-minus"></i><i
                                                 class="fa fa-minus stand"></i></span><strong>Step {{@index}}: </strong>Rinse the
                                         chicken pieces in cold
                                         water and pat dry.</dt>
