@@ -1,6 +1,6 @@
 {
   "name": "501recipe",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
@@ -15,7 +15,10 @@
     "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
     "mongoose": "^6.0.14",
-    "morgan": "~1.9.1",
-    "nodemon": "^2.0.15"
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1"
   }
 }
