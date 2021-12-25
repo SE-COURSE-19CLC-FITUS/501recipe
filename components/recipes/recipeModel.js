@@ -3,20 +3,35 @@ const { nonAccentVietnamese } = require('../../helper/index.js');
 
 const Schema = mongoose.Schema;
 
-const recipeSchema = Schema({
-  imageUrl: String,
-  ingredients: [{ text: String }],
-  instructions: [{ text: String }],
-  publisher: String,
-  servings: { type: Number, min: [1, 'Must at least 1, got {VALUE}'] },
-  source: String,
-  tags: [{ text: String }],
-  timePrep: String,
-  title: String,
-});
+const options = { toObject: { virtuals: true } };
 
-recipeSchema.virtual('slug').get(function () {
-  return nonAccentVietnamese(this.titleRecipe).replaceAll(' ', '-');
-});
+const slugValidator = function (val) {
+  return nonAccentVietnamese(this.title).replaceAll(' ', '-') === val;
+};
+
+const recipeSchema = Schema(
+  {
+    imageUrl: String,
+    ingredients: [{ text: String }],
+    instructions: [{ text: String }],
+    publisher: String,
+    servings: { type: Number, min: [1, 'Must at least 1, got {VALUE}'] },
+    slug: {
+      type: String,
+      validate: {
+        validator: slugValidator,
+        message:
+          'The value has to be lowercase and separated by hyphen, got {VALUE}',
+      },
+    },
+    source: String,
+    tags: [{ text: String }],
+    timePrep: String,
+    title: String,
+  },
+  options
+);
+
+recipeSchema.post('findOne', function () {});
 
 module.exports = mongoose.model('Recipe', recipeSchema, 'recipes');

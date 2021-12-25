@@ -1,4 +1,4 @@
-const Handlebars = require('handlebars');
+const Handlebars = require('hbs');
 
 module.exports = function () {
   Handlebars.registerHelper('index', function (index) {
@@ -9,10 +9,7 @@ module.exports = function () {
     return index == 0;
   });
 
-  Handlebars.registerHelper(
-    'eq',
-    function (operand1, operand2, trueClause, falseClause) {
-      return operand1 === operand2 ? trueClause : falseClause;
-    }
-  );
+  Handlebars.registerHelper('loud', function (aString) {
+    return aString.toUpperCase();
+  });
 };
