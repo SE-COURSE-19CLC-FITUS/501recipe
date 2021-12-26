@@ -134,7 +134,6 @@
                     <h2>Recent Recipes</h2>
 
                     <div class='recipe-listing listing-list'>
-
                         {{#each recipes}}
                             <div class='listing'>
                                 <div class='image'>
@@ -145,16 +144,16 @@
                                 <div class='detail'>
                                     <h4><a
                                             href='/recipes/{{slug}}'
-                                        >{{titleRecipe}}</a></h4>
+                                        >{{title}}</a></h4>
                                     <p>
-                                        {{description}}
+                                        {{!-- {{description}} --}}
                                     </p>
                                     <div class='meta-listing'>
                                         <ul class='post-meta'>
                                             <li class='author'><a
                                                     href='#'
                                                 >{{publisher}}</a></li>
-                                            <li class='calendar'>{{date}}</li>
+                                            {{!-- <li class='calendar'>{{date}}</li> --}}
                                         </ul>
                                         {{! <div class="rating-box">
                                         <span class="rating-icons"><svg class="icon-container" width="25" height="19"

@@ -1,3 +1,5 @@
+'use strict';
+
 const Recipe = require('./recipeModel.js');
 
 exports.list = () => Recipe.find({});

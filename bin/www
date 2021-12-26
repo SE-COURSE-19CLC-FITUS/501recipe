@@ -3,11 +3,12 @@
 /**
  * Module dependencies.
  */
+'use strict';
 
 require('dotenv').config();
-var app = require('../app');
-var debug = require('debug')('501recipe:server');
-var http = require('http');
+const app = require('../app');
+const debug = require('debug')('501recipe:server');
+const http = require('http');
 
 //#region CONNECT DATABASE
 const mongoose = require('mongoose');
@@ -19,14 +20,14 @@ con.on('disconnected', () =>
 con.on('error', console.error.bind(console, 'connection error:'));
 con.on('connected', function () {
   console.log('Database is connected successfully!');
-  var port = normalizePort(process.env.PORT || '3000');
+  const port = normalizePort(process.env.PORT || '3000');
   app.set('port', port);
 
   /**
    * Create HTTP server.
    */
 
-  var server = http.createServer(app);
+  const server = http.createServer(app);
 
   /**
    * Listen on provided port, on all network interfaces.
@@ -43,7 +44,7 @@ con.on('connected', function () {
  */
 
 function normalizePort(val) {
-  var port = parseInt(val, 10);
+  const port = parseInt(val, 10);
 
   if (isNaN(port)) {
     // named pipe
@@ -67,7 +68,7 @@ function onError(error) {
     throw error;
   }
 
-  var bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
+  const bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
@@ -89,7 +90,7 @@ function onError(error) {
  */
 
 function onListening(server, debug) {
-  var addr = server.address();
-  var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
+  const addr = server.address();
+  const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }

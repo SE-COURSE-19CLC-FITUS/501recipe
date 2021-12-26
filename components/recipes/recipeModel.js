@@ -1,5 +1,7 @@
+'use strict';
+
 const mongoose = require('mongoose');
-const { nonAccentVietnamese } = require('../../helper/index.js');
+const { nonAccentVietnamese } = require('../../helpers/index.js');
 
 const Schema = mongoose.Schema;
 
@@ -31,7 +33,5 @@ const recipeSchema = Schema(
   },
   options
 );
-
-recipeSchema.post('findOne', function () {});
 
 module.exports = mongoose.model('Recipe', recipeSchema, 'recipes');

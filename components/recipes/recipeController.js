@@ -1,5 +1,6 @@
-const recipeService = require('./recipeService');
-require('../../helper/hbsHelper.js')();
+'use strict';
+
+const recipeService = require('./recipeServices.js');
 
 exports.recipesInPage = async function (req, res) {
   let page = req.query.page;
@@ -14,5 +15,5 @@ exports.recipesInPage = async function (req, res) {
 exports.getRecipeBySlug = async function (req, res) {
   const recipe = await recipeService.findBySlug(req.params.slug);
 
-  res.render('recipes/views/recipeDetail.hbs', { recipe });
+  res.render('recipes/views/detailRecipe.hbs', { recipe });
 };

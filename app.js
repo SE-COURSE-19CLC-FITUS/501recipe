@@ -1,14 +1,23 @@
+'use strict';
+
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
-const recipeRouter = require('./components/recipes');
+const indexRouter = require('./routes/index.js');
+const usersRouter = require('./routes/users.js');
+const recipeRouter = require('./components/recipes/recipeRoutes.js');
 
 const app = express();
+
+const Handlebars = require('hbs');
+// Register hbs partials
+Handlebars.registerPartials(__dirname + '/views/partials');
+
+// Register hbs helpers
+require('./helpers/hbsHelper.js')();
 
 // view engine setup
 app.set('views', [
@@ -24,7 +33,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/', recipeRouter);
+app.use('/recipes', recipeRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

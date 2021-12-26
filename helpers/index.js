@@ -1,3 +1,5 @@
+'use strict';
+
 exports.nonAccentVietnamese = function (str) {
   str = str.toLowerCase();
   //     We can also use this instead of from line 11 to line 17
