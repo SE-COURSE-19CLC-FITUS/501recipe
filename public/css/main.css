@@ -4675,7 +4675,7 @@ div.widget-measurements .default-btn {
 .ingredients-checkbox .ingredients {
   padding: 0 25px;
   width: 58%;
-  background-image: url("../images/bg-ingredients.png");
+  /* background-image: url("../images/bg-ingredients.png"); */
   background-repeat: no-repeat;
   background-position: right bottom;
 }

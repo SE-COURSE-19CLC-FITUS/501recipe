@@ -1,15 +1,10 @@
 <!--banner-->
-<div class='banner banner-blog'>
-    <div class='container'>
-        <div class='main-heading'>
-            <h1>Recipe details page</h1>
-        </div>
-
-    </div>
-</div>
+{{> banner titleBanner="Recipe details page"}}
+<!--advance search form-->
 {{> advancedSearch}}
-
+<!--advance search form ends-->
 <!--banner ends-->
+
 <div class='recipes-home-body inner-page'>
     <div class='container'>
         <div class='row'>
@@ -68,16 +63,16 @@
                                         </div>
 
                                         <ul class='recipe-specs-2'>
-                                            <li><span>Yield :
-                                                </span>5 Grills</li>
+                                            {{!-- <li><span>Yield :
+                                                </span>5 Grills</li> --}}
                                             <li><span>Servings :
                                                 </span>{{servings}}</li>
                                             <li><span>Prep Time :
                                                 </span>{{timePrep}}</li>
-                                            <li><span>Cook Time :
+                                            {{!-- <li><span>Cook Time :
                                                 </span>40m</li>
                                             <li><span>Ready In :
-                                                </span>1:40h</li>
+                                                </span>1:40h</li> --}}
                                         </ul>
                                     </div>
                                     <a
@@ -232,15 +227,15 @@
                                     <span class='rating-figure'>(4.1 / 5)</span>
                                 </div>
                                 <ul class='pre-tags'>
-                                    <li><span>Cuisine :
-                                        </span>Chinese</li>
-                                    <li><span>Course :
-                                        </span>Side Dish</li>
+                                    {{!-- <li><span>Cuisine :
+                                        </span>Chinese</li> --}}
+                                    {{!-- <li><span>Course :
+                                        </span>Side Dish</li> --}}
                                     <li><span>Skill Level :
                                         </span>Advanced</li>
                                 </ul>
                                 <div class='separator-post'></div>
-                                <p>
+                                {{!-- <p>
                                     Rinse the chicken pieces in cold water and
                                     pat dry. Place the chicken in a large,
                                     resealable zip-top bag and pour in the
@@ -249,7 +244,7 @@
                                     refrigerate for 12 hours or as long as
                                     overnight icken pieces in cold water and pat
                                     dry.
-                                </p>
+                                </p> --}}
                                 <br />
                                 <div class='ingredients-checkbox'>
                                     <div class='ingredients'>
@@ -267,7 +262,7 @@
                                             {{/each}}
                                         </ul>
                                     </div>
-                                    <div class='nutritional'>
+                                    {{!-- <div class='nutritional'>
                                         <h3>Nutritional</h3>
                                         <div class='nutrition-detail'>
                                             <div class='left-box'>
@@ -321,7 +316,7 @@
                                             </div>
                                         </div>
 
-                                    </div>
+                                    </div> --}}
                                 </div>
 
                                 <div class='recipe-steps'>
@@ -353,7 +348,7 @@
                                                         {{text}}
                                                     </p>
                                                     {{! Step image
-                                                    description. Uncomment if
+                                                    description. Uncomment if we
                                                     have a specific step
                                                     description image }}
                                                     {{!-- <div class='col-sm-7'>
@@ -374,7 +369,7 @@
 
                                 </div>
 
-                                <div class='tips-variations'>
+                                {{!-- <div class='tips-variations'>
                                     <h3>Tips & variations</h3>
                                     <ul>
                                         <li>
@@ -407,7 +402,7 @@
                                             </p>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> --}}
 
                                 <div class='separator-post'></div>
                                 <div class='tags-icons'>
@@ -985,148 +980,71 @@
                         </div>
                         <!----->
 
-                                                <!--popular recipes widget-->
-                        <div class='widget latest-news-widget'>
-                            <h2>popular recipes</h2>
-                            <ul>
-                                <li>
-                                    <div class='thumb'>
-                                        <a href='#'>
-                                            <img
-                                                src='images/temp-images/widget-thumbnail.jpg'
-                                                alt='thumbnail'
-                                            />
-                                        </a>
-                                    </div>
-                                    <div class='detail'>
-                                        <a href='#'>Pimento Cheese Potato Skins</a>
-                                        <span class='post-date'>March 21,2015</span>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class='thumb'>
-                                        <a href='#'>
-                                            <img
-                                                src='images/temp-images/widget-thumbnail.jpg'
-                                                alt='thumbnail'
-                                            />
-                                        </a>
-                                    </div>
-                                    <div class='detail'>
-                                        <a href='#'>Pimento Cheese Potato Skins</a>
-                                        <span class='post-date'>March 21,2015</span>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class='thumb'>
-                                        <a href='#'>
-                                            <img
-                                                src='images/temp-images/widget-thumbnail.jpg'
-                                                alt='thumbnail'
-                                            />
-                                        </a>
-                                    </div>
-                                    <div class='detail'>
-                                        <a href='#'>Pimento Cheese Potato Skins</a>
-                                        <span class='post-date'>March 21,2015</span>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class='thumb'>
-                                        <a href='#'>
-                                            <img
-                                                src='images/temp-images/widget-thumbnail.jpg'
-                                                alt='thumbnail'
-                                            />
-                                        </a>
-                                    </div>
-                                    <div class='detail'>
-                                        <a href='#'>Pimento Cheese Potato Skins</a>
-                                        <span class='post-date'>March 21,2015</span>
-                                    </div>
-                                </li>
-
-                            </ul>
-                        </div>
+                        <!--popular recipes widget-->
+                        {{# if popularList}}
+                            {{> widgetPopular typePopular="Popular Recipes" popularList=popularList }}
+                        {{else}}
+                            {{!-- Fall over content --}}
+                            <div class='widget latest-news-widget'>
+                                <h2>Popular Recipes</h2>
+                                <ul>
+                                    <li>
+                                        <div class='thumb'>
+                                            <a href='#'>
+                                                <img
+                                                    src='/images/temp-images/widget-thumbnail.jpg'
+                                                    alt='thumbnail'
+                                                />
+                                            </a>
+                                        </div>
+                                        <div class='detail'>
+                                            <a href='#'>Pimento Cheese Potato Skins</a>
+                                            <span class='post-date'>Dec 26, 2021</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        {{/if}}
                         <!--popular recipes widget ends-->
-                        <div class='widget'>
+
+                        <!--advertisement widget-->
+                        {{!-- <div class='widget'>
                             <a href='#'>
                                 <img
                                     src='images/temp-images/add-side.jpg'
                                     alt='Add'
                                 />
                             </a>
-                        </div>
+                        </div> --}}
+                        <!--advertisement widget ends-->
+
                         <!--latest news widget-->
-                        <div class='widget latest-news-widget'>
-                            <h2>Latest News</h2>
-                            <ul>
-                                <li>
-                                    <div class='thumb'>
-                                        <a href='#'>
-                                            <img
-                                                src='images/temp-images/widget-thumbnail.jpg'
-                                                alt='thumbnail'
-                                            />
-                                        </a>
-                                    </div>
-                                    <div class='detail'>
-                                        <a href='#'>Pimento Cheese Potato Skins</a>
-                                        <span class='post-date'>March 21,2015</span>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class='thumb'>
-                                        <a href='#'>
-                                            <img
-                                                src='images/temp-images/widget-thumbnail.jpg'
-                                                alt='thumbnail'
-                                            />
-                                        </a>
-                                    </div>
-                                    <div class='detail'>
-                                        <a href='#'>Pimento Cheese Potato Skins</a>
-                                        <span class='post-date'>March 21,2015</span>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class='thumb'>
-                                        <a href='#'>
-                                            <img
-                                                src='images/temp-images/widget-thumbnail.jpg'
-                                                alt='thumbnail'
-                                            />
-                                        </a>
-                                    </div>
-                                    <div class='detail'>
-                                        <a href='#'>Pimento Cheese Potato Skins</a>
-                                        <span class='post-date'>March 21,2015</span>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class='thumb'>
-                                        <a href='#'>
-                                            <img
-                                                src='images/temp-images/widget-thumbnail.jpg'
-                                                alt='thumbnail'
-                                            />
-                                        </a>
-                                    </div>
-                                    <div class='detail'>
-                                        <a href='#'>Pimento Cheese Potato Skins</a>
-                                        <span class='post-date'>March 21,2015</span>
-                                    </div>
-                                </li>
-
-                            </ul>
-                        </div>
+                        {{# if popularList}}
+                            {{> widgetPopular typePopular="Latest News" popularList=popularList }}
+                        {{else}}
+                            {{!-- Fall over content --}}
+                            <div class='widget latest-news-widget'>
+                                <h2>Latest News</h2>
+                                <ul>
+                                    <li>
+                                        <div class='thumb'>
+                                            <a href='#'>
+                                                <img
+                                                    src='/images/temp-images/widget-thumbnail.jpg'
+                                                    alt='thumbnail'
+                                                />
+                                            </a>
+                                        </div>
+                                        <div class='detail'>
+                                            <a href='#'>Pimento Cheese Potato Skins</a>
+                                            <span class='post-date'>Dec 26, 2021</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        {{/if}}
                         <!--latest news widget ends-->
+
                         <!--get social-->
                         <div class='widget widget-get-social'>
                             <h2>get social</h2>

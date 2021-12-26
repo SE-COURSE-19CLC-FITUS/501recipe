@@ -1,0 +1,21 @@
+<!--popular recipes widget-->
+<div class='widget latest-news-widget'>
+    {{! pass by parameter }}
+    <h2>{{typePopular}}</h2>
+    <ul>
+        {{#each popularList}}
+            <li>
+                <div class='thumb'>
+                    <a href='#'>
+                        <img src='{{imageUrl}}' alt='thumbnail' />
+                    </a>
+                </div>
+                <div class='detail'>
+                    <a href='#'>{{title}}</a>
+                    <span class='post-date'>{{date}}</span>
+                </div>
+            </li>
+        {{/each}}
+    </ul>
+</div>
+<!--popular recipes widget ends-->

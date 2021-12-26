@@ -5,11 +5,12 @@ const { nonAccentVietnamese } = require('../../helpers/index.js');
 
 const Schema = mongoose.Schema;
 
-const options = { toObject: { virtuals: true } };
 
 const slugValidator = function (val) {
   return nonAccentVietnamese(this.title).replaceAll(' ', '-') === val;
 };
+
+const options = { toObject: { virtuals: true } };
 
 const recipeSchema = Schema(
   {
@@ -28,8 +29,22 @@ const recipeSchema = Schema(
     },
     source: String,
     tags: [{ text: String }],
-    timePrep: String,
+    timeCook: String,
     title: String,
+    rating: {
+      type: Number,
+      min: [1, 'Must at least 1, got {VALUE}'],
+      max: [5, 'Max is 5, got {VALUE}'],
+    },
+    levelSkill: {
+      type: String,
+      enum: {
+        values: ['Dễ', 'Trung bình', 'Khó'],
+        message: '{VALUE} is not supported',
+      },
+    },
+    datePublish: Date,
+    tips: [{ text: String }],
   },
   options
 );
