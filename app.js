@@ -4,11 +4,16 @@ const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const session = require("express-session");
+var flash = require('connect-flash');
 const logger = require('morgan');
 
 const indexRouter = require('./routes/index.js');
 const usersRouter = require('./routes/users.js');
+const authRouter = require("./components/auth");
 const recipeRouter = require('./components/recipes/recipeRoutes.js');
+
+const passport = require("./passport");
 
 const app = express();
 
@@ -31,8 +36,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(flash());
+
+// passport
+app.use(session({ secret: process.env.SESSION_SECRET }));
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(function (req, res, next) {
+  res.locals.user = req.user;
+  next();
+});
 
 app.use('/', indexRouter);
+app.use("/", authRouter);
 app.use('/', recipeRouter);
 app.use('/users', usersRouter);
 
