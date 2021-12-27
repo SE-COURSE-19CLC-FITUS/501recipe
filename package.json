@@ -14,7 +14,6 @@
     "cookie-parser": "~1.4.6",
     "debug": "~4.3.3",
     "dotenv": "^10.0.0",
-<<<<<<< Updated upstream
     "express": "~4.17.2",
     "express-session": "^1.17.2",
     "hbs": "~4.2.0",
@@ -28,15 +27,5 @@
     "nodemon": "^2.0.15",
     "npm-check-updates": "^12.0.5",
     "prettier": "^2.5.1"
-=======
-    "express": "~4.16.1",
-    "hbs": "~4.0.4",
-    "http-errors": "~1.6.3",
-    "mongoose": "^6.0.14",
-    "morgan": "~1.9.1",
-    "nodemon": "^2.0.15",
-    "passport": "^0.5.0",
-    "passport-local": "^1.0.0"
->>>>>>> Stashed changes
   }
 }
