@@ -14,6 +14,7 @@ const options = { toObject: { virtuals: true } };
 
 const recipeSchema = Schema(
   {
+    userId: { type: mongoose.Types.ObjectId },
     imageUrl: String,
     ingredients: [{ text: String }],
     instructions: [{ text: String }],
@@ -46,7 +47,7 @@ const recipeSchema = Schema(
     },
     datePublish: Date,
     tips: [{ text: String }],
-    recipeType: String,
+    mealType: String,
   },
   options
 );
