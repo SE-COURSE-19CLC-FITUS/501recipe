@@ -11,7 +11,8 @@ exports.findByPage = (page, itemPerPage) =>
 
 exports.findBySlug = slug => Recipe.findOne({ slug: slug });
 
-exports.saveRecipe = recipe => {
+exports.saveRecipe = async recipe => {
   const newRecipe = new Recipe(recipe);
-  return newRecipe.save();
+  let result = await newRecipe.save();
+  return result;
 };
