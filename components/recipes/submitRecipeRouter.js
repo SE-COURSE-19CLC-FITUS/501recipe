@@ -1,4 +1,5 @@
 'use strict';
+
 const submitRecipe = require('./submitRecipeController');
 const express = require('express');
 const router = express.Router();

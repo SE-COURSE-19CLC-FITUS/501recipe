@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const slugGenerator = require('mongoose-slug-generator');
 const { nonAccentVietnamese } = require('../../helpers/index.js');
 mongoose.plugin(slugGenerator);
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
 const slugValidator = function (val) {
   return nonAccentVietnamese(this.title).replaceAll(' ', '-') === val;
@@ -12,7 +12,7 @@ const slugValidator = function (val) {
 
 const options = { toObject: { virtuals: true } };
 
-const recipeSchema = Schema(
+const recipeSchema = new Schema(
   {
     imageUrl: String,
     ingredients: [{ text: String }],
@@ -46,7 +46,7 @@ const recipeSchema = Schema(
     },
     datePublish: Date,
     tips: [{ text: String }],
-    recipeType: String,
+    mealType: String,
   },
   options
 );

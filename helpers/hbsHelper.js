@@ -22,7 +22,7 @@ module.exports = function () {
   Handlebars.registerHelper('loop', function (context, options) {
     // options.hash is an Object, if no hash arguments options.hash = {}
     // Convert to number
-    if(!isFinite(+options.hash.iter)) return;
+    if (!isFinite(+options.hash.iter)) return;
 
     const iter = +options.hash.iter;
     let str = '';

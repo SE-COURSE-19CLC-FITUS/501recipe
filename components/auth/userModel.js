@@ -1,15 +1,30 @@
-const mongoose = require('mongoose')
+'use strict';
 
-const userSchema = mongoose.Schema({
-    username: String,
-    password: String,
-    firstname: String,
-    lastname: String,
-    birthday: String,
-    email: String,
-    phone: String,
-    status: String,
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
+const { emailValidation, phoneValidation } = require('../../helpers/index.js');
+
+const userSchema = Schema({
+  username: String,
+  password: String,
+  nameFirst: String,
+  nameLast: String,
+  birthday: Date,
+  email: {
+    type: String,
+    validate: {
+      validator: emailValidation,
+      message: 'Wrong email format',
+    },
+  },
+  phone: {
+    type: String,
+    validate: {
+      validator: phoneValidation,
+      message: 'Invalid phone number',
+    },
+  },
+  status: String,
 });
 
-const User = mongoose.model('User', userSchema, 'user');
-module.exports = User;
+module.exports = mongoose.model('User', userSchema, 'user');

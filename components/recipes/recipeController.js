@@ -3,7 +3,7 @@
 const recipeService = require('./recipeServices.js');
 
 exports.recipesInPage = async function (req, res) {
-  let page = req.query.page;
+  let { page } = req.query;
 
   if (!page) page = 0;
 

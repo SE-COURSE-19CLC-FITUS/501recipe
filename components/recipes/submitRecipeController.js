@@ -1,7 +1,9 @@
+'use strict';
+
 const recipeService = require('./recipeServices');
 const mongoose = require('mongoose');
 
-class submitRecipe {
+class SubmitRecipe {
   show(req, res, next) {
     res.render('recipes/views/submitRecipe');
   }
@@ -50,4 +52,4 @@ class submitRecipe {
   }
 }
 
-module.exports = new submitRecipe();
+module.exports = new SubmitRecipe();
