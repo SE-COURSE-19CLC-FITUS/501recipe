@@ -8,10 +8,6 @@ router.get('/', function (req, res, next) {
   res.render('index');
 });
 
-router.get('/submit-recipe', function (req, res, next) {
-  res.render('recipes/views/submitRecipe');
-});
-
 router.get('/blogs', function (req, res, next) {
   res.render('blogs/views/blogs');
 });

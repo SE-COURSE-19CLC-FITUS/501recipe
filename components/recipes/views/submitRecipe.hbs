@@ -18,14 +18,14 @@
                     </p>
 
                     <div class='submit-recipe-form'>
-                        <form action='#' method='post'>
+                        <form  method='post'action='/submitRecipe'>
                             <label for='title'>Recipe Title</label>
                             <input type='text' name='title' id='title' />
                             <br />
                             <label for='short-description'>Short Description</label>
                             <textarea
                                 class='short-text'
-                                name='short-des'
+                                name='description'
                                 id='short-description'
                                 cols='30'
                                 rows='10'
@@ -53,7 +53,7 @@
                                                 ></i></span>
                                             <input
                                                 type='text'
-                                                name='ingredients[]'
+                                                name='ingredients'
                                                 id='ingredients'
                                             />
                                             <span class='del-list'><i
@@ -94,7 +94,7 @@
                                 </span>
                             </fieldset>
 
-                            <label class='video-based-recipe'>Video Based Recipe</label>
+                            {{!-- <label class='video-based-recipe'>Video Based Recipe</label>
                             <br />
                             <label for='radio-yes'>
                                 <input
@@ -125,7 +125,7 @@
                                 id='video-embed'
                                 cols='30'
                                 rows='10'
-                            ></textarea>
+                            ></textarea> --}}
 
                             <div class='row'>
                                 <div class='col-sm-6'>
@@ -139,7 +139,7 @@
                                 <div class='col-sm-6'>
                                     <label for='servings'>Servings</label>
                                     <input
-                                        type='text'
+                                        type='number'
                                         name='servings'
                                         id='servings'
                                     />
@@ -150,27 +150,27 @@
                                 <div class='col-sm-4'>
                                     <label for='prep-time'>Preparation Time</label>
                                     <input
-                                        type='text'
-                                        name='prep-time'
+                                        type='number'
+                                        name='preTime'
                                         id='prep-time'
                                     />
                                 </div>
                                 <div class='col-sm-4'>
                                     <label for='cook-time'>Cook Time</label>
                                     <input
-                                        type='text'
-                                        name='cook-time'
+                                        type='number'
+                                        name='cookTime'
                                         id='cook-time'
                                     />
                                 </div>
-                                <div class='col-sm-4'>
+                                {{!-- <div class='col-sm-4'>
                                     <label for='ready-in'>Ready In</label>
                                     <input
                                         type='text'
                                         name='ready-in'
                                         id='ready-in'
                                     />
-                                </div>
+                                </div> --}}
                             </div>
 
                             <label for='tags'>Tags</label>
@@ -180,21 +180,18 @@
                                 <div class='col-sm-6'>
                                     <label for='recipe-type'>Recipe Type</label>
                                     <select
-                                        name='recipe-type'
+                                        name='recipeType'
                                         id='recipe-type'
                                         class='advance-selectable'
                                     >
-                                        <option
-                                            value='t0'
-                                            selected='selected'
-                                        >None</option>
-                                        <option value='t1'>type 1</option>
-                                        <option value='t2'>type 2</option>
-                                        <option value='t3'>type 3</option>
-                                        <option value='t4'>type 4</option>
+                                        <option value='breakfast'>Breakfast</option>
+                                        <option value='starter'>Starter</option>
+                                        <option value='lunch'>Lunch</option>
+                                        <option value='dinner'>Dinner</option>
+                                        <option value='dessert'>Dessert</option>
                                     </select>
                                 </div>
-                                <div class='col-sm-6'>
+                                {{!-- <div class='col-sm-6'>
                                     <label for='cuisine-select'>Cuisine</label>
                                     <select
                                         name='cuisine'
@@ -210,8 +207,8 @@
                                         <option value='c3'>type 3</option>
                                         <option value='c4'>type 4</option>
                                     </select>
-                                </div>
-                                <div class='col-sm-6'>
+                                </div> --}}
+                                {{!-- <div class='col-sm-6'>
                                     <label for='course-select'>Course</label>
                                     <select
                                         name='course'
@@ -227,7 +224,7 @@
                                         <option value='cr3'>type 3</option>
                                         <option value='cr4'>type 4</option>
                                     </select>
-                                </div>
+                                </div> --}}
                                 <div class='col-sm-6'>
                                     <label for='skill'>Skill Level</label>
                                     <select
@@ -235,14 +232,9 @@
                                         id='skill'
                                         class='advance-selectable'
                                     >
-                                        <option
-                                            value='s0'
-                                            selected='selected'
-                                        >None</option>
-                                        <option value='s1'>type 1</option>
-                                        <option value='s2'>type 2</option>
-                                        <option value='s3'>type 3</option>
-                                        <option value='s4'>type 4</option>
+                                        <option value='Dễ'>Dễ</option>
+                                        <option value='Trung bình'>Trung Bình</option>
+                                        <option value='Khó'>Khó</option>
                                     </select>
                                 </div>
                             </div>

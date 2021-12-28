@@ -298,7 +298,7 @@
         var newMajesticItem= '<li style="display: none">' +
             '<div class="add-fields">' +
             ' <span class="handler-list"><i class="fa fa-arrows"></i></span>' +
-            ' <input type="text" name="ingredients[]" id="ingredients"/>' +
+            ' <input type="text" name="ingredients" id="ingredients"/>' +
             ' <span class="del-list"><i class="fa fa-trash"></i></span>' +
             '</div>'+
             '</li>';

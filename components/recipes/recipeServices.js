@@ -10,3 +10,8 @@ exports.findByPage = (page, itemPerPage) =>
     .limit(itemPerPage);
 
 exports.findBySlug = slug => Recipe.findOne({ slug: slug });
+
+exports.saveRecipe = recipe => {
+  const newRecipe = new Recipe(recipe);
+  return newRecipe.save();
+};
