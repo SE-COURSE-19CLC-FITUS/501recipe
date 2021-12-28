@@ -4,16 +4,17 @@ const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const session = require("express-session");
+const session = require('express-session');
 var flash = require('connect-flash');
 const logger = require('morgan');
 
 const indexRouter = require('./routes/index.js');
 const usersRouter = require('./routes/users.js');
-const authRouter = require("./components/auth");
+const authRouter = require('./components/auth');
 const recipeRouter = require('./components/recipes/recipeRoutes.js');
+const submitRecipeRouter = require('./components/recipes/submitRecipeRouter.js');
 
-const passport = require("./passport");
+const passport = require('./passport');
 
 const app = express();
 
@@ -49,8 +50,9 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', indexRouter);
-app.use("/", authRouter);
+app.use('/', authRouter);
 app.use('/', recipeRouter);
+app.use('/', submitRecipeRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
