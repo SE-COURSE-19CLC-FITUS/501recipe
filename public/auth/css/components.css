@@ -97,72 +97,180 @@ html .content .content-wrapper .content-header-right .btn-icon svg {
 
 html .navbar-floating.footer-static .app-content .content-area-wrapper,
 html .navbar-floating.footer-static .app-content .kanban-wrapper {
-  height: calc( 100vh - calc( calc(2rem * 1) + 4.45rem + 3.35rem + 1.3rem + 0rem ));
-  height: calc( var(--vh, 1vh) * 100 - calc( calc(2rem * 1) + 4.45rem + 3.35rem + 1.3rem + 0rem )); }
+  height: calc(
+ 100vh -
+ calc(
+ calc(2rem * 1) + 4.45rem + 3.35rem + 1.3rem + 0rem
+ ));
+  height: calc(
+ var(--vh, 1vh) * 100 -
+ calc(
+ calc(2rem * 1) + 4.45rem + 3.35rem + 1.3rem + 0rem
+ )); }
 
 @media (max-width: 575.98px) {
   html .navbar-floating.footer-static .app-content .content-area-wrapper,
   html .navbar-floating.footer-static .app-content .kanban-wrapper {
-    height: calc( 100vh - calc( calc(calc(2rem * 1) - calc(0.8rem * 1)) + 4.45rem + 3.35rem + 1.3rem + 0rem ));
-    height: calc( var(--vh, 1vh) * 100 - calc( calc(calc(2rem * 1) - calc(0.8rem * 1)) + 4.45rem + 3.35rem + 1.3rem + 0rem )); } }
+    height: calc(
+ 100vh -
+ calc(
+ calc(calc(2rem * 1) - calc(0.8rem * 1)) + 4.45rem + 3.35rem +
+ 1.3rem + 0rem
+ ));
+    height: calc(
+ var(--vh, 1vh) * 100 -
+ calc(
+ calc(calc(2rem * 1) - calc(0.8rem * 1)) + 4.45rem + 3.35rem +
+ 1.3rem + 0rem
+ )); } }
 
 html .navbar-floating.footer-hidden .app-content .content-area-wrapper,
 html .navbar-floating.footer-hidden .app-content .kanban-wrapper {
-  height: calc( 100vh - calc( calc(2rem * 2) + 4.45rem + 0rem + 1.3rem + 0rem ));
-  height: calc( var(--vh, 1vh) * 100 - calc( calc(2rem * 2) + 4.45rem + 0rem + 1.3rem + 0rem )); }
+  height: calc(
+ 100vh -
+ calc(
+ calc(2rem * 2) + 4.45rem + 0rem + 1.3rem + 0rem
+ ));
+  height: calc(
+ var(--vh, 1vh) * 100 -
+ calc(
+ calc(2rem * 2) + 4.45rem + 0rem + 1.3rem + 0rem
+ )); }
 
 @media (max-width: 575.98px) {
   html .navbar-floating.footer-hidden .app-content .content-area-wrapper,
   html .navbar-floating.footer-hidden .app-content .kanban-wrapper {
-    height: calc( 100vh - calc( calc(calc(2rem * 2) - calc(0.8rem * 2)) + 4.45rem + 0rem + 1.3rem + 0rem ));
-    height: calc( var(--vh, 1vh) * 100 - calc( calc(calc(2rem * 2) - calc(0.8rem * 2)) + 4.45rem + 0rem + 1.3rem + 0rem )); } }
+    height: calc(
+ 100vh -
+ calc(
+ calc(calc(2rem * 2) - calc(0.8rem * 2)) + 4.45rem + 0rem +
+ 1.3rem + 0rem
+ ));
+    height: calc(
+ var(--vh, 1vh) * 100 -
+ calc(
+ calc(calc(2rem * 2) - calc(0.8rem * 2)) + 4.45rem + 0rem +
+ 1.3rem + 0rem
+ )); } }
 
 html .navbar-floating.footer-fixed .app-content .content-area-wrapper,
 html .navbar-floating.footer-fixed .app-content .kanban-wrapper {
-  height: calc( 100vh - calc( calc(2rem * 2) + 4.45rem + 3.35rem + 1.3rem + 0rem ));
-  height: calc( var(--vh, 1vh) * 100 - calc( calc(2rem * 2) + 4.45rem + 3.35rem + 1.3rem + 0rem )); }
+  height: calc(
+ 100vh -
+ calc(
+ calc(2rem * 2) + 4.45rem + 3.35rem + 1.3rem + 0rem
+ ));
+  height: calc(
+ var(--vh, 1vh) * 100 -
+ calc(
+ calc(2rem * 2) + 4.45rem + 3.35rem + 1.3rem + 0rem
+ )); }
 
 @media (max-width: 575.98px) {
   html .navbar-floating.footer-fixed .app-content .content-area-wrapper,
   html .navbar-floating.footer-fixed .app-content .kanban-wrapper {
-    height: calc( 100vh - calc( calc(calc(2rem * 2) - calc(0.8rem * 2)) + 4.45rem + 3.35rem + 1.3rem + 0rem ));
-    height: calc( var(--vh, 1vh) * 100 - calc( calc(calc(2rem * 2) - calc(0.8rem * 2)) + 4.45rem + 3.35rem + 1.3rem + 0rem )); } }
+    height: calc(
+ 100vh -
+ calc(
+ calc(calc(2rem * 2) - calc(0.8rem * 2)) + 4.45rem + 3.35rem +
+ 1.3rem + 0rem
+ ));
+    height: calc(
+ var(--vh, 1vh) * 100 -
+ calc(
+ calc(calc(2rem * 2) - calc(0.8rem * 2)) + 4.45rem + 3.35rem +
+ 1.3rem + 0rem
+ )); } }
 
 html .navbar-hidden .app-content {
   padding: 2rem 2rem 0 2rem !important; }
 
 html .navbar-hidden.footer-static .app-content .content-area-wrapper,
 html .navbar-hidden.footer-static .app-content .kanban-wrapper {
-  height: calc( 100vh - calc( calc(2rem * 1) + 0rem + 3.35rem + 0rem + 0rem ));
-  height: calc( var(--vh, 1vh) * 100 - calc( calc(2rem * 1) + 0rem + 3.35rem + 0rem + 0rem )); }
+  height: calc(
+ 100vh -
+ calc(
+ calc(2rem * 1) + 0rem + 3.35rem + 0rem + 0rem
+ ));
+  height: calc(
+ var(--vh, 1vh) * 100 -
+ calc(
+ calc(2rem * 1) + 0rem + 3.35rem + 0rem + 0rem
+ )); }
 
 @media (max-width: 575.98px) {
   html .navbar-hidden.footer-static .app-content .content-area-wrapper,
   html .navbar-hidden.footer-static .app-content .kanban-wrapper {
-    height: calc( 100vh - calc( calc(calc(2rem * 1) - calc(0.8rem * 1)) + 0rem + 3.35rem + 0rem + 0rem ));
-    height: calc( var(--vh, 1vh) * 100 - calc( calc(calc(2rem * 1) - calc(0.8rem * 1)) + 0rem + 3.35rem + 0rem + 0rem )); } }
+    height: calc(
+ 100vh -
+ calc(
+ calc(calc(2rem * 1) - calc(0.8rem * 1)) + 0rem + 3.35rem +
+ 0rem + 0rem
+ ));
+    height: calc(
+ var(--vh, 1vh) * 100 -
+ calc(
+ calc(calc(2rem * 1) - calc(0.8rem * 1)) + 0rem + 3.35rem +
+ 0rem + 0rem
+ )); } }
 
 html .navbar-hidden.footer-hidden .app-content .content-area-wrapper,
 html .navbar-hidden.footer-hidden .app-content .kanban-wrapper {
-  height: calc( 100vh - calc( calc(2rem * 2) + 0rem + 0rem + 0rem + 0rem ));
-  height: calc( var(--vh, 1vh) * 100 - calc( calc(2rem * 2) + 0rem + 0rem + 0rem + 0rem )); }
+  height: calc(
+ 100vh -
+ calc(
+ calc(2rem * 2) + 0rem + 0rem + 0rem + 0rem
+ ));
+  height: calc(
+ var(--vh, 1vh) * 100 -
+ calc(
+ calc(2rem * 2) + 0rem + 0rem + 0rem + 0rem
+ )); }
 
 @media (max-width: 575.98px) {
   html .navbar-hidden.footer-hidden .app-content .content-area-wrapper,
   html .navbar-hidden.footer-hidden .app-content .kanban-wrapper {
-    height: calc( 100vh - calc( calc(calc(2rem * 2) - calc(0.8rem * 2)) + 0rem + 0rem + 0rem + 0rem ));
-    height: calc( var(--vh, 1vh) * 100 - calc( calc(calc(2rem * 2) - calc(0.8rem * 2)) + 0rem + 0rem + 0rem + 0rem )); } }
+    height: calc(
+ 100vh -
+ calc(
+ calc(calc(2rem * 2) - calc(0.8rem * 2)) + 0rem + 0rem +
+ 0rem + 0rem
+ ));
+    height: calc(
+ var(--vh, 1vh) * 100 -
+ calc(
+ calc(calc(2rem * 2) - calc(0.8rem * 2)) + 0rem + 0rem +
+ 0rem + 0rem
+ )); } }
 
 html .navbar-hidden.footer-fixed .app-content .content-area-wrapper,
 html .navbar-hidden.footer-fixed .app-content .kanban-wrapper {
-  height: calc( 100vh - calc( calc(2rem * 2) + 0rem + 3.35rem + 0rem + 0rem ));
-  height: calc( var(--vh, 1vh) * 100 - calc( calc(2rem * 2) + 0rem + 3.35rem + 0rem + 0rem )); }
+  height: calc(
+ 100vh -
+ calc(
+ calc(2rem * 2) + 0rem + 3.35rem + 0rem + 0rem
+ ));
+  height: calc(
+ var(--vh, 1vh) * 100 -
+ calc(
+ calc(2rem * 2) + 0rem + 3.35rem + 0rem + 0rem
+ )); }
 
 @media (max-width: 575.98px) {
   html .navbar-hidden.footer-fixed .app-content .content-area-wrapper,
   html .navbar-hidden.footer-fixed .app-content .kanban-wrapper {
-    height: calc( 100vh - calc( calc(calc(2rem * 2) - calc(0.8rem * 2)) + 0rem + 3.35rem + 0rem + 0rem ));
-    height: calc( var(--vh, 1vh) * 100 - calc( calc(calc(2rem * 2) - calc(0.8rem * 2)) + 0rem + 3.35rem + 0rem + 0rem )); } }
+    height: calc(
+ 100vh -
+ calc(
+ calc(calc(2rem * 2) - calc(0.8rem * 2)) + 0rem + 3.35rem +
+ 0rem + 0rem
+ ));
+    height: calc(
+ var(--vh, 1vh) * 100 -
+ calc(
+ calc(calc(2rem * 2) - calc(0.8rem * 2)) + 0rem + 3.35rem +
+ 0rem + 0rem
+ )); } }
 
 html .navbar-static .main-menu {
   top: 0; }
@@ -175,72 +283,180 @@ html .navbar-static .app-content {
 
 html .navbar-static.footer-static .app-content .content-area-wrapper,
 html .navbar-static.footer-static .app-content .kanban-wrapper {
-  height: calc( 100vh - calc( calc(2rem * 1) + 4.45rem + 3.35rem + 0rem + 0rem ));
-  height: calc( var(--vh, 1vh) * 100 - calc( calc(2rem * 1) + 4.45rem + 3.35rem + 0rem + 0rem )); }
+  height: calc(
+ 100vh -
+ calc(
+ calc(2rem * 1) + 4.45rem + 3.35rem + 0rem + 0rem
+ ));
+  height: calc(
+ var(--vh, 1vh) * 100 -
+ calc(
+ calc(2rem * 1) + 4.45rem + 3.35rem + 0rem + 0rem
+ )); }
 
 @media (max-width: 575.98px) {
   html .navbar-static.footer-static .app-content .content-area-wrapper,
   html .navbar-static.footer-static .app-content .kanban-wrapper {
-    height: calc( 100vh - calc( calc(calc(2rem * 1) - calc(0.8rem * 1)) + 4.45rem + 3.35rem + 0rem + 0rem ));
-    height: calc( var(--vh, 1vh) * 100 - calc( calc(calc(2rem * 1) - calc(0.8rem * 1)) + 4.45rem + 3.35rem + 0rem + 0rem )); } }
+    height: calc(
+ 100vh -
+ calc(
+ calc(calc(2rem * 1) - calc(0.8rem * 1)) + 4.45rem + 3.35rem +
+ 0rem + 0rem
+ ));
+    height: calc(
+ var(--vh, 1vh) * 100 -
+ calc(
+ calc(calc(2rem * 1) - calc(0.8rem * 1)) + 4.45rem + 3.35rem +
+ 0rem + 0rem
+ )); } }
 
 html .navbar-static.footer-hidden .app-content .content-area-wrapper,
 html .navbar-static.footer-hidden .app-content .kanban-wrapper {
-  height: calc( 100vh - calc( calc(2rem * 2) + 4.45rem + 0rem + 0rem + 0rem ));
-  height: calc( var(--vh, 1vh) * 100 - calc( calc(2rem * 2) + 4.45rem + 0rem + 0rem + 0rem )); }
+  height: calc(
+ 100vh -
+ calc(
+ calc(2rem * 2) + 4.45rem + 0rem + 0rem + 0rem
+ ));
+  height: calc(
+ var(--vh, 1vh) * 100 -
+ calc(
+ calc(2rem * 2) + 4.45rem + 0rem + 0rem + 0rem
+ )); }
 
 @media (max-width: 575.98px) {
   html .navbar-static.footer-hidden .app-content .content-area-wrapper,
   html .navbar-static.footer-hidden .app-content .kanban-wrapper {
-    height: calc( 100vh - calc( calc(calc(2rem * 2) - calc(0.8rem * 2)) + 4.45rem + 0rem + 0rem + 0rem ));
-    height: calc( var(--vh, 1vh) * 100 - calc( calc(calc(2rem * 2) - calc(0.8rem * 2)) + 4.45rem + 0rem + 0rem + 0rem )); } }
+    height: calc(
+ 100vh -
+ calc(
+ calc(calc(2rem * 2) - calc(0.8rem * 2)) + 4.45rem + 0rem +
+ 0rem + 0rem
+ ));
+    height: calc(
+ var(--vh, 1vh) * 100 -
+ calc(
+ calc(calc(2rem * 2) - calc(0.8rem * 2)) + 4.45rem + 0rem +
+ 0rem + 0rem
+ )); } }
 
 html .navbar-static.footer-fixed .app-content .content-area-wrapper,
 html .navbar-static.footer-fixed .app-content .kanban-wrapper {
-  height: calc( 100vh - calc( calc(2rem * 2) + 4.45rem + 3.35rem + 0rem + 0rem ));
-  height: calc( var(--vh, 1vh) * 100 - calc( calc(2rem * 2) + 4.45rem + 3.35rem + 0rem + 0rem )); }
+  height: calc(
+ 100vh -
+ calc(
+ calc(2rem * 2) + 4.45rem + 3.35rem + 0rem + 0rem
+ ));
+  height: calc(
+ var(--vh, 1vh) * 100 -
+ calc(
+ calc(2rem * 2) + 4.45rem + 3.35rem + 0rem + 0rem
+ )); }
 
 @media (max-width: 575.98px) {
   html .navbar-static.footer-fixed .app-content .content-area-wrapper,
   html .navbar-static.footer-fixed .app-content .kanban-wrapper {
-    height: calc( 100vh - calc( calc(calc(2rem * 2) - calc(0.8rem * 2)) + 4.45rem + 3.35rem + 0rem + 0rem ));
-    height: calc( var(--vh, 1vh) * 100 - calc( calc(calc(2rem * 2) - calc(0.8rem * 2)) + 4.45rem + 3.35rem + 0rem + 0rem )); } }
+    height: calc(
+ 100vh -
+ calc(
+ calc(calc(2rem * 2) - calc(0.8rem * 2)) + 4.45rem + 3.35rem +
+ 0rem + 0remRegs-cipe Cookbook
+ ));
+    height: calc(
+ var(--vh, 1vh) * 100 -
+ calc(
+ calc(calc(2rem * 2) - calc(0.8rem * 2)) + 4.45rem + 3.35rem +
+ 0rem + 0rem
+ )); } }
 
 html .navbar-sticky .app-content {
   padding: calc(2rem + 4.45rem) 2rem 0 2rem; }
 
 html .navbar-sticky.footer-static .app-content .content-area-wrapper,
 html .navbar-sticky.footer-static .app-content .kanban-wrapper {
-  height: calc( 100vh - calc( calc(2rem * 1) + 4.45rem + 3.35rem + 0rem + 0rem ));
-  height: calc( var(--vh, 1vh) * 100 - calc( calc(2rem * 1) + 4.45rem + 3.35rem + 0rem + 0rem )); }
+  height: calc(
+ 100vh -
+ calc(
+ calc(2rem * 1) + 4.45rem + 3.35rem + 0rem + 0rem
+ ));
+  height: calc(
+ var(--vh, 1vh) * 100 -
+ calc(
+ calc(2rem * 1) + 4.45rem + 3.35rem + 0rem + 0rem
+ )); }
 
 @media (max-width: 575.98px) {
   html .navbar-sticky.footer-static .app-content .content-area-wrapper,
   html .navbar-sticky.footer-static .app-content .kanban-wrapper {
-    height: calc( 100vh - calc( calc(calc(2rem * 1) - calc(0.8rem * 1)) + 4.45rem + 3.35rem + 0rem + 0rem ));
-    height: calc( var(--vh, 1vh) * 100 - calc( calc(calc(2rem * 1) - calc(0.8rem * 1)) + 4.45rem + 3.35rem + 0rem + 0rem )); } }
+    height: calc(
+ 100vh -
+ calc(
+ calc(calc(2rem * 1) - calc(0.8rem * 1)) + 4.45rem + 3.35rem +
+ 0rem + 0rem
+ ));
+    height: calc(
+ var(--vh, 1vh) * 100 -
+ calc(
+ calc(calc(2rem * 1) - calc(0.8rem * 1)) + 4.45rem + 3.35rem +
+ 0rem + 0rem
+ )); } }
 
 html .navbar-sticky.footer-hidden .app-content .content-area-wrapper,
 html .navbar-sticky.footer-hidden .app-content .kanban-wrapper {
-  height: calc( 100vh - calc( calc(2rem * 2) + 4.45rem + 0rem + 0rem + 0rem ));
-  height: calc( var(--vh, 1vh) * 100 - calc( calc(2rem * 2) + 4.45rem + 0rem + 0rem + 0rem )); }
+  height: calc(
+ 100vh -
+ calc(
+ calc(2rem * 2) + 4.45rem + 0rem + 0rem + 0rem
+ ));
+  height: calc(
+ var(--vh, 1vh) * 100 -
+ calc(
+ calc(2rem * 2) + 4.45rem + 0rem + 0rem + 0rem
+ )); }
 
 @media (max-width: 575.98px) {
   html .navbar-sticky.footer-hidden .app-content .content-area-wrapper,
   html .navbar-sticky.footer-hidden .app-content .kanban-wrapper {
-    height: calc( 100vh - calc( calc(calc(2rem * 2) - calc(0.8rem * 2)) + 4.45rem + 0rem + 0rem + 0rem ));
-    height: calc( var(--vh, 1vh) * 100 - calc( calc(calc(2rem * 2) - calc(0.8rem * 2)) + 4.45rem + 0rem + 0rem + 0rem )); } }
+    height: calc(
+ 100vh -
+ calc(
+ calc(calc(2rem * 2) - calc(0.8rem * 2)) + 4.45rem + 0rem +
+ 0rem + 0rem
+ ));
+    height: calc(
+ var(--vh, 1vh) * 100 -
+ calc(
+ calc(calc(2rem * 2) - calc(0.8rem * 2)) + 4.45rem + 0rem +
+ 0rem + 0rem
+ )); } }
 
 html .navbar-sticky.footer-fixed .app-content .content-area-wrapper,
 html .navbar-sticky.footer-fixed .app-content .kanban-wrapper {
-  height: calc( 100vh - calc( calc(2rem * 2) + 4.45rem + 3.35rem + 0rem + 0rem ));
-  height: calc( var(--vh, 1vh) * 100 - calc( calc(2rem * 2) + 4.45rem + 3.35rem + 0rem + 0rem )); }
+  height: calc(
+ 100vh -
+ calc(
+ calc(2rem * 2) + 4.45rem + 3.35rem + 0rem + 0rem
+ ));
+  height: calc(
+ var(--vh, 1vh) * 100 -
+ calc(
+ calc(2rem * 2) + 4.45rem + 3.35rem + 0rem + 0rem
+ )); }
 
 @media (max-width: 575.98px) {
   html .navbar-sticky.footer-fixed .app-content .content-area-wrapper,
   html .navbar-sticky.footer-fixed .app-content .kanban-wrapper {
-    height: calc( 100vh - calc( calc(calc(2rem * 2) - calc(0.8rem * 2)) + 4.45rem + 3.35rem + 0rem + 0rem ));
-    height: calc( var(--vh, 1vh) * 100 - calc( calc(calc(2rem * 2) - calc(0.8rem * 2)) + 4.45rem + 3.35rem + 0rem + 0rem )); } }
+    height: calc(
+ 100vh -
+ calc(
+ calc(calc(2rem * 2) - calc(0.8rem * 2)) + 4.45rem + 3.35rem +
+ 0rem + 0rem
+ ));
+    height: calc(
+ var(--vh, 1vh) * 100 -
+ calc(
+ calc(calc(2rem * 2) - calc(0.8rem * 2)) + 4.45rem + 3.35rem +
+ 0rem + 0rem
+ )); } }
 
 html .navbar-static .nav.header-navbar .navbar-container,
 html .navbar-sticky .nav.header-navbar .navbar-container {
@@ -251,7 +467,7 @@ html .navbar-static .nav.header-navbar .navbar-container .search-input .search-l
 html .navbar-sticky .nav.header-navbar .navbar-container .search-input .search-list.show {
   width: 98%;
   left: 1%; }
-
+Regs-cipe Cookbook
 html .footer-fixed .content.app-content {
   padding-bottom: 3.35rem !important; }
 
@@ -260,7 +476,8 @@ html [data-col='1-column'] .header-navbar {
   left: 0 !important; }
 
 html [data-col='1-column'] .header-navbar.floating-nav {
-  width: calc( 100vw - (100vw - 100%) - calc(2rem * 2)) !important; }
+  width: calc(
+ 100vw - (100vw - 100%) - calc(2rem * 2)) !important; }
 
 html [data-col='1-column'] .content,
 html [data-col='1-column'] .footer {
@@ -852,7 +1069,7 @@ footer.footer-border {
   text-decoration: none; }
 
 .navigation {
-  font-size: 1.1rem;
+  font-size:Regs-cipe Cookbookem;
   font-family: "Montserrat", Helvetica, Arial, serif;
   font-weight: 400;
   overflow-y: hidden;
@@ -2031,7 +2248,7 @@ footer.footer-border {
 
 .btn-outline-flickr {
   border: 1px solid #ff0084 !important;
-  color: #ff0084; }
+  color: #ff008Regs-cipe Cookbook
 
 .btn-outline-foursquare {
   border: 1px solid #f94877 !important;
@@ -2126,7 +2343,7 @@ footer.footer-border {
   border: 1px solid #363636 !important; }
 
 .btn-outline-google:hover {
-  color: #b13c2e;
+  color: #b1Regs-cipe Cookbook
   border: 1px solid #b13c2e !important; }
 
 .btn-outline-instagram:hover {

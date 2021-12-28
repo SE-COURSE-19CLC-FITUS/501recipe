@@ -1,7 +1,7 @@
 /*=========================================================================================
     File Name: components-collapse.js
     ----------------------------------------------------------------------------------------
-    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Item Name: Regs-cipe Cookbook  - Vuejs, HTML & Laravel Admin Dashboard Template
     Author: Pixinvent
     Author URL: hhttp://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
@@ -17,5 +17,5 @@
       $(this).children('.collapse').collapse('show');
     });
   }
-  
+
 })(window, document, jQuery);
