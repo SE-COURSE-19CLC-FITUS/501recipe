@@ -2,41 +2,24 @@
 
 const mongoose = require('mongoose');
 const slugGenerator = require('mongoose-slug-generator');
-const { nonAccentVietnamese } = require('../../helpers/index.js');
-mongoose.plugin(slugGenerator);
+const { isURL } = require('validator');
 const { Schema } = mongoose;
-
-const slugValidator = function (val) {
-  return nonAccentVietnamese(this.title).replaceAll(' ', '-') === val;
-};
+mongoose.plugin(slugGenerator);
 
 const options = { toObject: { virtuals: true } };
 
 const recipeSchema = new Schema(
   {
-    imageUrl: String,
-    ingredients: [{ text: String }],
-    instructions: [{ text: String }],
-    publisher: String,
-    servings: { type: Number, min: [1, 'Must at least 1, got {VALUE}'] },
-    slug: {
+    datePublish: Date,
+    imageUrl: {
       type: String,
-      slug: 'title',
       validate: {
-        validator: slugValidator,
-        message:
-          'The value has to be lowercase and separated by hyphen, got {VALUE}',
+        validator: isURL,
+        message: 'Invalid URL',
       },
     },
-    source: String,
-    tags: [{ text: String }],
-    timeCook: String,
-    title: String,
-    rating: {
-      type: Number,
-      min: [1, 'Must at least 1, got {VALUE}'],
-      max: [5, 'Max is 5, got {VALUE}'],
-    },
+    ingredients: [{ text: String }],
+    instructions: [{ text: String }],
     levelSkill: {
       type: String,
       enum: {
@@ -44,9 +27,51 @@ const recipeSchema = new Schema(
         message: '{VALUE} is not supported',
       },
     },
-    datePublish: Date,
+    mealType: {
+      type: String,
+      enum: {
+        values: ['Breakfast', 'Starter', 'Lunch', 'Dinner', 'Dessert'],
+        message: '{VALUE} is not supported',
+      },
+    },
+    publisher: { id: mongoose.ObjectId, name: String },
+    rating: {
+      type: Number,
+      min: [1, 'Must at least 1, got {VALUE}'],
+      max: [5, 'Max is 5, got {VALUE}'],
+    },
+    servings: { type: Number, min: [1, 'Must at least 1, got {VALUE}'] },
+    slug: {
+      type: String,
+      slug: 'title',
+      validate: {
+        validator: function (val) {
+          return isSlug(val) && val === this.title;
+        },
+        message:
+          'The value has to be lowercase and separated by hyphen, got {VALUE}',
+      },
+    },
+    source: {
+      type: String,
+      validate: {
+        validator: isURL,
+        message: 'Invalid URL',
+      },
+    },
+    tags: [{ text: String }],
+    timeCook: {
+      type: String,
+      validate: {
+        validator: function (val) {
+          return /^\d+\s*(giây|phút|giờ)$/.test(val);
+        },
+        message:
+          'The value must have number and time unit, time unit must in "giây, phút, giờ"',
+      },
+    },
     tips: [{ text: String }],
-    mealType: String,
+    title: String,
   },
   options
 );

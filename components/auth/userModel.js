@@ -2,7 +2,8 @@
 
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-const { emailValidation, phoneValidation } = require('../../helpers/index.js');
+const { isMobilePhone, isEmail } = require('validator');
+const { LOCALE } = require('../../config/constants.js');
 
 const userSchema = Schema({
   username: String,
@@ -13,18 +14,24 @@ const userSchema = Schema({
   email: {
     type: String,
     validate: {
-      validator: emailValidation,
+      validator: isEmail,
       message: 'Wrong email format',
     },
   },
   phone: {
     type: String,
     validate: {
-      validator: phoneValidation,
+      validator: function (val) {
+        return isMobilePhone(val, [LOCALE]);
+      },
       message: 'Invalid phone number',
     },
   },
   status: String,
+});
+
+userSchema.virtual('nameFull').get(function () {
+  return `${this.nameFirst}${this.nameLast}`;
 });
 
 module.exports = mongoose.model('User', userSchema, 'user');

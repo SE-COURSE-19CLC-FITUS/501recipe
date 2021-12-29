@@ -2,6 +2,7 @@
 
 const recipeService = require('./recipeServices');
 const mongoose = require('mongoose');
+const { LOCALE } = require('../../config/constants.js');
 
 class SubmitRecipe {
   show(req, res, next) {
@@ -41,7 +42,7 @@ class SubmitRecipe {
       })),
       levelSkill: content.skill,
       recipeType: content.recipeType,
-      datePublish: new Date().toLocaleDateString('en-US'),
+      datePublish: new Date().toLocaleDateString(LOCALE),
     };
     const result = await recipeService.saveRecipe(recipe);
     if (result) {
