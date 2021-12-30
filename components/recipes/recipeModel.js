@@ -18,8 +18,8 @@ const recipeSchema = new Schema(
         message: 'Invalid URL',
       },
     },
-    ingredients: [{ text: String }],
-    instructions: [{ text: String }],
+    ingredients: [{ text: { type: String, trim: true } }],
+    instructions: [{ text: { type: String, trim: true } }],
     levelSkill: {
       type: String,
       enum: {
@@ -30,8 +30,11 @@ const recipeSchema = new Schema(
     mealType: {
       type: String,
       enum: {
-        values: ['Breakfast', 'Starter', 'Lunch', 'Dinner', 'Dessert'],
+        values: ['breakfast', 'starter', 'lunch', 'dinner', 'dessert'],
         message: '{VALUE} is not supported',
+      },
+      get: function (val) {
+        return val[0].toUpperCase() + val.slice(1);
       },
     },
     publisher: { id: mongoose.ObjectId, name: String },
@@ -59,7 +62,7 @@ const recipeSchema = new Schema(
         message: 'Invalid URL',
       },
     },
-    tags: [{ text: String }],
+    tags: [{ text: { type: String, trim: true } }],
     timeCook: {
       type: String,
       validate: {
@@ -70,8 +73,8 @@ const recipeSchema = new Schema(
           'The value must have number and time unit, time unit must in "giây, phút, giờ"',
       },
     },
-    tips: [{ text: String }],
-    title: String,
+    tips: [{ text: { type: String, trim: true } }],
+    title: { type: String, trim: true },
   },
   options
 );

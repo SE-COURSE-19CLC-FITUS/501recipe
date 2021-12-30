@@ -1,5 +1,6 @@
 <div class='rating-box'>
-    {{! Since we don't pass any context to helper block, we have to falsy values to helper block }}
+    {{! Since we pass only "rating" as a primitive, so even we pass this, the
+    rating will eventually discard in "loop" helper }}
     {{#loop this iter=5}}
         <span class='rating-icons'>
             <svg
