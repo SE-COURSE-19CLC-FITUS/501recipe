@@ -785,7 +785,7 @@
                             </ul>
                         </div>
                         <div id="bookmark"> 
-                            <button type="button" class="btn btn-light" id='bookmark'>Add to Bookmark</button>
+                            <button type="button" class="btn btn-light" id='bookmark'>{{recipe.bookmark}}</button>
                         </div>
                         <!--get social ends-->
                     </div>
@@ -798,9 +798,11 @@
 <script type='text/javascript'>
     document.getElementById('bookmark').addEventListener('click', function(e) {
         e.preventDefault();
+        
         var bookmark = document.getElementById('bookmark');
-        if(bookmark.innerHTML==='Add to Bookmark')
+        if(bookmark.innerText==='Add to Bookmark')
         {
+            console.log('add to bookmark');
         bookmark.innerHTML = '<button type="button" class="btn btn-light" id="bookmark">Added to Bookmark</button>';
         const recipeId=document.getElementById('recipeId').innerHTML;
         $.post('/bookmark/add', {
@@ -809,6 +811,7 @@
             alert(data.message);
         });
     }else{
+        console.log('remove from bookmark');
         bookmark.innerHTML = '<button type="button" class="btn btn-light" id="bookmark">Add to Bookmark</button>';
         const recipeId=document.getElementById('recipeId').innerHTML;
         $.post('/bookmark/remove', {

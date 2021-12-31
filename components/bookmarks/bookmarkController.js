@@ -1,15 +1,12 @@
 const moongoose = require('mongoose');
 const bookmarkModel = require('./BookmarkModel');
+const bookmarkService = require('./bookmarkService');
 class Bookmark {
   async addBookmark(req, res) {
     const recipeId = req.body.recipeId;
     const userId = req.user._id;
 
-    const bookmarkItem = await bookmarkModel.find({
-      userId: new moongoose.Types.ObjectId(userId),
-      bookmark: [{ recipeId: new moongoose.Types.ObjectId(recipeId) }],
-    });
-
+    const bookmarkItem = await bookmarkService.findBookmark(userId, recipeId); //đoạn này có thể bỏ
     if (bookmarkItem.length !== 0) {
       return res.status(400).json({ message: 'Recipe already in bookmarks' });
     }
@@ -35,6 +32,19 @@ class Bookmark {
     }
 
     res.status(200).json({ message: 'Recipe added to bookmarks' });
+  }
+  async removeBookmark(req, res) {
+    const recipeId = req.body.recipeId;
+    const userId = req.user._id;
+    const removeBookmark = await bookmarkModel.findOneAndUpdate(
+      { userId: new moongoose.Types.ObjectId(userId) },
+      {
+        $pull: {
+          bookmark: { recipeId: new moongoose.Types.ObjectId(recipeId) },
+        },
+      }
+    );
+    res.status(200).json({ message: 'Recipe removed from bookmarks' });
   }
 }
 module.exports = new Bookmark();
