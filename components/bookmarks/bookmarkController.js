@@ -1,7 +1,22 @@
 const moongoose = require('mongoose');
 const bookmarkModel = require('./BookmarkModel');
 const bookmarkService = require('./bookmarkService');
+const recipeService = require('../recipes/recipeServices');
 class Bookmark {
+  async getBookmark(req, res) {
+    const userId = req.user._id;
+    let myBookmark = await bookmarkService.getAllBookmark(userId);
+    let recipes = [];
+    for (let i = 0; i < myBookmark.bookmark.length; i++) {
+      let item = myBookmark.bookmark[i];
+      let recipe = await recipeService.getRecipeById(item.recipeId);
+      recipes.push(recipe);
+    }
+
+    console.log(recipes);
+    res.render('recipes/views/recipes.hbs', { recipes });
+  }
+
   async addBookmark(req, res) {
     const recipeId = req.body.recipeId;
     const userId = req.user._id;

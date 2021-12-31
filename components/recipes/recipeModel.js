@@ -10,6 +10,7 @@ const options = { toObject: { virtuals: true } };
 
 const recipeSchema = new Schema(
   {
+    _id: { type: mongoose.Types.ObjectId },
     datePublish: Date,
     imageUrl: {
       type: String,
