@@ -2,7 +2,7 @@
     File Name: app-ecommerce-wishlist.js
     Description: Ecommerce wishlist pages js
     ----------------------------------------------------------------------------------------
-    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Item Name: Regs-cipe Cookbook  - Vuejs, HTML & Laravel Admin Dashboard Template
     Author: PIXINVENT
     Author URL: http://www.themeforest.net/user/pixinvent
 ==========================================================================================*/

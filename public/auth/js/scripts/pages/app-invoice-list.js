@@ -2,7 +2,7 @@
     File Name: app-invoice-list.js
     Description: app-invoice-list Javascripts
     ----------------------------------------------------------------------------------------
-    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Item Name: Regs-cipe Cookbook  - Vuejs, HTML & Laravel Admin Dashboard Template
    Version: 1.0
     Author: PIXINVENT
     Author URL: http://www.themeforest.net/user/pixinvent

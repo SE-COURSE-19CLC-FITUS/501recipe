@@ -2,11 +2,10 @@
 
 const express = require('express');
 const router = express.Router();
+const homeController = require('../components/home/homeController');
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index');
-});
+router.get('/', homeController.index);
 
 router.get('/blogs', function (req, res, next) {
   res.render('blogs/views/blogs');

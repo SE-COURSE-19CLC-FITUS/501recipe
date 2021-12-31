@@ -3,7 +3,7 @@
     Description: Modals are streamlined, but flexible, dialog prompts with the minimum
 				required functionality and smart defaults.
     ----------------------------------------------------------------------------------------
-    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Item Name: Regs-cipe Cookbook  - Vuejs, HTML & Laravel Admin Dashboard Template
     Author: Pixinvent
     Author URL: hhttp://www.themeforest.net/user/pixinvent
 ==========================================================================================*/

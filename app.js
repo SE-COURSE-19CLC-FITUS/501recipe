@@ -5,7 +5,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-var flash = require('connect-flash');
+const flash = require('connect-flash');
 const logger = require('morgan');
 
 const indexRouter = require('./routes/index.js');
@@ -13,6 +13,8 @@ const usersRouter = require('./routes/users.js');
 const authRouter = require('./components/auth');
 const recipeRouter = require('./components/recipes/recipeRoutes.js');
 const submitRecipeRouter = require('./components/recipes/submitRecipeRouter.js');
+const bookmarkRouter = require('./components/bookmarks/bookmarkRoutes.js');
+
 const auth = require('./middleware/authMiddleware');
 const passport = require('./passport');
 
@@ -54,6 +56,7 @@ app.use('/', authRouter);
 app.use('/', recipeRouter);
 app.use('/', auth, submitRecipeRouter);
 app.use('/users', usersRouter);
+app.use('/bookmark', auth, bookmarkRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
