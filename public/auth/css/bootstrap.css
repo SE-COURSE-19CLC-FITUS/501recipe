@@ -2200,7 +2200,7 @@ progress {
 .form-control:focus {
     color: #6e6b7b;
     background-color: #fff;
-    border-color: #7367f0;
+    border-color: #6EBE3B;
     outline: 0;
     box-shadow: 0 3px 10px 0 rgba(34, 41, 47, 0.1);
 }
@@ -3040,8 +3040,8 @@ fieldset:disabled .btn {
 
 .btn-primary {
     color: #fff;
-    background-color: #7367f0;
-    border-color: #7367f0;
+    background-color: #6EBE3B;
+    border-color: #6EBE3B;
 }
 
 .btn-primary:hover {
