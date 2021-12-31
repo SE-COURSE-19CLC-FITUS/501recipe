@@ -25,26 +25,26 @@ class SubmitRecipe {
     } else {
       steps = content.steps.map(step => ({ text: step }));
     }
-		let tips;
-		if (typeof content.tips === 'string') {
+    let tips;
+    if (typeof content.tips === 'string') {
       tips = [{ text: content.tips }];
     } else {
       tips = content.tips.map(tip => ({ text: tip }));
     }
     const recipe = {
-			_id: new mongoose.Types.ObjectId(),
-			datePublish: new Date().toLocaleDateString(LOCALE),
+      _id: new mongoose.Types.ObjectId(),
+      datePublish: new Date().toLocaleDateString(LOCALE),
       ingredients: ingredients,
       instructions: steps,
-			levelSkill: content.skill,
-			mealType: content.mealType,
+      levelSkill: content.skill,
+      mealType: content.mealType,
       servings: content.servings,
       tags: content.tags.split(',').map(tag => ({
-				text: tag,
+        text: tag,
       })),
-			timeCook: content.cookTime,
-			tips: tips,
-			title: content.title,
+      timeCook: content.cookTime,
+      tips: tips,
+      title: content.title,
     };
     const result = await recipeService.saveRecipe(recipe);
     if (result) {

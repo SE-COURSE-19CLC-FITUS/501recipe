@@ -81,8 +81,7 @@
                                                 id='steps'
                                                 cols='30'
                                                 rows='10'
-                                            >
-                                            </textarea>
+                                            ></textarea>
                                             <span class='del-list'><i
                                                     class='fa fa-trash'
                                                 ></i></span>
@@ -142,39 +141,41 @@
                                         type='number'
                                         name='servings'
                                         id='servings'
+										placeholder='E.g: 4'
+                                    />
+                                </div>
+                                <div class='col-sm-6'>
+                                    <label for='cook-time'>Cook Time</label>
+                                    <input
+                                        type='number'
+                                        name='cookTime'
+                                        id='cook-time'
+										placeholder='E.g: 30 phút, 1 giờ, 20 giây'
                                     />
                                 </div>
                             </div>
 
-                            <div class='row'>
-                                {{!-- <div class='col-sm-4'>
+                            {{!-- <div class='row'>
+                                <div class='col-sm-4'>
                                     <label for='prep-time'>Preparation Time</label>
                                     <input
                                         type='number'
                                         name='preTime'
                                         id='prep-time'
                                     />
-                                </div> --}}
-                                <div class='col-sm-4'>
-                                    <label for='cook-time'>Cook Time</label>
-                                    <input
-                                        type='type'
-                                        name='cookTime'
-                                        id='cook-time'
-                                    />
                                 </div>
-                                {{!-- <div class='col-sm-4'>
+                                <div class='col-sm-4'>
                                     <label for='ready-in'>Ready In</label>
                                     <input
                                         type='text'
                                         name='ready-in'
                                         id='ready-in'
                                     />
-                                </div> --}}
-                            </div>
+                                </div>
+                            </div> --}}
 
                             <label for='tags'>Tags</label>
-                            <input type='text' name='tags' id='tags placeholder="E.g: chicken, eggs, pizza"' />
+                            <input type='text' name='tags' id='tags' placeholder='E.g: chicken, eggs, pizza' />
 
                             <div class='row'>
                                 <div class='col-sm-6'>
@@ -246,14 +247,15 @@
                                             <span class='handler-list'><i
                                                     class='fa fa-arrows'
                                                 ></i></span>
+											{{!-- Don't leave spaces between
+											textarea  --}}
                                             <textarea
                                                 class='short-text'
                                                 name='tips'
                                                 id='tips'
                                                 cols='30'
                                                 rows='10'
-                                            >
-                                            </textarea>
+                                            ></textarea>
                                             <span class='del-list'><i
                                                     class='fa fa-trash'
                                                 ></i></span>
