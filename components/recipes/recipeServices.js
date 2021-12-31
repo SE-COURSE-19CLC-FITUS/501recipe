@@ -23,3 +23,12 @@ exports.getRecipeById = async recipeId => {
   });
   return mongooseObject.mongooseToObject(result);
 };
+exports.getTop7Rating = async () => {
+  const filter = {
+    rating: {
+      $gte: 4.5,
+    },
+  };
+  const result = await Recipe.find(filter).sort({ rating: -1 }).limit(7);
+  return mongooseObject.multipleMongooseToObject(result);
+};

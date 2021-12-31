@@ -14,6 +14,7 @@ const authRouter = require('./components/auth');
 const recipeRouter = require('./components/recipes/recipeRoutes.js');
 const submitRecipeRouter = require('./components/recipes/submitRecipeRouter.js');
 const bookmarkRouter = require('./components/bookmarks/bookmarkRoutes.js');
+
 const auth = require('./middleware/authMiddleware');
 const passport = require('./passport');
 

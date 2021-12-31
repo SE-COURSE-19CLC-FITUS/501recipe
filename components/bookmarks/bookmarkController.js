@@ -13,7 +13,6 @@ class Bookmark {
       recipes.push(recipe);
     }
 
-    console.log(recipes);
     res.render('recipes/views/recipes.hbs', { recipes });
   }
 
