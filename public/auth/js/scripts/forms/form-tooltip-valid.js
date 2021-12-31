@@ -2,7 +2,7 @@
     File Name: form-tooltip-valid.js
     Description: form tooltip validation etc..
     ----------------------------------------------------------------------------------------
-    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Item Name: Regs-cipe Cookbook  - Vuejs, HTML & Laravel Admin Dashboard Template
     Author: Pixinvent
     Author URL: hhttp://www.themeforest.net/user/pixinvent
 ==========================================================================================*/

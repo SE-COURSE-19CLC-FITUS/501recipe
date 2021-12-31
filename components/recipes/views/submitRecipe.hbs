@@ -22,7 +22,7 @@
                             <label for='title'>Recipe Title</label>
                             <input type='text' name='title' id='title' />
                             <br />
-                            <label for='short-description'>Short Description</label>
+                            {{!-- <label for='short-description'>Short Description</label>
                             <textarea
                                 class='short-text'
                                 name='description'
@@ -36,7 +36,7 @@
                                 id='recipe-content'
                                 cols='30'
                                 rows='10'
-                            ></textarea>
+                            ></textarea> --}}
                             <label for='upload-image'>Upload Images</label>
                             <input
                                 type='file'
@@ -81,8 +81,7 @@
                                                 id='steps'
                                                 cols='30'
                                                 rows='10'
-                                            >
-                                            </textarea>
+                                            ></textarea>
                                             <span class='del-list'><i
                                                     class='fa fa-trash'
                                                 ></i></span>
@@ -128,25 +127,35 @@
                             ></textarea> --}}
 
                             <div class='row'>
-                                <div class='col-sm-6'>
+                                {{!-- <div class='col-sm-6'>
                                     <label for='yield'>Yield</label>
                                     <input
                                         type='text'
                                         name='yield'
                                         id='yield'
                                     />
-                                </div>
+                                </div> --}}
                                 <div class='col-sm-6'>
                                     <label for='servings'>Servings</label>
                                     <input
                                         type='number'
                                         name='servings'
                                         id='servings'
+										placeholder='E.g: 4'
+                                    />
+                                </div>
+                                <div class='col-sm-6'>
+                                    <label for='cook-time'>Cook Time</label>
+                                    <input
+                                        type='number'
+                                        name='cookTime'
+                                        id='cook-time'
+										placeholder='E.g: 30 phút, 1 giờ, 20 giây'
                                     />
                                 </div>
                             </div>
 
-                            <div class='row'>
+                            {{!-- <div class='row'>
                                 <div class='col-sm-4'>
                                     <label for='prep-time'>Preparation Time</label>
                                     <input
@@ -156,25 +165,17 @@
                                     />
                                 </div>
                                 <div class='col-sm-4'>
-                                    <label for='cook-time'>Cook Time</label>
-                                    <input
-                                        type='number'
-                                        name='cookTime'
-                                        id='cook-time'
-                                    />
-                                </div>
-                                {{!-- <div class='col-sm-4'>
                                     <label for='ready-in'>Ready In</label>
                                     <input
                                         type='text'
                                         name='ready-in'
                                         id='ready-in'
                                     />
-                                </div> --}}
-                            </div>
+                                </div>
+                            </div> --}}
 
                             <label for='tags'>Tags</label>
-                            <input type='text' name='tags' id='tags' />
+                            <input type='text' name='tags' id='tags' placeholder='E.g: chicken, eggs, pizza' />
 
                             <div class='row'>
                                 <div class='col-sm-6'>
@@ -238,6 +239,33 @@
                                     </select>
                                 </div>
                             </div>
+							<fieldset class='ingredient-set'>
+                                <label for='tips'>Tips</label>
+                                <ul class='list-sortable steps'>
+                                    <li>
+                                        <div class='add-fields'>
+                                            <span class='handler-list'><i
+                                                    class='fa fa-arrows'
+                                                ></i></span>
+											{{!-- Don't leave spaces between
+											textarea  --}}
+                                            <textarea
+                                                class='short-text'
+                                                name='tips'
+                                                id='tips'
+                                                cols='30'
+                                                rows='10'
+                                            ></textarea>
+                                            <span class='del-list'><i
+                                                    class='fa fa-trash'
+                                                ></i></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <span class='add-button add-steps'>
+                                    <i class='fa fa-plus'></i>
+                                </span>
+                            </fieldset>
                             <div class='text-center'>
                                 <button
                                     type='submit'
@@ -642,7 +670,7 @@
     document.getElementById('submitRecipe').addEventListener('submit', function(e) {
         console.log('submit')
         e.preventDefault()
-        
+
         var payload=$(this).serialize()
         $.post('/submitRecipe', payload, function(data){
             if(data.success){

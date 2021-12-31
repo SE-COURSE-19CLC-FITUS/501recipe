@@ -22,3 +22,11 @@ exports.nonAccentVietnamese = function (str) {
   str = str.replace(/\u02C6|\u0306|\u031B/g, ''); // Â, Ê, Ă, Ơ, Ư
   return str;
 };
+
+exports.emailValidation = function (email) {
+  return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+};
+
+exports.phoneValidation = function (phone) {
+  return /^[0-9\-\+]{9,15}$/.test(phone);
+};

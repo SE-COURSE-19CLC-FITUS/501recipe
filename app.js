@@ -5,7 +5,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-var flash = require('connect-flash');
+const flash = require('connect-flash');
 const logger = require('morgan');
 
 const indexRouter = require('./routes/index.js');

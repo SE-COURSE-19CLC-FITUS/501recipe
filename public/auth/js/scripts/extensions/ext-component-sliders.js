@@ -2,7 +2,7 @@
 	File Name: ext-component-sliders.js
 	Description: noUiSlider is a lightweight JavaScript range slider library.
 	----------------------------------------------------------------------------------------
-	Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+	Item Name: Regs-cipe Cookbook  - Vuejs, HTML & Laravel Admin Dashboard Template
 	Author: PIXINVENT
 	Author URL: http://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
