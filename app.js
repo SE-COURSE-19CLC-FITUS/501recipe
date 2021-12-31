@@ -13,6 +13,7 @@ const usersRouter = require('./routes/users.js');
 const authRouter = require('./components/auth');
 const recipeRouter = require('./components/recipes/recipeRoutes.js');
 const submitRecipeRouter = require('./components/recipes/submitRecipeRouter.js');
+const bookmarkRouter = require('./components/bookmarks/bookmarkRoutes.js');
 const auth = require('./middleware/authMiddleware');
 const passport = require('./passport');
 
@@ -54,6 +55,7 @@ app.use('/', authRouter);
 app.use('/', recipeRouter);
 app.use('/', auth, submitRecipeRouter);
 app.use('/users', usersRouter);
+app.use('/bookmark', auth, bookmarkRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

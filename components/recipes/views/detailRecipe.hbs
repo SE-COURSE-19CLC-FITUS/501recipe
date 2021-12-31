@@ -27,6 +27,7 @@
                                 </div>
 
                                 <div class='slider-recipe-detail2'>
+                                    <div id='recipeId' style="display: none;">{{_id}}</div>
                                     <div class='wrapper-slider-detail'>
                                         <div class='recipe-slider'>
                                             <div class='slider-detail2'>
@@ -783,6 +784,9 @@
 
                             </ul>
                         </div>
+                        <div id="bookmark"> 
+                            <button type="button" class="btn btn-light" id='bookmark'>Add to Bookmark</button>
+                        </div>
                         <!--get social ends-->
                     </div>
                 </aside>
@@ -791,3 +795,27 @@
 
     </div>
 </div>
+<script type='text/javascript'>
+    document.getElementById('bookmark').addEventListener('click', function(e) {
+        e.preventDefault();
+        var bookmark = document.getElementById('bookmark');
+        if(bookmark.innerHTML==='Add to Bookmark')
+        {
+        bookmark.innerHTML = '<button type="button" class="btn btn-light" id="bookmark">Added to Bookmark</button>';
+        const recipeId=document.getElementById('recipeId').innerHTML;
+        $.post('/bookmark/add', {
+            recipeId
+        }, function(data) {
+            alert(data.message);
+        });
+    }else{
+        bookmark.innerHTML = '<button type="button" class="btn btn-light" id="bookmark">Add to Bookmark</button>';
+        const recipeId=document.getElementById('recipeId').innerHTML;
+        $.post('/bookmark/remove', {
+            recipeId
+        }, function(data) {
+            alert(data.message);
+        });
+    }
+    });
+</script>
