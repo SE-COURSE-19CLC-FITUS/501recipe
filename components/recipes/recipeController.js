@@ -1,7 +1,8 @@
 'use strict';
+
 const {
   RECIPE_PER_PAGE,
-  PAGE_PER_SLIDE
+  PAGE_PER_SLIDE,
 } = require('../../config/constants.js');
 
 const recipeService = require('./recipeServices.js');
@@ -14,16 +15,12 @@ exports.recipesInPage = async function (req, res) {
 
   const recipes = await recipeService.findByPage(curPage, RECIPE_PER_PAGE);
   const numRecipes = await recipeService.count();
-  console.log("numRecipes", numRecipes);
 
   const limitPage = PAGE_PER_SLIDE;
-  console.log("limitPage", limitPage);
   // Because page has index 1, so we have to increase limit
   // So with limitPage is 4, we have turn 0: [1, 2, 3, 4], turn 1: [5, 6, 7, 8]
   const pageTurn = Math.floor(curPage / (limitPage + 1));
-  console.log("pageTurn", pageTurn);
   const numPages = Math.ceil(numRecipes / RECIPE_PER_PAGE);
-  console.log("numPages", numPages);
 
   res.render('recipes/views/recipes.hbs', {
     curPage,
@@ -37,12 +34,12 @@ exports.recipesInPage = async function (req, res) {
 
 exports.getRecipeBySlug = async function (req, res) {
   const recipe = await recipeService.findBySlug(req.params.slug);
-  const comments = await recipeService.getRecipeComments(recipe._id)
-  comments.sort((a, b) => (new Date(b.createAt) - new Date(a.createAt)));
-  comments.map((comment) => {
+  const comments = await recipeService.getRecipeComments(recipe._id);
+  comments.sort((a, b) => new Date(b.createAt) - new Date(a.createAt));
+  comments.map(comment => {
     comment.createAt = timeSince(comment.createAt);
     return comment;
-  })
+  });
   recipe.bookmark = 'Add to Bookmark';
   if (req.user) {
     const userId = req.user._id;
@@ -54,39 +51,42 @@ exports.getRecipeBySlug = async function (req, res) {
 
   res.render('recipes/views/detailRecipe.hbs', {
     recipe,
-    comments
+    comments,
   });
 };
 
 exports.postComment = async (req, res, next) => {
-  const comment = await recipeService.postComment(req.body.name, req.body.recipeId, req.body.comment);
+  const comment = await recipeService.postComment(
+    req.body.name,
+    req.body.recipeId,
+    req.body.comment
+  );
   res.redirect(`/recipes/${req.body.slug}#leave-comment`);
-}
+};
 
 function timeSince(date) {
+  let seconds = Math.floor((new Date() - date) / 1000);
 
-  var seconds = Math.floor((new Date() - date) / 1000);
-
-  var interval = seconds / 31536000;
+  let interval = seconds / 31536000;
 
   if (interval > 1) {
-    return Math.floor(interval) + " years";
+    return Math.floor(interval) + ' years';
   }
   interval = seconds / 2592000;
   if (interval > 1) {
-    return Math.floor(interval) + " months";
+    return Math.floor(interval) + ' months';
   }
   interval = seconds / 86400;
   if (interval > 1) {
-    return Math.floor(interval) + " days";
+    return Math.floor(interval) + ' days';
   }
   interval = seconds / 3600;
   if (interval > 1) {
-    return Math.floor(interval) + " hours";
+    return Math.floor(interval) + ' hours';
   }
   interval = seconds / 60;
   if (interval > 1) {
-    return Math.floor(interval) + " minutes";
+    return Math.floor(interval) + ' minutes';
   }
-  return Math.floor(seconds) + " seconds";
+  return Math.floor(seconds) + ' seconds';
 }

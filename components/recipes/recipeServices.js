@@ -3,7 +3,7 @@
 const Recipe = require('./recipeModel');
 const Comment = require('./commentModel')
 const mongoose = require('mongoose');
-const mongooseObject = require('../../utils/mongoose');
+const mongooseObject = require('../../utils/mongooseUtil');
 
 exports.list = () => Recipe.find({});
 

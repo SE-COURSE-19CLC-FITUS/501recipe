@@ -1,6 +1,8 @@
+'use strict';
+
 const mongoose = require('mongoose');
-const bookmarkModel = require('./BookmarkModel');
-const mongooseOBject = require('../../utils/mongoose');
+const bookmarkModel = require('./bookmarkModel');
+const mongooseOBject = require('../../utils/mongooseUtil');
 exports.findBookmark = async function (userId, recipeId) {
   const filter = {
     userId: new mongoose.Types.ObjectId(userId),
