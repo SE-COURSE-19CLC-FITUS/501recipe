@@ -16,8 +16,10 @@
                                 class='fa fa-bars'
                             ></i></span>
                     </div>
-                    <button type="button" class="btn btn-light"id="myRecipe">My Recipe</button>
-                    <h2>Recent Recipes</h2>
+                    <button type="button" class="green-color mid-button default-btn"id="myBookmark">My Bookmark</button>
+                    <button type="button" class="green-color mid-button default-btn"id="myRecipe">My Recipe</button>
+                    
+                    <h2 id='labelRecipe'>Recent Recipes</h2>
 
                     <div class='recipe-listing listing-list'>
                         {{#each recipes}}
@@ -84,7 +86,7 @@
 
                             <div class='category-list'>
                                 <ul>
-                                    <li><a href='#'>breakfast</a>
+                                    <li><a href='/recipes?page=1&mealType=Breakfast'>breakfast</a>
                                         <div class='list-icons'><svg
                                                 version='1.1'
                                                 class='icon-container'
@@ -115,7 +117,7 @@
                                             </svg>
                                         </div>
                                     </li>
-                                    <li><a href='#'>Starter</a>
+                                    <li><a href='/recipes?page=1&mealType=Starter'>Starter</a>
                                         <div class='list-icons'><svg
                                                 version='1.1'
                                                 class='icon-container'
@@ -149,7 +151,7 @@
                                             </svg>
                                         </div>
                                     </li>
-                                    <li><a href='#'>lunch</a>
+                                    <li><a href='/recipes?page=1&mealType=Lunch'>lunch</a>
                                         <div class='list-icons'><svg
                                                 version='1.1'
                                                 class='icon-container'
@@ -192,7 +194,7 @@
                                             </svg>
                                         </div>
                                     </li>
-                                    <li><a href='#'>dinner</a>
+                                    <li><a href='/recipes?page=1&mealType=Dinner'>dinner</a>
                                         <div class='list-icons'><svg
                                                 version='1.1'
                                                 class='icon-container'
@@ -228,7 +230,7 @@
                                             </svg>
                                         </div>
                                     </li>
-                                    <li><a href='#'>dessert</a>
+                                    <li><a href='/recipes?page=1&mealType=Dessert'>dessert</a>
                                         <div class='list-icons'><svg
                                                 version='1.1'
                                                 class='icon-container'
@@ -374,7 +376,8 @@
     </div>
 </div>
 <script type="text/javascript">
-    document.getElementById('myRecipe').addEventListener('click',function(){
+
+    document.getElementById('myBookmark').addEventListener('click',function(){
         window.location.href = "/bookmark";
     })
 </script>

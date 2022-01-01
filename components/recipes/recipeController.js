@@ -9,11 +9,23 @@ const recipeService = require('./recipeServices.js');
 const bookmarkService = require('../bookmarks/bookmarkService');
 exports.recipesInPage = async function (req, res) {
   let curPage = +req.query.page;
-
+  let mealType = req.query.mealType;
+  let keyword = req.query.keyword;
+  let filter = {};
+  if (mealType) {
+    filter.mealType = mealType;
+  }
+  if (keyword) {
+    filter.title = { $regex: keyword, $options: 'i' };
+  }
   // Pages have index 1, instead of 0
   if (!curPage) curPage = 1;
 
-  const recipes = await recipeService.findByPage(curPage, RECIPE_PER_PAGE);
+  const recipes = await recipeService.findByPage(
+    filter,
+    curPage,
+    RECIPE_PER_PAGE
+  );
   const numRecipes = await recipeService.count();
 
   const limitPage = PAGE_PER_SLIDE;

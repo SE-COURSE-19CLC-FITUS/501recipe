@@ -400,17 +400,18 @@
             <div class='row'>
                 <div class='col-lg-4 col-md-5'>
                     <div class='search-box'>
-                        <form class='search-box-home'>
+                        <form class='search-box-home'id='homeSearch'action="/recipes?page=1&" >
                             <div class='slider-search-left'>
                                 <span>Search</span>
-                                <label for='search-slider'>
+                                <label >
                                     <input
-                                        type='search'
+                                        type='text'
                                         id='search-slider'
                                         placeholder='keyword'
+                                        name='keyword'
                                     />
                                 </label>
-                                <button><i class='fa fa-search'></i></button>
+                                <button type="submit"><i class='fa fa-search'></i></button>
                             </div>
                         </form>
                         <div class='search-option'>
@@ -422,7 +423,7 @@
                     <div class='wrapper-search-carousel'>
                         <div class='search-carousel' id='search-carousel'>
                             <div class='slide'>
-                                <a href='#'><span><svg
+                                <a href='/recipes?page=1&mealType=Breakfast'><span><svg
                                             version='1.1'
                                             class='icon-container'
                                             xmlns='http://www.w3.org/2000/svg'
@@ -454,7 +455,7 @@
                             </div>
 
                             <div class='slide'>
-                                <a href='#'><span><svg
+                                <a href='/recipes?page=1&mealType=Starter'><span><svg
                                             version='1.1'
                                             class='icon-container'
                                             xmlns='http://www.w3.org/2000/svg'
@@ -489,7 +490,7 @@
                             </div>
 
                             <div class='slide'>
-                                <a href='#'><span><svg
+                                <a href='/recipes?page=1&mealType=Lunch'><span><svg
                                             version='1.1'
                                             class='icon-container'
                                             xmlns='http://www.w3.org/2000/svg'
@@ -532,7 +533,7 @@
                                     </span>lunch</a>
                             </div>
                             <div class='slide'>
-                                <a href='#'><span><svg
+                                <a href='/recipes?page=1&mealType=Dessert'><span><svg
                                             version='1.1'
                                             class='icon-container'
                                             xmlns='http://www.w3.org/2000/svg'
@@ -571,7 +572,7 @@
                                     </span>dessert</a>
                             </div>
                             <div class='slide'>
-                                <a href='#'><span><svg
+                                <a href='/recipes?page=1&mealType=Dinner'><span><svg
                                             version='1.1'
                                             class='icon-container'
                                             xmlns='http://www.w3.org/2000/svg'
@@ -1192,3 +1193,6 @@
 </div>
 
 <!--recipe submit banner ends-->
+<script type="text/javascript">
+    
+</script>
