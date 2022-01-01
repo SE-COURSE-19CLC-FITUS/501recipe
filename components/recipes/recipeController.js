@@ -39,6 +39,10 @@ exports.getRecipeBySlug = async function (req, res) {
   const recipe = await recipeService.findBySlug(req.params.slug);
   const comments = await recipeService.getRecipeComments(recipe._id)
   comments.sort((a, b) => (new Date(b.createAt) - new Date(a.createAt)));
+  comments.map((comment) => {
+    comment.createAt = timeSince(comment.createAt);
+    return comment;
+  })
   recipe.bookmark = 'Add to Bookmark';
   if (req.user) {
     const userId = req.user._id;
