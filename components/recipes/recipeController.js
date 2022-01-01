@@ -1,41 +1,45 @@
 'use strict';
-const { RECIPE_PER_PAGE, PAGE_PER_SLIDE } = require('../../config/constants.js');
+const {
+  RECIPE_PER_PAGE,
+  PAGE_PER_SLIDE
+} = require('../../config/constants.js');
 
 const recipeService = require('./recipeServices.js');
 const bookmarkService = require('../bookmarks/bookmarkService');
 exports.recipesInPage = async function (req, res) {
   let curPage = +req.query.page;
 
-	// Pages have index 1, instead of 0
+  // Pages have index 1, instead of 0
   if (!curPage) curPage = 1;
 
   const recipes = await recipeService.findByPage(curPage, RECIPE_PER_PAGE);
   const numRecipes = await recipeService.count();
   console.log("numRecipes", numRecipes);
 
-	const limitPage = PAGE_PER_SLIDE;
-	console.log("limitPage", limitPage);
-	// Because page has index 1, so we have to increase limit
-	// So with limitPage is 4, we have turn 0: [1, 2, 3, 4], turn 1: [5, 6, 7, 8]
-	const pageTurn = Math.floor(curPage / (limitPage + 1));
-	console.log("pageTurn", pageTurn);
-	const numPages = Math.ceil(numRecipes / RECIPE_PER_PAGE);
-	console.log("numPages", numPages);
+  const limitPage = PAGE_PER_SLIDE;
+  console.log("limitPage", limitPage);
+  // Because page has index 1, so we have to increase limit
+  // So with limitPage is 4, we have turn 0: [1, 2, 3, 4], turn 1: [5, 6, 7, 8]
+  const pageTurn = Math.floor(curPage / (limitPage + 1));
+  console.log("pageTurn", pageTurn);
+  const numPages = Math.ceil(numRecipes / RECIPE_PER_PAGE);
+  console.log("numPages", numPages);
 
   res.render('recipes/views/recipes.hbs', {
     curPage,
-		pageTurn,
+    pageTurn,
     limitPage,
     numRecipes,
-		numPages,
+    numPages,
     recipes,
   });
 };
 
 exports.getRecipeBySlug = async function (req, res) {
   const recipe = await recipeService.findBySlug(req.params.slug);
-  recipe.bookmark = 'Add to Bookmark'; //cái này dùng để phân biệt giữa việc đã add hay chưa, xem thêm ở script cuổi
-  //trang detailRecipe.hbs
+  const comments = await recipeService.getRecipeComments(recipe._id)
+  comments.sort((a, b) => (new Date(b.createAt) - new Date(a.createAt)));
+  recipe.bookmark = 'Add to Bookmark';
   if (req.user) {
     const userId = req.user._id;
     const bookmark = await bookmarkService.findBookmark(userId, recipe._id);
@@ -44,5 +48,41 @@ exports.getRecipeBySlug = async function (req, res) {
     }
   }
 
-  res.render('recipes/views/detailRecipe.hbs', { recipe });
+  res.render('recipes/views/detailRecipe.hbs', {
+    recipe,
+    comments
+  });
 };
+
+exports.postComment = async (req, res, next) => {
+  const comment = await recipeService.postComment(req.body.name, req.body.recipeId, req.body.comment);
+  res.redirect(`/recipes/${req.body.slug}#leave-comment`);
+}
+
+function timeSince(date) {
+
+  var seconds = Math.floor((new Date() - date) / 1000);
+
+  var interval = seconds / 31536000;
+
+  if (interval > 1) {
+    return Math.floor(interval) + " years";
+  }
+  interval = seconds / 2592000;
+  if (interval > 1) {
+    return Math.floor(interval) + " months";
+  }
+  interval = seconds / 86400;
+  if (interval > 1) {
+    return Math.floor(interval) + " days";
+  }
+  interval = seconds / 3600;
+  if (interval > 1) {
+    return Math.floor(interval) + " hours";
+  }
+  interval = seconds / 60;
+  if (interval > 1) {
+    return Math.floor(interval) + " minutes";
+  }
+  return Math.floor(seconds) + " seconds";
+}

@@ -1,8 +1,10 @@
 'use strict';
 
-const Recipe = require('./recipeModel.js');
+const Recipe = require('./recipeModel');
+const Comment = require('./commentModel')
 const mongoose = require('mongoose');
 const mongooseObject = require('../../utils/mongoose');
+
 exports.list = () => Recipe.find({});
 
 exports.count = () => Recipe.find().count();
@@ -35,3 +37,14 @@ exports.getTop7Rating = async () => {
   const result = await Recipe.find(filter).sort({ rating: -1 }).limit(7);
   return mongooseObject.multipleMongooseToObject(result);
 };
+
+exports.postComment = (name, recipeId, comment) => {
+  return new Comment({
+    name: name,
+    recipeId: recipeId,
+    comment: comment,
+    createAt: new Date(),
+  }).save();
+}
+
+exports.getRecipeComments = (recipeId) => Comment.find({recipeId: recipeId}).lean();
