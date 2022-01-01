@@ -1,7 +1,7 @@
 'use strict';
 
 const Recipe = require('./recipeModel');
-const Comment = require('./commentModel')
+const Comment = require('./commentModel');
 const mongoose = require('mongoose');
 const mongooseObject = require('../../utils/mongooseUtil');
 
@@ -9,9 +9,9 @@ exports.list = () => Recipe.find({});
 
 exports.count = () => Recipe.find().count();
 
-exports.findByPage = (page, itemPerPage) =>
-	// Pages have index 1, instead of 0. So if page is 1, then we don't skip
-  Recipe.find({})
+exports.findByPage = (filter, page, itemPerPage) =>
+  // Pages have index 1, instead of 0. So if page is 1, then we don't skip
+  Recipe.find(filter)
     .skip((page - 1) * itemPerPage)
     .limit(itemPerPage);
 
@@ -45,6 +45,7 @@ exports.postComment = (name, recipeId, comment) => {
     comment: comment,
     createAt: new Date(),
   }).save();
-}
+};
 
-exports.getRecipeComments = (recipeId) => Comment.find({recipeId: recipeId}).lean();
+exports.getRecipeComments = recipeId =>
+  Comment.find({ recipeId: recipeId }).lean();
