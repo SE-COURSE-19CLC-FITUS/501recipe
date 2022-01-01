@@ -2,7 +2,6 @@
 
 const recipeService = require('./recipeServices');
 const mongoose = require('mongoose');
-const { LOCALE } = require('../../config/constants.js');
 
 class SubmitRecipe {
   show(req, res, next) {
@@ -33,7 +32,7 @@ class SubmitRecipe {
     }
     const recipe = {
       _id: new mongoose.Types.ObjectId(),
-      datePublish: new Date().toLocaleDateString(LOCALE),
+      datePublish: new Date(),
       ingredients: ingredients,
       instructions: steps,
       levelSkill: content.skill,

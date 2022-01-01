@@ -1,7 +1,7 @@
 <div class='rating-box'>
     {{! Since we pass only "rating" as a primitive, so even we pass this, the
     rating will eventually discard in "loop" helper }}
-    {{#loop this iter=5}}
+    {{#loop_b this iter=5}}
         <span class='rating-icons'>
             <svg
                 class='icon-container'
@@ -37,6 +37,6 @@
                 </g>
             </svg>
         </span>
-    {{/loop}}
+    {{/loop_b}}
     <span class='rating-figure'>({{this.rating}} / 5)</span>
 </div>

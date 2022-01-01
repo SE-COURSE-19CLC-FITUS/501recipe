@@ -5,9 +5,12 @@ const mongoose = require('mongoose');
 const mongooseObject = require('../../utils/mongoose');
 exports.list = () => Recipe.find({});
 
+exports.count = () => Recipe.find().count();
+
 exports.findByPage = (page, itemPerPage) =>
+	// Pages have index 1, instead of 0. So if page is 1, then we don't skip
   Recipe.find({})
-    .skip(page * itemPerPage)
+    .skip((page - 1) * itemPerPage)
     .limit(itemPerPage);
 
 exports.findBySlug = slug => Recipe.findOne({ slug: slug });

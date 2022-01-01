@@ -2,16 +2,25 @@
 
 const mongoose = require('mongoose');
 const slugGenerator = require('mongoose-slug-generator');
+const { LOCALE } = require('../../config/constants.js');
 const { isURL } = require('validator');
 const { Schema } = mongoose;
 mongoose.plugin(slugGenerator);
 
 const options = { toObject: { virtuals: true } };
 
+const dateFormatOptions = {
+	day: "numeric",
+	month: "short",
+	year: "numeric"
+}
+
 const recipeSchema = new Schema(
   {
     _id: { type: mongoose.Types.ObjectId },
-    datePublish: Date,
+    datePublish: { type: Date, get: function (date) {
+			return new Intl.DateTimeFormat(LOCALE, dateFormatOptions).format(date);
+		} },
     imageUrl: {
       type: String,
       validate: {

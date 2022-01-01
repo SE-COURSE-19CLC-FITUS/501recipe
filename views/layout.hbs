@@ -62,7 +62,7 @@
                         <div class='col-lg-2'>
                             <div class='logo-wrapper'>
                                 <a href='/'><img
-                                        src='images/logo.png'
+                                        src='/images/logo.png'
                                         alt='logo'
                                     /></a>
                             </div>
@@ -76,15 +76,12 @@
                                     <li><a href='#'><i class='fa fa-google-plus'></i></a></li>
                                 </ul> }}
                                     {{#if user}}
-                                        <div>Hi,
-                                            {{user.username}}&ensp;<span
-                                                class='sign-in-buttons'
-                                            >
-                                                <a
-                                                    class='login'
-                                                    href='/logout'
-                                                >Logout</a>
-                                            </span></div>
+                                        <div class='wrapper-greeting'>
+											<p class='greeting'>Hi, {{user.username}}</p>
+											<span class='sign-in-buttons'>
+                                                <a class='logout' href='/logout'>Logout</a>
+                                            </span>
+										</div>
                                     {{else}}
                                         <span class='sign-in-buttons'>
                                             <a

@@ -1,15 +1,35 @@
 'use strict';
+const { RECIPE_PER_PAGE, PAGE_PER_SLIDE } = require('../../config/constants.js');
 
 const recipeService = require('./recipeServices.js');
 const bookmarkService = require('../bookmarks/bookmarkService');
 exports.recipesInPage = async function (req, res) {
-  let { page } = req.query;
+  let curPage = +req.query.page;
 
-  if (!page) page = 0;
+	// Pages have index 1, instead of 0
+  if (!curPage) curPage = 1;
 
-  const recipes = await recipeService.findByPage(page, 6);
+  const recipes = await recipeService.findByPage(curPage, RECIPE_PER_PAGE);
+  const numRecipes = await recipeService.count();
+  console.log("numRecipes", numRecipes);
 
-  res.render('recipes/views/recipes.hbs', { recipes });
+	const limitPage = PAGE_PER_SLIDE;
+	console.log("limitPage", limitPage);
+	// Because page has index 1, so we have to increase limit
+	// So with limitPage is 4, we have turn 0: [1, 2, 3, 4], turn 1: [5, 6, 7, 8]
+	const pageTurn = Math.floor(curPage / (limitPage + 1));
+	console.log("pageTurn", pageTurn);
+	const numPages = Math.ceil(numRecipes / RECIPE_PER_PAGE);
+	console.log("numPages", numPages);
+
+  res.render('recipes/views/recipes.hbs', {
+    curPage,
+		pageTurn,
+    limitPage,
+    numRecipes,
+		numPages,
+    recipes,
+  });
 };
 
 exports.getRecipeBySlug = async function (req, res) {

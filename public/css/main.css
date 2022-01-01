@@ -573,6 +573,7 @@ ul {
 }
 .wrapper-links {
   margin-bottom: 30px;
+  height: 40px;
 }
 .header-social-icons {
   display: inline-block;
@@ -589,23 +590,36 @@ ul {
 .header-social-icons li a:hover {
   color: #6ebe3b;
 }
+
+div.wrapper-greeting {
+	align-items: baseline;
+	display: inline-flex;
+	margin: 0 -5px;
+	transform: translate(-5px);
+}
+
+p.greeting {
+	display: inline-block;
+	margin: 0 10px;
+}
+
 span.sign-in-buttons {
-  border: 1px solid #000000;
-  display: inline-table;
+	border: 0.5px solid #000000;
+	display: inline-flex;
 }
 span.sign-in-buttons a {
-  padding: 6px 12px;
+	border: 0.5px solid #000000;
+	text-align: center;
   color: #28211f;
+  display: block;
   font-family: 'Lora', serif;
-  display: table-cell;
+  padding: 6px 12px;
 }
 span.sign-in-buttons a:hover {
   background: #000000;
   color: #ffffff;
 }
-span.sign-in-buttons .login {
-  border-right: 1px solid #000000;
-}
+
 .nav-collapse > ul {
   margin-bottom: 0;
 }
@@ -989,22 +1003,24 @@ a.mean-expand {
   width: 100%;
 }
 .custom-arrows {
-  display: table;
+  display: flex;
   position: absolute;
   top: 50%;
   margin-top: -32px;
   left: -39px;
 }
-.custom-arrows span {
-  display: table-cell;
+.left-arrow.slick-arrow, .right-arrow.slick-arrow {
+  align-items: center;
+  background: #3d3432;
+  cursor: pointer;
+  display: flex;
   height: 65px;
-  width: 39px;
+  justify-content: center;
   line-height: 65px;
   text-align: center;
-  cursor: pointer;
-  user-select: none;
   transition: 0.2s all ease-in-out;
-  background: #3d3432;
+  user-select: none;
+  width: 39px;
 }
 .custom-arrows span:hover {
   background: #28211f;
@@ -3252,14 +3268,16 @@ a.mean-expand {
   margin-right: 10px;
 }
 .page-nav li a {
-  display: inline-block;
-  width: 38px;
-  height: 38px;
-  line-height: 36px;
-  border: 1px solid #e4d9d1;
+  align-items: center;
   background: #ffffff;
+  border: 1px solid #e4d9d1;
+  display: inline-flex;
   font-family: 'Lora', serif;
   font-weight: 600;
+  height: 38px;
+  justify-content: center;
+  line-height: 36px;
+  width: 38px;
 }
 .page-nav li a:hover {
   background: transparent;

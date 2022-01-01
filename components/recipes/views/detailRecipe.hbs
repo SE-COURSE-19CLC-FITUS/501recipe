@@ -64,14 +64,12 @@
                                         </div>
 
                                         <ul class='recipe-specs-2'>
-                                            {{!-- <li><span>Yield :
-                                                </span>5 Grills</li> --}}
                                             <li><span>Servings :
                                                 </span>{{servings}}</li>
                                             <li><span>Cooking Time :
                                                 </span>{{timeCook}}</li>
-                                            {{!-- <li><span>Cook Time :
-                                                </span>40m</li>
+                                            {{!-- <li><span>Yield :
+                                                </span>5 Grills</li>
                                             <li><span>Ready In :
                                                 </span>1:40h</li> --}}
                                         </ul>
@@ -86,12 +84,12 @@
                             <div class='recipe-detail-body'>
                                 {{> ratingBox rating=rating}}
                                 <ul class='pre-tags'>
-                                    {{!-- <li><span>Cuisine :
-                                        </span>Chinese</li> --}}
-                                    {{!-- <li><span>Course :
-                                        </span>Side Dish</li> --}}
+                                    <li><span>Meal Type :
+                                        </span>{{mealType}}</li>
                                     <li><span>Skill Level :
                                         </span>{{levelSkill}}</li>
+                                    <li><span>Date Publish :
+                                        </span>{{datePublish}}</li>
                                 </ul>
                                 <div class='separator-post'></div>
                                 {{!-- <p>
@@ -228,40 +226,20 @@
 
                                 </div>
 
-                                {{!-- <div class='tips-variations'>
+								{{#if tips}}
+                                <div class='tips-variations'>
                                     <h3>Tips & variations</h3>
                                     <ul>
+										{{#each tips}}
                                         <li>
                                             <p>
-                                                Rinse the chicken pieces in cold
-                                                water and pat dry. Place the
-                                                chicken in a large, resealable
-                                                zip-top bag and pour in the
-                                                marinade. Toss the chicken
-                                                inside the bag to cover.
+                                                {{text}}
                                             </p>
                                         </li>
-                                        <li>
-                                            <p>
-                                                Rinse the chicken pieces in cold
-                                                water and pat dry. Place the
-                                                chicken in a large, resealable
-                                                zip-top bag and pour in the
-                                                marinade.
-                                            </p>
-                                        </li>
-                                        <li>
-                                            <p>
-                                                Rinse the chicken pieces in cold
-                                                water and pat dry. Place the
-                                                chicken in a large, resealable
-                                                zip-top bag and pour in the
-                                                marinade. Toss the chicken
-                                                inside the bag to cover.
-                                            </p>
-                                        </li>
+										{{/each}}
                                     </ul>
-                                </div> --}}
+                                </div>
+								{{/if}}
 
                                 <div class='separator-post'></div>
                                 <div class='tags-icons'>

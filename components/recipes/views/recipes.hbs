@@ -41,14 +41,14 @@
                                                 >{{publisher}}</a></li>
                                             {{!-- <li class='calendar'>{{date}}</li> --}}
                                         </ul>
-                                        {{> ratingBox rating=rating}}
+                                        {{> ratingBox rating=this.rating}}
                                     </div>
                                 </div>
                             </div>
                         {{/each}}
 
-                        {{! <!--recipe of the day-->
-                        <div class="recipe-of-day">
+                        <!--recipe of the day-->
+                        <!--<div class="recipe-of-day">
                             <img src="images/temp-images/recipe-of-the-day.jpg" alt="Recipe of the day">
                             <div class="recipe-contents-outer">
                                 <div class="recipe-contents text-center">
@@ -64,14 +64,15 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!--recipe of the day ends--> }}
+                        </div>-->
+                        <!--recipe of the day ends-->
 
-                        <ul class='page-nav'>
+						{{> pagination curPage=this.curPage limitPage=this.limitPage numRecipes=this.numRecipes turn=this.turn}}
+                        {{!-- <ul class='page-nav'>
                             <li class='current'><a href='#'>1</a></li>
                             <li><a href='#'>2</a></li>
                             <li><a href='#'>3</a></li>
-                        </ul>
+                        </ul> --}}
                     </div>
                 </div>
             </div>
@@ -272,7 +273,7 @@
                         <!--recipes search widget ends-->
 
                         <!--popular recipes widget-->
-                        {{# if popularList}}
+                        {{#if popularList}}
                             {{> widgetPopular typePopular="Popular Recipes" popularList=popularList }}
                         {{else}}
                             {{!-- Fall over content --}}
@@ -310,7 +311,7 @@
                         <!--advertisement widget ends-->
 
                         <!--latest news widget-->
-                        {{# if popularList}}
+                        {{#if popularList}}
                             {{> widgetPopular typePopular="Latest News" popularList=popularList }}
                         {{else}}
                             {{!-- Fall over content --}}
