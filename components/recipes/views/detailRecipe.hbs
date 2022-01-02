@@ -252,7 +252,6 @@
                                 </div>
                             </div>
                         </div>
-                        {{/with}}
 
                         <div class='about-chef'>
                             <h3 class='lined'>About Chef</h3>
@@ -266,7 +265,7 @@
                                 <div class='detail'>
                                     <div class='row'>
                                         <div class='col-sm-8'>
-                                            <h4><a href='#'>james anderson</a></h4>
+                                            <h4><a href='#'>{{publisher.username}}</a></h4>
 
                                         </div>
                                         <div class='col-sm-4'>
@@ -290,6 +289,7 @@
                                 </div>
                             </div>
                         </div>
+						{{/with}}
 
                         <div class='related-recipes'>
                             <h3 class='lined'>Related Recipes</h3>
@@ -368,7 +368,7 @@
                 <aside>
                     <div class='side-bar'>
                         <!--recipes search widget-->
-                        {{> widgetSearch}}
+                        {{> widgetCategory}}
                         <!--recipes search widget ends-->
 
                         <!--popular recipes widget-->

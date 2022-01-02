@@ -12,8 +12,7 @@ const bookmarkService = require('../bookmarks/bookmarkService');
 exports.recipesInPage = async function (req, res) {
   // Pages have index 1, instead of 0
   let curPage = +req.query.page || 1;
-  let mealType = req.query.mealType;
-  let keyword = req.query.keyword;
+  let { mealType, keyword } = req.query;
   let filter = {};
   if (mealType) {
     filter.mealType = mealType;
@@ -35,7 +34,7 @@ exports.recipesInPage = async function (req, res) {
     numRecipes = recipes.length;
   }
 
-	// FIXME: Kinda boilerplate code. Should I add it to recipeService?
+  // FIXME: Kinda boilerplate code. Should I add it to recipeService?
   const limitPage = RECIPE_PAGE_LIMIT;
   // Because page has index 1, so we have to decrease the curPage
   // So with limitPage is 4, we have turn 0: [1, 2, 3, 4], turn 1: [5, 6, 7, 8]
@@ -53,7 +52,7 @@ exports.recipesInPage = async function (req, res) {
 
 exports.getRecipeBySlug = async function (req, res) {
   const recipe = await recipeService.findBySlug(req.params.slug);
-	// NOTE: Remember to convert page to number
+  // NOTE: Remember to convert page to number
   const curCommentPage = +req.query['comment-page'] || 1;
 
   const comments = await recipeService.getRecipeComments(
@@ -62,7 +61,7 @@ exports.getRecipeBySlug = async function (req, res) {
     COMMENT_PER_PAGE
   );
 
-	// FIXME: Kinda boilerplate code. Should I add it to recipeService?
+  // FIXME: Kinda boilerplate code. Should I add it to recipeService?
   const limitCommentPage = COMMENT_PAGE_LIMIT;
   // Because page has index 1, so we have to decrease the curPage
   // So with limitPage is 4, we have turn 0: [1, 2, 3, 4], turn 1: [5, 6, 7, 8]
@@ -104,7 +103,7 @@ exports.postComment = async (req, res, next) => {
   res.redirect(`/recipes/${req.body.slug}#leave-comment`);
 };
 
-function timeSince(date) {
+const timeSince = function (date) {
   let seconds = Math.floor((new Date() - date) / 1000);
 
   let interval = seconds / 31536000;
@@ -129,4 +128,4 @@ function timeSince(date) {
     return Math.floor(interval) + ' minutes';
   }
   return Math.floor(seconds) + ' seconds';
-}
+};

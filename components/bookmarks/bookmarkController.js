@@ -8,7 +8,6 @@ class Bookmark {
   async getBookmark(req, res) {
     const userId = req.user._id;
     const myBookmark = await bookmarkService.getAllBookmark(userId);
-    //console.log('myBookmark', myBookmark);
     let recipes = [];
     if (myBookmark) {
       for (let i = 0; i < myBookmark.bookmark.length; i++) {

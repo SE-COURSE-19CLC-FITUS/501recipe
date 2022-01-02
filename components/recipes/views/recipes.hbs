@@ -40,7 +40,7 @@
                                         <ul class='post-meta'>
                                             <li class='author'><a
                                                     href='#'
-                                                >{{publisher}}</a></li>
+                                                >{{publisher.username}}</a></li>
                                             <li class='calendar'>{{datePublish}}</li>
                                         </ul>
                                         {{> ratingBox rating=this.rating}}
@@ -82,7 +82,7 @@
                 <aside>
                     <div class='side-bar'>
                         <!--recipes search widget-->
-                        {{> widgetSearch}}
+                        {{> widgetCategory}}
                         <!--recipes search widget ends-->
 
                         <!--popular recipes widget-->

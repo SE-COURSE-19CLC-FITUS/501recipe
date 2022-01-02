@@ -8,6 +8,7 @@ class SubmitRecipe {
     res.render('recipes/views/submitRecipe');
   }
   async submit(req, res, next) {
+    const { _id: userId, username } = req.user;
     const content = req.body;
 
     let ingredients;
@@ -37,6 +38,8 @@ class SubmitRecipe {
       instructions: steps,
       levelSkill: content.skill,
       mealType: content.mealType,
+      publisher: { id: userId, username },
+			rating: 0,
       servings: content.servings,
       tags: content.tags.split(',').map(tag => ({
         text: tag,

@@ -11,11 +11,7 @@ class Home {
     // {
     //   top1: recipe[0],
     //   top2: recipe[1],
-    //   top3: recipe[2],
-    //   top4: recipe[3],
-    //   top5: recipe[4],
-    //   top6: recipe[5],
-    //   top7: recipe[6],
+    //   ...
     // };
 
     res.render('index.hbs', { topRecipe });

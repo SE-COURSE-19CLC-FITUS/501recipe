@@ -9,16 +9,19 @@ mongoose.plugin(slugGenerator);
 const options = { toObject: { virtuals: true } };
 
 const dateFormatOptions = {
-	day: "numeric",
-	month: "short",
-	year: "numeric"
-}
+  day: 'numeric',
+  month: 'short',
+  year: 'numeric',
+};
 
 const recipeSchema = mongoose.Schema(
   {
-    datePublish: { type: Date, get: function (date) {
-			return new Intl.DateTimeFormat(LOCALE, dateFormatOptions).format(date);
-		} },
+    datePublish: {
+      type: Date,
+      get: function (date) {
+        return new Intl.DateTimeFormat(LOCALE, dateFormatOptions).format(date);
+      },
+    },
     imageUrl: {
       type: String,
       validate: {
@@ -45,7 +48,7 @@ const recipeSchema = mongoose.Schema(
         return val[0].toUpperCase() + val.slice(1);
       },
     },
-    publisher: { id: mongoose.ObjectId, name: String },
+    publisher: { id: mongoose.ObjectId, username: String },
     rating: {
       type: Number,
       min: [1, 'Must at least 1, got {VALUE}'],
@@ -61,13 +64,6 @@ const recipeSchema = mongoose.Schema(
         },
         message:
           'The value has to be lowercase and separated by hyphen, got {VALUE}',
-      },
-    },
-    source: {
-      type: String,
-      validate: {
-        validator: isURL,
-        message: 'Invalid URL',
       },
     },
     tags: [{ text: { type: String, trim: true } }],

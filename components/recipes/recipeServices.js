@@ -35,7 +35,9 @@ exports.getTopRecipes = async () => {
       $gte: 4.5,
     },
   };
-  const result = await Recipe.find(filter).sort({ rating: -1 }).limit(NUMBER_TOP_RECIPE);
+  const result = await Recipe.find(filter)
+    .sort({ rating: -1 })
+    .limit(NUMBER_TOP_RECIPE);
   return mongooseObject.multipleMongooseToObject(result);
 };
 
