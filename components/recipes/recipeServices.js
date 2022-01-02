@@ -1,7 +1,7 @@
 'use strict';
 
 const Recipe = require('./recipeModel');
-const Comment = require('./commentModel');
+const Comment = require('../comment/commentModel.js');
 const mongoose = require('mongoose');
 const mongooseObject = require('../../utils/mongooseUtil');
 const { NUMBER_TOP_RECIPE } = require('../../config/constants.js');

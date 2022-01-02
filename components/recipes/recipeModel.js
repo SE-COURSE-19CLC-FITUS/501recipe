@@ -6,7 +6,7 @@ const { LOCALE } = require('../../config/constants.js');
 const { isURL } = require('validator');
 mongoose.plugin(slugGenerator);
 
-const options = { toObject: { virtuals: true } };
+const options = { toObject: { virtuals: true }, toJSON: {virtuals: true} };
 
 const dateFormatOptions = {
   day: 'numeric',

@@ -3239,6 +3239,7 @@ a.mean-expand {
 }
 .wrapper-post-slider {
   position: relative;
+  height: fit-content;
 }
 .wrapper-post-slider:hover .arrow-nav {
   opacity: 1;
@@ -3246,7 +3247,9 @@ a.mean-expand {
 .wrapper-post-slider .arrow-nav {
   opacity: 0;
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   width: 29px;
   height: 37px;
   line-height: 37px;
