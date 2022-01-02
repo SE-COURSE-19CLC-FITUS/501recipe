@@ -1,5 +1,5 @@
 'use strict';
-
+require('dotenv').config();
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -7,6 +7,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const flash = require('connect-flash');
 const logger = require('morgan');
+const cloudinary = require('cloudinary').v2;
 
 const indexRouter = require('./routes/index.js');
 const usersRouter = require('./routes/users.js');
@@ -26,6 +27,16 @@ Handlebars.registerPartials(__dirname + '/views/partials');
 
 // Register hbs helpers
 require('./helpers/hbsHelper.js')();
+
+//cloudinary config
+cloudinary.config({
+  // cloud_name: process.env.CLOUDINARY_NAME,
+  // api_key: process.env.CLOUDINARY_API_KEY,
+  // api_secret: process.env.CLOUDINARY_API_SECRET,
+  cloud_name: 'diy3dfyak',
+  api_key: '557825844347151',
+  api_secret: '8fxUY5ZnNRoHiMV2Ki7zkId8WUM',
+});
 
 // view engine setup
 app.set('views', [

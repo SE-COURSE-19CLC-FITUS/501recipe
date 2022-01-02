@@ -51,7 +51,7 @@ const recipeSchema = mongoose.Schema(
     publisher: { id: mongoose.ObjectId, username: String },
     rating: {
       type: Number,
-      min: [1, 'Must at least 1, got {VALUE}'],
+      //min: [1, 'Must at least 1, got {VALUE}'],
       max: [5, 'Max is 5, got {VALUE}'],
     },
     servings: { type: Number, min: [1, 'Must at least 1, got {VALUE}'] },
