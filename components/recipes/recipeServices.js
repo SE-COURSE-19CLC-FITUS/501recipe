@@ -4,6 +4,7 @@ const Recipe = require('./recipeModel');
 const Comment = require('./commentModel');
 const mongoose = require('mongoose');
 const mongooseObject = require('../../utils/mongooseUtil');
+const { NUMBER_TOP_RECIPE } = require('../../config/constants.js');
 
 exports.list = () => Recipe.find({});
 
@@ -28,13 +29,13 @@ exports.getRecipeById = async recipeId => {
   });
   return mongooseObject.mongooseToObject(result);
 };
-exports.getTop7Rating = async () => {
+exports.getTopRecipes = async () => {
   const filter = {
     rating: {
       $gte: 4.5,
     },
   };
-  const result = await Recipe.find(filter).sort({ rating: -1 }).limit(7);
+  const result = await Recipe.find(filter).sort({ rating: -1 }).limit(NUMBER_TOP_RECIPE);
   return mongooseObject.multipleMongooseToObject(result);
 };
 

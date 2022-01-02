@@ -3,25 +3,13 @@
     <div class='container'>
         <div class='home-slider'>
             <div class='slider-box'>
-
+				{{#with topRecipe}}
                 <!--left slider-->
                 <div class='slider-left'>
                     <div class='custom-margin' id='sync1'>
+                        <div><a href='#'><img src='{{top1.imageUrl}}' alt='slide'/></a></div>
 
-                        <div>
-                            <a href='#'><img
-                                    src='images/temp-images/slide1.jpg'
-                                    alt='slide'
-                                /></a>
-                        </div>
-
-                        <div>
-                            <a href='#'><img
-                                    src='images/temp-images/slide2.jpg'
-                                    alt='slide'
-                                /></a>
-                        </div>
-
+                        <div><a href='#'><img src='{{top2.imageUrl}}' alt='slide'/></a></div>
                     </div>
                     <span class='custom-arrows'>
                         <span class='left-arrow'><i
@@ -40,18 +28,15 @@
                         <div>
                             <div class='slide-detail fbox'>
                                 <div class='box1 box'>
-                                    <h2><a href='#'>Pasto Pizza with Extra
-                                            Cheese & Toppings</a></h2>
+                                    <h2><a href='/recipes/{{top1.slug}}'>{{top1.title}}</a></h2>
 
-                                    <a class='food-category' href='#'>asian food</a>
+                                    <a class='food-category' href='/recipes?page=1&mealType={{top1.mealType}}'>{{top1.mealType}}</a>
                                     <ul class='post-meta slider-rating'>
-                                        <li class='author'><a href='#'>Johan Doe</a></li>
-                                        <li class='type'><a
-                                                href='#'
-                                            >Easy</a></li>
-                                        <li class='time'>2 Hours</li>
+                                        <li class='author'><a href='#'>{{top1.publisher}}</a></li>
+                                        <li class='type'><a href='#'>{{top1.levelSkill}}</a></li>
+                                        <li class='time'>{{top1.timeCook}}</li>
                                     </ul>
-                                    <p>
+                                    {{!-- <p>
                                         Nam ornare arcu turpis, nec congue nibh
                                         tempor at. Curabitur quis euismod
                                         mauris. Nulla porttitor orci eget semper
@@ -59,152 +44,10 @@
                                         congue nibh tempor at. Curabitur quis
                                         euismod mauris. Nulla porttitor orci
                                         eget.
-                                    </p>
+                                    </p> --}}
                                 </div>
                                 <div class='rating-slider box2 box'>
-                                    <div class='rating-box'>
-                                        <span class='rating-icons'><svg
-                                                class='icon-container'
-                                                width='25'
-                                                height='19'
-                                                xmlns='http://www.w3.org/2000/svg'
-                                                viewBox='0 0 25 19'
-                                            >
-
-                                                <g>
-                                                    <title>background</title>
-                                                    <rect
-                                                        fill='none'
-                                                        height='21'
-                                                        width='27'
-                                                        y='-1'
-                                                        x='-1'
-                                                    ></rect>
-                                                </g>
-                                                <g>
-                                                    <title>Layer 1</title>
-                                                    <path
-                                                        class='icon-svg'
-                                                        d='m24.671816,17.625433c0,0.438 -0.286999,0.801001 -0.681,0.935001c-0.095001,0.036999 -0.198002,0.064999 -0.318001,0.064999l-16.000998,0c-0.553,0 -1,-0.448 -1,-1c0,-0.553999 0.447,-1 1,-1l14.950999,0c-0.500999,-5.053999 -4.764997,-9 -9.950999,-9c-5.523,0 -10,4.477001 -10,10c0,0 0.063,1 -1,1c-1.062,0 -1,-1 -1,-1c0,-5.769999 4.071,-10.581999 9.495001,-11.734999c-0.306002,-0.52 -0.495001,-1.117001 -0.495001,-1.765001c0,-1.933999 1.566999,-3.499999 3.5,-3.499999c1.931999,0 3.499,1.567 3.499,3.499999c0,0.739 -0.232998,1.423 -0.624998,1.989c4.984999,1.459 8.625998,6.056 8.625998,11.511l0,0zm-11.499,-15c-0.828999,0 -1.500999,0.670001 -1.500999,1.499001c0,0.827999 0.672001,1.5 1.500999,1.5c0.828001,0 1.499001,-0.672001 1.499001,-1.5c0,-0.829 -0.671,-1.499001 -1.499001,-1.499001l0,0z'
-                                                        clip-rule='evenodd'
-                                                        fill-rule='evenodd'
-                                                    ></path>
-                                                </g>
-                                            </svg></span>
-                                        <span class='rating-icons'><svg
-                                                class='icon-container'
-                                                width='25'
-                                                height='19'
-                                                xmlns='http://www.w3.org/2000/svg'
-                                                viewBox='0 0 25 19'
-                                            >
-
-                                                <g>
-                                                    <title>background</title>
-                                                    <rect
-                                                        fill='none'
-                                                        height='21'
-                                                        width='27'
-                                                        y='-1'
-                                                        x='-1'
-                                                    ></rect>
-                                                </g>
-                                                <g>
-                                                    <title>Layer 1</title>
-                                                    <path
-                                                        class='icon-svg'
-                                                        d='m24.671816,17.625433c0,0.438 -0.286999,0.801001 -0.681,0.935001c-0.095001,0.036999 -0.198002,0.064999 -0.318001,0.064999l-16.000998,0c-0.553,0 -1,-0.448 -1,-1c0,-0.553999 0.447,-1 1,-1l14.950999,0c-0.500999,-5.053999 -4.764997,-9 -9.950999,-9c-5.523,0 -10,4.477001 -10,10c0,0 0.063,1 -1,1c-1.062,0 -1,-1 -1,-1c0,-5.769999 4.071,-10.581999 9.495001,-11.734999c-0.306002,-0.52 -0.495001,-1.117001 -0.495001,-1.765001c0,-1.933999 1.566999,-3.499999 3.5,-3.499999c1.931999,0 3.499,1.567 3.499,3.499999c0,0.739 -0.232998,1.423 -0.624998,1.989c4.984999,1.459 8.625998,6.056 8.625998,11.511l0,0zm-11.499,-15c-0.828999,0 -1.500999,0.670001 -1.500999,1.499001c0,0.827999 0.672001,1.5 1.500999,1.5c0.828001,0 1.499001,-0.672001 1.499001,-1.5c0,-0.829 -0.671,-1.499001 -1.499001,-1.499001l0,0z'
-                                                        clip-rule='evenodd'
-                                                        fill-rule='evenodd'
-                                                    ></path>
-                                                </g>
-                                            </svg></span>
-                                        <span class='rating-icons'><svg
-                                                class='icon-container'
-                                                width='25'
-                                                height='19'
-                                                xmlns='http://www.w3.org/2000/svg'
-                                                viewBox='0 0 25 19'
-                                            >
-
-                                                <g>
-                                                    <title>background</title>
-                                                    <rect
-                                                        fill='none'
-                                                        height='21'
-                                                        width='27'
-                                                        y='-1'
-                                                        x='-1'
-                                                    ></rect>
-                                                </g>
-                                                <g>
-                                                    <title>Layer 1</title>
-                                                    <path
-                                                        class='icon-svg'
-                                                        d='m24.671816,17.625433c0,0.438 -0.286999,0.801001 -0.681,0.935001c-0.095001,0.036999 -0.198002,0.064999 -0.318001,0.064999l-16.000998,0c-0.553,0 -1,-0.448 -1,-1c0,-0.553999 0.447,-1 1,-1l14.950999,0c-0.500999,-5.053999 -4.764997,-9 -9.950999,-9c-5.523,0 -10,4.477001 -10,10c0,0 0.063,1 -1,1c-1.062,0 -1,-1 -1,-1c0,-5.769999 4.071,-10.581999 9.495001,-11.734999c-0.306002,-0.52 -0.495001,-1.117001 -0.495001,-1.765001c0,-1.933999 1.566999,-3.499999 3.5,-3.499999c1.931999,0 3.499,1.567 3.499,3.499999c0,0.739 -0.232998,1.423 -0.624998,1.989c4.984999,1.459 8.625998,6.056 8.625998,11.511l0,0zm-11.499,-15c-0.828999,0 -1.500999,0.670001 -1.500999,1.499001c0,0.827999 0.672001,1.5 1.500999,1.5c0.828001,0 1.499001,-0.672001 1.499001,-1.5c0,-0.829 -0.671,-1.499001 -1.499001,-1.499001l0,0z'
-                                                        clip-rule='evenodd'
-                                                        fill-rule='evenodd'
-                                                    ></path>
-                                                </g>
-                                            </svg></span>
-                                        <span class='rating-icons'><svg
-                                                class='icon-container'
-                                                width='25'
-                                                height='19'
-                                                xmlns='http://www.w3.org/2000/svg'
-                                                viewBox='0 0 25 19'
-                                            >
-
-                                                <g>
-                                                    <title>background</title>
-                                                    <rect
-                                                        fill='none'
-                                                        height='21'
-                                                        width='27'
-                                                        y='-1'
-                                                        x='-1'
-                                                    ></rect>
-                                                </g>
-                                                <g>
-                                                    <title>Layer 1</title>
-                                                    <path
-                                                        class='icon-svg'
-                                                        d='m24.671816,17.625433c0,0.438 -0.286999,0.801001 -0.681,0.935001c-0.095001,0.036999 -0.198002,0.064999 -0.318001,0.064999l-16.000998,0c-0.553,0 -1,-0.448 -1,-1c0,-0.553999 0.447,-1 1,-1l14.950999,0c-0.500999,-5.053999 -4.764997,-9 -9.950999,-9c-5.523,0 -10,4.477001 -10,10c0,0 0.063,1 -1,1c-1.062,0 -1,-1 -1,-1c0,-5.769999 4.071,-10.581999 9.495001,-11.734999c-0.306002,-0.52 -0.495001,-1.117001 -0.495001,-1.765001c0,-1.933999 1.566999,-3.499999 3.5,-3.499999c1.931999,0 3.499,1.567 3.499,3.499999c0,0.739 -0.232998,1.423 -0.624998,1.989c4.984999,1.459 8.625998,6.056 8.625998,11.511l0,0zm-11.499,-15c-0.828999,0 -1.500999,0.670001 -1.500999,1.499001c0,0.827999 0.672001,1.5 1.500999,1.5c0.828001,0 1.499001,-0.672001 1.499001,-1.5c0,-0.829 -0.671,-1.499001 -1.499001,-1.499001l0,0z'
-                                                        clip-rule='evenodd'
-                                                        fill-rule='evenodd'
-                                                    ></path>
-                                                </g>
-                                            </svg></span>
-                                        <span class='rating-icons'><svg
-                                                class='icon-container'
-                                                width='25'
-                                                height='19'
-                                                xmlns='http://www.w3.org/2000/svg'
-                                                viewBox='0 0 25 19'
-                                            >
-
-                                                <g>
-                                                    <title>background</title>
-                                                    <rect
-                                                        fill='none'
-                                                        height='21'
-                                                        width='27'
-                                                        y='-1'
-                                                        x='-1'
-                                                    ></rect>
-                                                </g>
-                                                <g>
-                                                    <title>Layer 1</title>
-                                                    <path
-                                                        class='icon-svg'
-                                                        d='m24.671816,17.625433c0,0.438 -0.286999,0.801001 -0.681,0.935001c-0.095001,0.036999 -0.198002,0.064999 -0.318001,0.064999l-16.000998,0c-0.553,0 -1,-0.448 -1,-1c0,-0.553999 0.447,-1 1,-1l14.950999,0c-0.500999,-5.053999 -4.764997,-9 -9.950999,-9c-5.523,0 -10,4.477001 -10,10c0,0 0.063,1 -1,1c-1.062,0 -1,-1 -1,-1c0,-5.769999 4.071,-10.581999 9.495001,-11.734999c-0.306002,-0.52 -0.495001,-1.117001 -0.495001,-1.765001c0,-1.933999 1.566999,-3.499999 3.5,-3.499999c1.931999,0 3.499,1.567 3.499,3.499999c0,0.739 -0.232998,1.423 -0.624998,1.989c4.984999,1.459 8.625998,6.056 8.625998,11.511l0,0zm-11.499,-15c-0.828999,0 -1.500999,0.670001 -1.500999,1.499001c0,0.827999 0.672001,1.5 1.500999,1.5c0.828001,0 1.499001,-0.672001 1.499001,-1.5c0,-0.829 -0.671,-1.499001 -1.499001,-1.499001l0,0z'
-                                                        clip-rule='evenodd'
-                                                        fill-rule='evenodd'
-                                                    ></path>
-                                                </g>
-                                            </svg></span>
-                                        <span class='rating-figure'>(4.1 / 5)</span>
-                                    </div>
+                                    {{> ratingBox rating=top1.rating}}
                                 </div>
                             </div>
                         </div>
@@ -212,170 +55,25 @@
                         <div>
                             <div class='slide-detail fbox'>
                                 <div class='box1 box'>
-                                    <h2><a href='#'>Supreame Pizza with Extra
-                                            Toppings</a></h2>
+                                    <h2><a href='/recipes/{{top2.slug}}'>{{top2.title}}</a></h2>
 
-                                    <a class='food-category' href='#'>asian food</a>
+                                    <a class='food-category' href='/recipes?page=1&mealType={{top2.mealType}}'>{{top2.mealType}}</a>
                                     <ul class='post-meta slider-rating'>
-                                        <li class='author'><a href='#'>Johan Doe</a></li>
-                                        <li class='type'><a
-                                                href='#'
-                                            >Easy</a></li>
-                                        <li class='time'>2 Hours</li>
+                                        <li class='author'><a href='#'>{{top2.publisher}}</a></li>
+                                        <li class='type'><a href='#'>{{top2.levelSkill}}</a></li>
+                                        <li class='time'>{{top2.timeCook}}</li>
                                     </ul>
-                                    <p>
+                                    {{!-- <p>
                                         Nam ornare arcu turpis, nec congue nibh
                                         tempor at. Curabitur quis euismod
                                         mauris. Nulla porttitor orci eget semper
                                         vulputate. Nam ornare arcu turpis, nec
                                         congue nibh tempor at. Nulla porttitor
                                         orci eget.
-                                    </p>
+                                    </p> --}}
                                 </div>
                                 <div class='rating-slider box2 box'>
-                                    <div class='rating-box'>
-                                        <span class='rating-icons'><svg
-                                                class='icon-container'
-                                                width='25'
-                                                height='19'
-                                                xmlns='http://www.w3.org/2000/svg'
-                                                viewBox='0 0 25 19'
-                                            >
-
-                                                <g>
-                                                    <title>background</title>
-                                                    <rect
-                                                        fill='none'
-                                                        height='21'
-                                                        width='27'
-                                                        y='-1'
-                                                        x='-1'
-                                                    ></rect>
-                                                </g>
-                                                <g>
-                                                    <title>Layer 1</title>
-                                                    <path
-                                                        class='icon-svg'
-                                                        d='m24.671816,17.625433c0,0.438 -0.286999,0.801001 -0.681,0.935001c-0.095001,0.036999 -0.198002,0.064999 -0.318001,0.064999l-16.000998,0c-0.553,0 -1,-0.448 -1,-1c0,-0.553999 0.447,-1 1,-1l14.950999,0c-0.500999,-5.053999 -4.764997,-9 -9.950999,-9c-5.523,0 -10,4.477001 -10,10c0,0 0.063,1 -1,1c-1.062,0 -1,-1 -1,-1c0,-5.769999 4.071,-10.581999 9.495001,-11.734999c-0.306002,-0.52 -0.495001,-1.117001 -0.495001,-1.765001c0,-1.933999 1.566999,-3.499999 3.5,-3.499999c1.931999,0 3.499,1.567 3.499,3.499999c0,0.739 -0.232998,1.423 -0.624998,1.989c4.984999,1.459 8.625998,6.056 8.625998,11.511l0,0zm-11.499,-15c-0.828999,0 -1.500999,0.670001 -1.500999,1.499001c0,0.827999 0.672001,1.5 1.500999,1.5c0.828001,0 1.499001,-0.672001 1.499001,-1.5c0,-0.829 -0.671,-1.499001 -1.499001,-1.499001l0,0z'
-                                                        clip-rule='evenodd'
-                                                        fill-rule='evenodd'
-                                                    ></path>
-                                                </g>
-                                            </svg></span>
-                                        <span class='rating-icons'><svg
-                                                class='icon-container'
-                                                width='25'
-                                                height='19'
-                                                xmlns='http://www.w3.org/2000/svg'
-                                                viewBox='0 0 25 19'
-                                            >
-
-                                                <g>
-                                                    <title>background</title>
-                                                    <rect
-                                                        fill='none'
-                                                        height='21'
-                                                        width='27'
-                                                        y='-1'
-                                                        x='-1'
-                                                    ></rect>
-                                                </g>
-                                                <g>
-                                                    <title>Layer 1</title>
-                                                    <path
-                                                        class='icon-svg'
-                                                        d='m24.671816,17.625433c0,0.438 -0.286999,0.801001 -0.681,0.935001c-0.095001,0.036999 -0.198002,0.064999 -0.318001,0.064999l-16.000998,0c-0.553,0 -1,-0.448 -1,-1c0,-0.553999 0.447,-1 1,-1l14.950999,0c-0.500999,-5.053999 -4.764997,-9 -9.950999,-9c-5.523,0 -10,4.477001 -10,10c0,0 0.063,1 -1,1c-1.062,0 -1,-1 -1,-1c0,-5.769999 4.071,-10.581999 9.495001,-11.734999c-0.306002,-0.52 -0.495001,-1.117001 -0.495001,-1.765001c0,-1.933999 1.566999,-3.499999 3.5,-3.499999c1.931999,0 3.499,1.567 3.499,3.499999c0,0.739 -0.232998,1.423 -0.624998,1.989c4.984999,1.459 8.625998,6.056 8.625998,11.511l0,0zm-11.499,-15c-0.828999,0 -1.500999,0.670001 -1.500999,1.499001c0,0.827999 0.672001,1.5 1.500999,1.5c0.828001,0 1.499001,-0.672001 1.499001,-1.5c0,-0.829 -0.671,-1.499001 -1.499001,-1.499001l0,0z'
-                                                        clip-rule='evenodd'
-                                                        fill-rule='evenodd'
-                                                    ></path>
-                                                </g>
-                                            </svg></span>
-                                        <span class='rating-icons'><svg
-                                                class='icon-container'
-                                                width='25'
-                                                height='19'
-                                                xmlns='http://www.w3.org/2000/svg'
-                                                viewBox='0 0 25 19'
-                                            >
-
-                                                <g>
-                                                    <title>background</title>
-                                                    <rect
-                                                        fill='none'
-                                                        height='21'
-                                                        width='27'
-                                                        y='-1'
-                                                        x='-1'
-                                                    ></rect>
-                                                </g>
-                                                <g>
-                                                    <title>Layer 1</title>
-                                                    <path
-                                                        class='icon-svg'
-                                                        d='m24.671816,17.625433c0,0.438 -0.286999,0.801001 -0.681,0.935001c-0.095001,0.036999 -0.198002,0.064999 -0.318001,0.064999l-16.000998,0c-0.553,0 -1,-0.448 -1,-1c0,-0.553999 0.447,-1 1,-1l14.950999,0c-0.500999,-5.053999 -4.764997,-9 -9.950999,-9c-5.523,0 -10,4.477001 -10,10c0,0 0.063,1 -1,1c-1.062,0 -1,-1 -1,-1c0,-5.769999 4.071,-10.581999 9.495001,-11.734999c-0.306002,-0.52 -0.495001,-1.117001 -0.495001,-1.765001c0,-1.933999 1.566999,-3.499999 3.5,-3.499999c1.931999,0 3.499,1.567 3.499,3.499999c0,0.739 -0.232998,1.423 -0.624998,1.989c4.984999,1.459 8.625998,6.056 8.625998,11.511l0,0zm-11.499,-15c-0.828999,0 -1.500999,0.670001 -1.500999,1.499001c0,0.827999 0.672001,1.5 1.500999,1.5c0.828001,0 1.499001,-0.672001 1.499001,-1.5c0,-0.829 -0.671,-1.499001 -1.499001,-1.499001l0,0z'
-                                                        clip-rule='evenodd'
-                                                        fill-rule='evenodd'
-                                                    ></path>
-                                                </g>
-                                            </svg></span>
-                                        <span class='rating-icons'><svg
-                                                class='icon-container'
-                                                width='25'
-                                                height='19'
-                                                xmlns='http://www.w3.org/2000/svg'
-                                                viewBox='0 0 25 19'
-                                            >
-
-                                                <g>
-                                                    <title>background</title>
-                                                    <rect
-                                                        fill='none'
-                                                        height='21'
-                                                        width='27'
-                                                        y='-1'
-                                                        x='-1'
-                                                    ></rect>
-                                                </g>
-                                                <g>
-                                                    <title>Layer 1</title>
-                                                    <path
-                                                        class='icon-svg'
-                                                        d='m24.671816,17.625433c0,0.438 -0.286999,0.801001 -0.681,0.935001c-0.095001,0.036999 -0.198002,0.064999 -0.318001,0.064999l-16.000998,0c-0.553,0 -1,-0.448 -1,-1c0,-0.553999 0.447,-1 1,-1l14.950999,0c-0.500999,-5.053999 -4.764997,-9 -9.950999,-9c-5.523,0 -10,4.477001 -10,10c0,0 0.063,1 -1,1c-1.062,0 -1,-1 -1,-1c0,-5.769999 4.071,-10.581999 9.495001,-11.734999c-0.306002,-0.52 -0.495001,-1.117001 -0.495001,-1.765001c0,-1.933999 1.566999,-3.499999 3.5,-3.499999c1.931999,0 3.499,1.567 3.499,3.499999c0,0.739 -0.232998,1.423 -0.624998,1.989c4.984999,1.459 8.625998,6.056 8.625998,11.511l0,0zm-11.499,-15c-0.828999,0 -1.500999,0.670001 -1.500999,1.499001c0,0.827999 0.672001,1.5 1.500999,1.5c0.828001,0 1.499001,-0.672001 1.499001,-1.5c0,-0.829 -0.671,-1.499001 -1.499001,-1.499001l0,0z'
-                                                        clip-rule='evenodd'
-                                                        fill-rule='evenodd'
-                                                    ></path>
-                                                </g>
-                                            </svg></span>
-                                        <span class='rating-icons'><svg
-                                                class='icon-container'
-                                                width='25'
-                                                height='19'
-                                                xmlns='http://www.w3.org/2000/svg'
-                                                viewBox='0 0 25 19'
-                                            >
-
-                                                <g>
-                                                    <title>background</title>
-                                                    <rect
-                                                        fill='none'
-                                                        height='21'
-                                                        width='27'
-                                                        y='-1'
-                                                        x='-1'
-                                                    ></rect>
-                                                </g>
-                                                <g>
-                                                    <title>Layer 1</title>
-                                                    <path
-                                                        class='icon-svg'
-                                                        d='m24.671816,17.625433c0,0.438 -0.286999,0.801001 -0.681,0.935001c-0.095001,0.036999 -0.198002,0.064999 -0.318001,0.064999l-16.000998,0c-0.553,0 -1,-0.448 -1,-1c0,-0.553999 0.447,-1 1,-1l14.950999,0c-0.500999,-5.053999 -4.764997,-9 -9.950999,-9c-5.523,0 -10,4.477001 -10,10c0,0 0.063,1 -1,1c-1.062,0 -1,-1 -1,-1c0,-5.769999 4.071,-10.581999 9.495001,-11.734999c-0.306002,-0.52 -0.495001,-1.117001 -0.495001,-1.765001c0,-1.933999 1.566999,-3.499999 3.5,-3.499999c1.931999,0 3.499,1.567 3.499,3.499999c0,0.739 -0.232998,1.423 -0.624998,1.989c4.984999,1.459 8.625998,6.056 8.625998,11.511l0,0zm-11.499,-15c-0.828999,0 -1.500999,0.670001 -1.500999,1.499001c0,0.827999 0.672001,1.5 1.500999,1.5c0.828001,0 1.499001,-0.672001 1.499001,-1.5c0,-0.829 -0.671,-1.499001 -1.499001,-1.499001l0,0z'
-                                                        clip-rule='evenodd'
-                                                        fill-rule='evenodd'
-                                                    ></path>
-                                                </g>
-                                            </svg></span>
-                                        <span class='rating-figure'>(4.1 / 5)</span>
-                                    </div>
+                                    {{> ratingBox rating=top2.rating}}
                                 </div>
                             </div>
                         </div>
@@ -383,6 +81,7 @@
                     </div>
                 </div>
                 <!--right slider ends-->
+				{{/with}}
             </div>
             <div class='corner-image slider'>
                 <img src='images/slider-bg-corner.png' alt='image' />
@@ -674,13 +373,13 @@
             <div class='hot-row'>
                 <!--recipe col starts-->
                 <div class='full-image col-size'>
-                    <a href='/recipes/{{top1.slug}}'>
+                    <a href='/recipes/{{top3.slug}}'>
                         <figure class='inner-full-image'>
                             <img
-                                src={{top1.imageUrl}}
+                                src={{top3.imageUrl}}
                                 alt='image'
                             />
-                            <figcaption>{{top1.title}}</figcaption>
+                            <figcaption>{{top3.title}}</figcaption>
                         </figure>
                     </a>
                 </div>
@@ -690,37 +389,43 @@
                 <div class='split-images col-size'>
                     <div class='split-images-inner'>
                         <!--recipe start-->
+						{{#if top4}}
                         <div class='intro-first'>
-                            {{> recipeBox recipe=top2}}
+                            {{> recipeBox recipe=top4}}
                         </div>
+						{{/if}}
                         <!--recipe ends-->
 
                         <!--recipe start-->
+						{{#if top5}}
                         <div class='image-first'>
-                            {{> recipeBox recipe=top3}}
+                            {{> recipeBox recipe=top5}}
                         </div>
+						{{/if}}
                         <!--recipe ends-->
                     </div>
                 </div>
                 <!--recipe col ends-->
 
                 <!--recipe col start-->
+				{{#if top9}}
                 <div class='split-images col-size'>
                     <div class='split-images-inner'>
                         <!--recipe start-->
                         <div class='image-first'>
-                            {{> recipeBox recipe=top4}}
+                            {{> recipeBox recipe=top6}}
                         </div>
                         <!--recipe ends-->
 
                         <!--recipe start-->
                         <div class='intro-first'>
-                            {{> recipeBox recipe=top5}}
+                            {{> recipeBox recipe=top7}}
                         </div>
                         <!--recipe ends-->
 
                     </div>
                 </div>
+				{{/if}}
                 <!--recipe col ends-->
 
                 <!--recipe col start-->
@@ -899,21 +604,23 @@
                         <!--recipe ends-->
                     </div>
                 </div> --}}
+				{{#if top9}}
                 <div class='split-images col-size'>
                     <div class='split-images-inner'>
                         <!--recipe start-->
                         <div class='intro-first'>
-                            {{> recipeBox recipe=top6}}
+                            {{> recipeBox recipe=top8}}
                         </div>
                         <!--recipe ends-->
 
                         <!--recipe start-->
                         <div class='image-first'>
-                            {{> recipeBox recipe=top7}}
+                            {{> recipeBox recipe=top9}}
                         </div>
                         <!--recipe ends-->
                     </div>
                 </div>
+				{{/if}}
                 <!--recipe col ends-->
 
             </div>
@@ -1194,5 +901,5 @@
 
 <!--recipe submit banner ends-->
 <script type="text/javascript">
-    
+
 </script>

@@ -987,7 +987,7 @@ a.mean-expand {
 /*-----------------------------------------------------------------------------------*/
 .slick-slider {
   margin-bottom: 0;
-	height: fit-content;
+  height: 100%;
 }
 .custom-margin {
   margin-bottom: 0;
@@ -1002,6 +1002,8 @@ a.mean-expand {
 }
 .slider-left img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .custom-arrows {
   display: flex;
@@ -5157,13 +5159,17 @@ div.widget-measurements .default-btn {
 }
 .recipe-steps .accordion dt .arrow {
   position: absolute;
-  top: 13px;
-  left: 22px;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .recipe-steps .accordion dt .arrow i {
   position: absolute;
-  top: 6px;
-  left: 0;
+  width: 1px;
+  height: 1px;
+  display: block;
 }
 .recipe-steps .accordion dt .arrow i.stand {
   -webkit-transition: transform 300ms ease-in-out;
@@ -5175,8 +5181,8 @@ div.widget-measurements .default-btn {
   -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   -o-transform: rotate(90deg);
-  transform: rotate(90deg);
-  left: -1px;
+  transform: rotate(90deg) translateX(100%);
+  left: 10px;
 }
 .recipe-steps .accordion dt.current {
   background: none;
@@ -5188,6 +5194,7 @@ div.widget-measurements .default-btn {
   -ms-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   transform: rotate(0deg);
+  left: 0px;
 }
 .boxed-recipes .icon-svg {
   fill: #6ebe3b;
@@ -5626,6 +5633,7 @@ div.widget-measurements .default-btn {
 }
 .wrapper-slider-detail {
   position: relative;
+  height: fit-content;
 }
 .wrapper-slider-detail .top-slider .shortcode-arrows.wider {
   position: absolute;
