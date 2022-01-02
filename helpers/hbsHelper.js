@@ -4,6 +4,11 @@ const Handlebars = require('hbs');
 
 module.exports = function () {
   // Expression helper
+  Handlebars.registerHelper('concat', function (...str) {
+    return str.filter(item => typeof item === 'string').join('');
+  });
+
+  // Expression helper
   Handlebars.registerHelper('incAmount', function (num, amount) {
     if (!isFinite(num) && !isFinite(amount)) return;
 
@@ -41,21 +46,21 @@ module.exports = function () {
     // Compare between 2 operands
     const { op1, op2 } = options.hash;
     if (op1 <= op2) {
-			return options.fn(context)
-		} else {
-			return options.inverse(context)
-		}
+      return options.fn(context);
+    } else {
+      return options.inverse(context);
+    }
   });
 
-	// Block helper
+  // Block helper
   Handlebars.registerHelper('gte_b', function (context, options) {
     // Compare between 2 operands
     const { op1, op2 } = options.hash;
     if (op1 >= op2) {
-			return options.fn(context)
-		} else {
-			return options.inverse(context)
-		}
+      return options.fn(context);
+    } else {
+      return options.inverse(context);
+    }
   });
 
   // Expression helper

@@ -7,7 +7,7 @@ const mongooseObject = require('../../utils/mongooseUtil');
 
 exports.list = () => Recipe.find({});
 
-exports.count = () => Recipe.find().count();
+exports.countRecipes = () => Recipe.find().count();
 
 exports.findByPage = (filter, page, itemPerPage) =>
   // Pages have index 1, instead of 0. So if page is 1, then we don't skip
@@ -47,5 +47,11 @@ exports.postComment = (name, recipeId, comment) => {
   }).save();
 };
 
-exports.getRecipeComments = recipeId =>
-  Comment.find({ recipeId: recipeId }).lean();
+exports.getRecipeComments = (recipeId, page, itemPerPage) =>
+  Comment.find({ recipeId: recipeId })
+    .skip((page - 1) * itemPerPage)
+    .limit(itemPerPage)
+    .lean();
+
+exports.countComments = recipeId =>
+  Comment.find({ recipeId: recipeId }).count();

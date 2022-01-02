@@ -2,13 +2,16 @@
 
 const {
   RECIPE_PER_PAGE,
-  PAGE_PER_SLIDE,
+  RECIPE_PAGE_LIMIT,
+  COMMENT_PER_PAGE,
+  COMMENT_PAGE_LIMIT,
 } = require('../../config/constants.js');
 
 const recipeService = require('./recipeServices.js');
 const bookmarkService = require('../bookmarks/bookmarkService');
 exports.recipesInPage = async function (req, res) {
-  let curPage = +req.query.page;
+  // Pages have index 1, instead of 0
+  let curPage = +req.query.page || 1;
   let mealType = req.query.mealType;
   let keyword = req.query.keyword;
   let filter = {};
@@ -18,40 +21,61 @@ exports.recipesInPage = async function (req, res) {
   if (keyword) {
     filter.title = { $regex: keyword, $options: 'i' };
   }
-  // Pages have index 1, instead of 0
-  if (!curPage) curPage = 1;
 
   const recipes = await recipeService.findByPage(
     filter,
     curPage,
     RECIPE_PER_PAGE
   );
-  const numRecipes = await recipeService.count();
 
-  const limitPage = PAGE_PER_SLIDE;
-  // Because page has index 1, so we have to increase limit
+  let numRecipes;
+  if (Object.keys(filter).length === 0) {
+    numRecipes = await recipeService.countRecipes();
+  } else {
+    numRecipes = recipes.length;
+  }
+
+	// FIXME: Kinda boilerplate code. Should I add it to recipeService?
+  const limitPage = RECIPE_PAGE_LIMIT;
+  // Because page has index 1, so we have to decrease the curPage
   // So with limitPage is 4, we have turn 0: [1, 2, 3, 4], turn 1: [5, 6, 7, 8]
-  const pageTurn = Math.floor(curPage / (limitPage + 1));
+  const pageTurn = Math.floor((curPage - 1) / limitPage);
   const numPages = Math.ceil(numRecipes / RECIPE_PER_PAGE);
 
   res.render('recipes/views/recipes.hbs', {
-    curPage,
-    pageTurn,
-    limitPage,
-    numRecipes,
-    numPages,
     recipes,
+    curPage,
+    limitPage,
+    pageTurn,
+    numPages,
   });
 };
 
 exports.getRecipeBySlug = async function (req, res) {
   const recipe = await recipeService.findBySlug(req.params.slug);
-  const comments = await recipeService.getRecipeComments(recipe._id);
+	// NOTE: Remember to convert page to number
+  const curCommentPage = +req.query['comment-page'] || 1;
+
+  const comments = await recipeService.getRecipeComments(
+    recipe._id,
+    curCommentPage,
+    COMMENT_PER_PAGE
+  );
+
+	// FIXME: Kinda boilerplate code. Should I add it to recipeService?
+  const limitCommentPage = COMMENT_PAGE_LIMIT;
+  // Because page has index 1, so we have to decrease the curPage
+  // So with limitPage is 4, we have turn 0: [1, 2, 3, 4], turn 1: [5, 6, 7, 8]
+  const commentPageTurn = Math.floor((curCommentPage - 1) / limitCommentPage);
+  const numComments = await recipeService.countComments(recipe._id);
+  const numCommentPages = Math.ceil(numComments / COMMENT_PER_PAGE);
+
   comments.sort((a, b) => new Date(b.createAt) - new Date(a.createAt));
   comments.map(comment => {
     comment.createAt = timeSince(comment.createAt);
     return comment;
   });
+
   recipe.bookmark = 'Add to Bookmark';
   if (req.user) {
     const userId = req.user._id;
@@ -64,6 +88,10 @@ exports.getRecipeBySlug = async function (req, res) {
   res.render('recipes/views/detailRecipe.hbs', {
     recipe,
     comments,
+    curCommentPage,
+    limitCommentPage,
+    commentPageTurn,
+    numCommentPages,
   });
 };
 
