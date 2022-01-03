@@ -35,21 +35,27 @@ class SubmitRecipe {
         tips = fields.tips.map(tip => ({ text: tip }));
       }
       let imageUrl = [];
-      for (let i = 0; i < files.fileUpload.length; i++) {
-        let file = files.fileUpload[i];
+      if (files.fileUpload.length > 0) {
+        for (let i = 0; i < files.fileUpload.length; i++) {
+          let file = files.fileUpload[i];
+          await cloudinary.uploader.upload(
+            file.filepath,
+            { public_id: `NMCNPM/${file.originalFilename}` }, //thay đổi đường dẫn và tên file
+            function (error, result) {
+              //console.log(result);
+              imageUrl.push(result.url);
+            }
+          ); //result.url là link ảnh
+        }
+      } else {
         await cloudinary.uploader.upload(
-          file.filepath,
-          { public_id: `NMCNPM/${file.originalFilename}` }, //thay đổi đường dẫn và tên file
+          files.fileUpload.filepath,
+          { public_id: `NMCNPM/${files.fileUpload.originalFilename}` }, //thay đổi đường dẫn và tên file
           function (error, result) {
             //console.log(result);
             imageUrl.push(result.url);
           }
-        ); //result.url là link ảnh
-      }
-
-      if (err) {
-        next(err);
-        return;
+        );
       }
 
       const recipe = {
