@@ -8,7 +8,7 @@ class SubmitRecipe {
   show(req, res, next) {
     res.render('recipes/views/submitRecipe');
   }
-  async submit(req, res, next) {
+  submit(req, res, next) {
     const { _id: userId, username } = req.user;
 
     const form = formidable({ multiples: true });
@@ -39,17 +39,17 @@ class SubmitRecipe {
           let file = files.fileUpload[i];
           await cloudinary.uploader.upload(
             file.filepath,
-            { public_id: `NMCNPM/${file.originalFilename}` }, //thay đổi đường dẫn và tên file
+            { public_id: `NMCNPM/${file.originalFilename}` }, // thay đổi đường dẫn và tên file
             function (error, result) {
-              //console.log(result);
+              // console.log(result);
               imageUrl.push(result.url);
             }
-          ); //result.url là link ảnh
+          ); // result.url là link ảnh
         }
       } else {
         await cloudinary.uploader.upload(
           files.fileUpload.filepath,
-          { public_id: `NMCNPM/${files.fileUpload.originalFilename}` }, //thay đổi đường dẫn và tên file
+          { public_id: `NMCNPM/${files.fileUpload.originalFilename}` }, // thay đổi đường dẫn và tên file
           function (error, result) {
             // console.log(result);
             imageUrl.push(result.url);

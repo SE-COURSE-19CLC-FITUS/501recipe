@@ -15,12 +15,14 @@
 					{{#with blog}}
 					<div id='blogId' style="display: none;">{{_id}}</div>
                     <div class='post-visuals'>
+						{{#each imageUrl}}
                         <a href='#'>
                             <img
-                                src='{{imageUrl}}'
+                                src='{{this}}'
                                 alt='image'
                             />
                         </a>
+						{{/each}}
                     </div>
                     <div class='post-contents'>
                         <div class='post-contents-inner'>

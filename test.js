@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
   `);
 });
 
-app.post('/api/upload', async (req, res, next) => {
+app.post('/api/upload', (req, res, next) => {
   const form = formidable({ multiples: true });
 
   form.parse(req, async (err, field, file) => {

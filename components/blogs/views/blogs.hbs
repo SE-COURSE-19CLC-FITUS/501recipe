@@ -13,10 +13,20 @@
                 <!--single post-->
 				{{#each blogs}}
                 <article class='post-single'>
-                    <div class='post-visuals'>
-                        <a href='/blogs/{{slug}}'>
-                            <img src='{{imageUrl}}' alt='image' />
-                        </a>
+					<div class='post-visuals'>
+                        <div class='wrapper-post-slider'>
+                            <div class='post-slider'>
+							{{#each imageUrl}}
+                                <div>
+                                    <a href='/blogs/{{../slug}}'>
+                                        <img src='{{this}}' alt='image' />
+                                    </a>
+                                </div>
+							{{/each}}
+                            </div>
+                            <span class='arrow-nav left-arrow'><i class='fa fa-angle-left'></i></span>
+                            <span class='arrow-nav right-arrow'><i class='fa fa-angle-right'></i></span>
+                        </div>
                     </div>
                     <div class='post-contents'>
                         <div class='post-contents-inner'>
@@ -46,32 +56,9 @@
                 <!--single post-->
                 {{!-- <article class='post-single'>
                     <div class='post-visuals'>
-                        <div class='wrapper-post-slider'>
-                            <div class='post-slider'>
-                                <div>
-                                    <a href='#'>
-                                        <img
-                                            src='images/temp-images/post-image-2.jpg'
-                                            alt='image'
-                                        />
-                                    </a>
-                                </div>
-                                <div>
-                                    <a href='#'>
-                                        <img
-                                            src='images/temp-images/post-image-2.jpg'
-                                            alt='image'
-                                        />
-                                    </a>
-                                </div>
-                            </div>
-                            <span class='arrow-nav left-arrow'><i
-                                    class='fa fa-angle-left'
-                                ></i></span>
-                            <span class='arrow-nav right-arrow'><i
-                                    class='fa fa-angle-right'
-                                ></i></span>
-                        </div>
+                        <a href='/blogs/{{slug}}'>
+                            <img src='{{imageUrl}}' alt='image' />
+                        </a>
                     </div>
                     <div class='post-contents'>
                         <div class='post-contents-inner'>

@@ -3061,6 +3061,8 @@ a.mean-expand {
 }
 .post-single .post-visuals img {
   width: 100%;
+  height: 60vh;
+  object-fit: cover;
 }
 .post-single .post-visuals a:hover {
   opacity: 0.8;
@@ -5052,6 +5054,8 @@ div.widget-measurements .default-btn {
 }
 .slider-detail2 img {
   width: 100%;
+  height: 60vh;
+  object-fit: cover;
 }
 .recipe-set .slider-recipe-detail2 {
   position: relative;
