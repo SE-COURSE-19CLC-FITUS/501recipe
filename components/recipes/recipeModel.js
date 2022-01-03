@@ -22,13 +22,7 @@ const recipeSchema = mongoose.Schema(
         return new Intl.DateTimeFormat(LOCALE, dateFormatOptions).format(date);
       },
     },
-    imageUrl: {
-      type: String,
-      validate: {
-        validator: isURL,
-        message: 'Invalid URL',
-      },
-    },
+    imageUrl: [{ type: String }],
     ingredients: [{ text: { type: String, trim: true } }],
     instructions: [{ text: { type: String, trim: true } }],
     levelSkill: {
