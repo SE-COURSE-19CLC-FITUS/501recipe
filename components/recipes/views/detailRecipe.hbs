@@ -30,12 +30,12 @@
                                     <div class='recipe-slider'>
                                         <div class='slider-detail2'>
                                             {{! Can loop here if we have more images }}
-                                            {{!-- {{# each ...}} --}}
+                                            {{#each imageUrl}}
                                             <div>
                                                 <a href='#' class='swipebox' rel='recipe-gallery'><img
-                                                        src='{{imageUrl}}' alt='slide' /></a>
+                                                        src='{{this}}' alt='slide' /></a>
                                             </div>
-                                            {{!-- {{/each}} --}}
+                                            {{/each}}
                                         </div>
                                         <span class='custom-arrows wider'>
                                             <span class='left-arrow slick-arrow' data-direction='prev'

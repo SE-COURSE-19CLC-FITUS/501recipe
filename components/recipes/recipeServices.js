@@ -38,6 +38,11 @@ exports.getTopRecipes = async () => {
   const result = await Recipe.find(filter)
     .sort({ rating: -1 })
     .limit(NUMBER_TOP_RECIPE);
+  result.forEach(item => {
+    if (item.imageUrl.length > 0) {
+      item.imageUrl = item.imageUrl[0];
+    }
+  });
   return mongooseObject.multipleMongooseToObject(result);
 };
 

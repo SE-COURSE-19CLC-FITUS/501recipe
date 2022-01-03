@@ -18,7 +18,7 @@
                     </p> --}}
                         {{!-- method='post'action='/submitRecipe' --}}
                     <div class='submit-recipe-form'>
-                        <form   id='submitRecipe'>
+                        <form id='submitRecipe'method='post'action='/submitRecipe'enctype="multipart/form-data">
                             <label for='title'>Recipe Title</label>
                             <input type='text' name='title' id='title' />
                             <br />
@@ -38,11 +38,14 @@
                                 rows='10'
                             ></textarea> --}}
                             <label for='upload-image'>Upload Images</label>
-                            <input
+                            
+                            <div>File: <input type="file" name="fileUpload" multiple="multiple" /></div>
+                            {{!-- <input
                                 type='file'
                                 name='fileUpload'
                                 id='upload-image'
-                            />
+                               
+                            /> --}}
                             <fieldset class='ingredient-set'>
                                 <label for='ingredients'>Ingredients</label>
                                 <ul class='list-sortable ingredients-list'>
@@ -269,6 +272,7 @@
                             <div class='text-center'>
                                 <button
                                     type='submit'
+                                    value='upload'
                                     class='recipe-submit-btn'
                                 >Submit Your Recipe</button>
                             </div>
@@ -383,21 +387,5 @@
     </div>
 </div>
 <script type="text/javascript">
-    console.log('hellos')
-    document.getElementById('submitRecipe').addEventListener('submit', function(e) {
-        console.log('submit')
-        e.preventDefault()
 
-        var payload=$(this).serialize()
-        $.post('/submitRecipe', payload, function(data){
-            if(data.success){
-                console.log('success')
-                alert(data.message)
-            }
-            else if(data.success===false){
-                console.log('fail')
-                alert(data.message)
-            }
-        })
-    })
 </script>
