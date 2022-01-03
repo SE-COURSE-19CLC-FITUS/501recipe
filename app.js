@@ -33,9 +33,6 @@ cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
-  // cloud_name: 'diy3dfyak',
-  // api_key: '557825844347151',
-  // api_secret: '8fxUY5ZnNRoHiMV2Ki7zkId8WUM',
 });
 
 // view engine setup
