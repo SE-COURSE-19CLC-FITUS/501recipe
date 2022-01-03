@@ -51,13 +51,6 @@ const recipeSchema = mongoose.Schema(
     slug: {
       type: String,
       slug: 'title',
-      validate: {
-        validator: function (val) {
-          return isSlug(val) && val === this.title;
-        },
-        message:
-          'The value has to be lowercase and separated by hyphen, got {VALUE}',
-      },
     },
     tags: [{ text: { type: String, trim: true } }],
     timeCook: {

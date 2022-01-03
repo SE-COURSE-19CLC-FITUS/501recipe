@@ -1,3 +1,4 @@
+'use strict';
 /*
 Web: cloudinary.com
 Account: nttung19@clc.fitus.edu.vn
@@ -7,9 +8,9 @@ Password: ne6kaJv_JJiH&y2
 // run cmd: node cloudinaryExampleCode.js
 
 const express = require('express');
-const formidable = require('formidable'); //npm i formidable
-const cloudinary = require('cloudinary').v2; //npm i cloudinary
-require('dotenv').config(); //npm i dotenv
+const formidable = require('formidable'); // npm i formidable
+const cloudinary = require('cloudinary').v2; // npm i cloudinary
+require('dotenv').config(); // npm i dotenv
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
@@ -37,11 +38,11 @@ app.post('/api/upload', async (req, res, next) => {
     console.log(file);
     await cloudinary.uploader.upload(
       file.someExpressFiles.filepath,
-      { public_id: `NMCNPM/${file.someExpressFiles.originalFilename}` }, //thay đổi đường dẫn và tên file
+      { public_id: `NMCNPM/${file.someExpressFiles.originalFilename}` }, // thay đổi đường dẫn và tên file
       function (error, result) {
         console.log(result);
       }
-    ); //result.url là link ảnh
+    ); // result.url là link ảnh
     if (err) {
       next(err);
       return;

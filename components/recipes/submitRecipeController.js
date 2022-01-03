@@ -2,8 +2,8 @@
 
 const recipeService = require('./recipeServices');
 const mongoose = require('mongoose');
-const formidable = require('formidable'); //npm i formidable
-const cloudinary = require('cloudinary').v2; //npm i cloudinary
+const formidable = require('formidable'); // npm i formidable
+const cloudinary = require('cloudinary').v2; // npm i cloudinary
 class SubmitRecipe {
   show(req, res, next) {
     res.render('recipes/views/submitRecipe');
@@ -38,12 +38,12 @@ class SubmitRecipe {
         let file = files.fileUpload[i];
         await cloudinary.uploader.upload(
           file.filepath,
-          { public_id: `NMCNPM/${file.originalFilename}` }, //thay đổi đường dẫn và tên file
+          { public_id: `NMCNPM/${file.originalFilename}` }, // thay đổi đường dẫn và tên file
           function (error, result) {
-            //console.log(result);
+            // console.log(result);
             imageUrl.push(result.url);
           }
-        ); //result.url là link ảnh
+        ); // result.url là link ảnh
       }
 
       if (err) {
@@ -71,10 +71,10 @@ class SubmitRecipe {
       };
       const result = await recipeService.saveRecipe(recipe);
       if (result) {
-        //res.status(200).json({ message: 'Thêm thành công', success: true });
+        // res.status(200).json({ message: 'Thêm thành công', success: true });
         res.send('<p>successfull</p>');
       } else {
-        //res.status(500).json({ message: 'Thêm thất bại', success: false });
+        // res.status(500).json({ message: 'Thêm thất bại', success: false });
       }
     });
   }

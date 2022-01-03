@@ -29,7 +29,7 @@ Handlebars.registerPartials(__dirname + '/views/partials');
 // Register hbs helpers
 require('./helpers/hbsHelper.js')();
 
-//cloudinary config
+// cloudinary config
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,

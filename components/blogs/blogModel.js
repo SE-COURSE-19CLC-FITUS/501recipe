@@ -3,7 +3,6 @@
 const mongoose = require('mongoose');
 const slugGenerator = require('mongoose-slug-generator');
 const { LOCALE } = require('../../config/constants.js');
-const { isURL } = require('validator');
 mongoose.plugin(slugGenerator);
 
 const options = { toObject: { virtuals: true }, toJSON: { virtuals: true } };
@@ -22,25 +21,12 @@ const blogSchema = mongoose.Schema(
         return new Intl.DateTimeFormat(LOCALE, dateFormatOptions).format(date);
       },
     },
-    imageUrl: {
-      type: String,
-      validate: {
-        validator: isURL,
-        message: 'Invalid URL',
-      },
-    },
+    imageUrl: [{ type: String }],
     content: [{ text: { type: String, trim: true } }],
     publisher: { id: mongoose.ObjectId, username: String },
     slug: {
       type: String,
       slug: 'title',
-      validate: {
-        validator: function (val) {
-          return isSlug(val) && val === this.title;
-        },
-        message:
-          'The value has to be lowercase and separated by hyphen, got {VALUE}',
-      },
     },
     tags: [{ text: { type: String, trim: true } }],
     title: { type: String, trim: true },
