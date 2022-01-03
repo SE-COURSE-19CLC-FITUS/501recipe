@@ -68,14 +68,6 @@ module.exports = function () {
     // Don't accept "nullish" values
     return val ?? defaultVal;
   });
-  //index=0 of image
-  Handlebars.registerHelper('getImageAtIndex', function (image, index) {
-    if (image.length > 0) {
-      return image[index];
-    } else {
-      return image;
-    }
-  });
 
   // Block helper (Advanced)
   Handlebars.registerHelper('loop_b', function (context, options) {

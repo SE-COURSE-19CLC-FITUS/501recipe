@@ -1,5 +1,5 @@
 <!--banner-->
-{{> banner titleBanner="Recipe details page"}}
+{{> banner titleBanner="Blog details page"}}
 <!--advance search form-->
 {{> advancedSearch}}
 <!--advance search form ends-->
@@ -13,6 +13,7 @@
                 <!--single post-->
                 <article class='post-single'>
 					{{#with blog}}
+					<div id='blogId' style="display: none;">{{_id}}</div>
                     <div class='post-visuals'>
                         <a href='#'>
                             <img
@@ -29,51 +30,13 @@
 
                                 <li class='author'><a href='#'>{{publisher.username}}</a></li>
 
-                                <li class='comments'><a href='#'>12 Comments</a></li>
+                                <li class='comments'><a href='#'>{{../comments.length}} Comments</a></li>
                             </ul>
 							{{#each content}}
 							<p>{{text}}</p>
 							<br />
 							{{/each}}
-                            {{!-- <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Proin eu vulputate arcu. Fusce
-                                consectetur varius nisi, in maximus eros egestas
-                                sed. Proin non purus erat. Proin sed mauris id
-                                metus pulvinar pretium. Etiam tristique metus
-                                lorem, scelerisque pharetra dui blandit sit amet
-                            </p>
-                            <br />
-                            <p>
-                                Praesent lacus eros, sodales a neque laoreet,
-                                suscipit venenatis erat. Donec ultricies
-                                consequat efficitur. Morbi eleifend sed lorem
-                                fringilla condimentum. Nunc non odio ante.
-                                Aliquam vehicula erat accumsan ante vehicula,
-                                dignissim molestie turpis mollis. Donec vitae
-                                tellus in ex maximus vehicula. Nulla tincidunt
-                                dictum gravida. Quisque interdum id dolor at
-                                condimentum. Quisque tincidunt, turpis ac
-                                rhoncus tristique, nisi nisl congue lacus, et
-                                porta elit orci ullamcorper enim. Fusce congue,
-                                leo quis eleifend cursus, justo p aliquam odio,
-                                sodales faucibus justo tortor ac dui. Sed eu
-                                pharetra massa. In dignissim vitae ex at
-                                eleifend
-                            </p>
-                            <br />
-                            <p>
-                                Nulla tincidunt dictum gravida. Quisque interdum
-                                id dolor at condimentum. Quisque tincidunt,
-                                turpis ac rhoncus tristique, nisi nisl congue
-                                lacus, et porta elit orci ullamcorper enim.
-                                Fusce congue, leo quis eleifend cursus, justo p
-                                aliquam odio, sodales faucibus justo tortor ac
-                                dui. Sed eu pharetra massa. In dignissim vitae
-                                ex at eleifend
-                            </p>
-                            <br />
-                            <div class='row'>
+                            {{!-- <div class='row'>
                                 <div class='col-sm-6'>
                                     <h3>heading title here</h3>
                                     <p>
@@ -106,94 +69,23 @@
                             <ul class='post-tags'>
 								{{#each tags}}
                                 <li>
-                                    <a href='#'>{{text}}</a>
+                                    <a href='#'>{{text}},</a>
                                 </li>
 								{{/each}}
                             </ul>
 
-                            <div class='prev-next-links'>
+                            {{!-- <div class='prev-next-links'>
                                 <a href='#' class='left-arrow'><i
                                         class='fa fa-arrow-left'
                                     ></i>
                                     previous post</a>
                                 <a href='#' class='right-arrow'>next post
                                     <i class='fa fa-arrow-right'></i></a>
-                            </div>
-                            <div class='separator-post'></div>
+                            </div> --}}
 
-                            <div class='related-posts'>
-                                <h3>related posts</h3>
-                                <div class='row'>
-                                    <div class='col-sm-4'>
-                                        <div class='related-single'>
-                                            <h4><a href='#'>Vitae varius odio
-                                                    dictum Lorem ipsum</a></h4>
-                                            <span>in
-                                                <a href='#'>"potato recipe"</a></span>
-                                        </div>
-                                    </div>
+                            {{!-- <div class='separator-post'></div> --}}
 
-                                    <div class='col-sm-4'>
-                                        <div class='related-single'>
-                                            <h4><a href='#'>Vitae varius odio
-                                                    dictum Lorem ipsum</a></h4>
-                                            <span>in
-                                                <a href='#'>"potato recipe"</a></span>
-                                        </div>
-                                    </div>
-
-                                    <div class='col-sm-4'>
-                                        <div class='related-single'>
-                                            <h4><a href='#'>Vitae varius odio
-                                                    dictum Lorem ipsum</a></h4>
-                                            <span>in
-                                                <a href='#'>"potato recipe"</a></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-					{{/with}}
-                            <div class='separator-post'></div>
-
-                            <div class='post-author'>
-                                <div class='avatar'>
-                                    <a href='#'><img
-                                            src='images/temp-images/author-avatar.jpg'
-                                            alt='avatar'
-                                        /></a>
-                                </div>
-                                <div class='detail'>
-                                    <ul class='social-icons'>
-                                        <li><a href='#'><i
-                                                    class='fa fa-facebook'
-                                                ></i></a></li>
-                                        <li><a href='#'><i
-                                                    class='fa fa-twitter'
-                                                ></i></a></li>
-                                        <li><a href='#'><i
-                                                    class='fa fa-linkedin'
-                                                ></i></a></li>
-                                        <li><a href='#'><i
-                                                    class='fa fa-google-plus'
-                                                ></i></a></li>
-                                    </ul>
-                                    <h5><a href='#'>john deo</a></h5>
-                                    <span class='type'>author</span>
-                                    <p>
-                                        Sed et sapien elit. Aliquam laoreet odio
-                                        nunc, id imperdiet mauris auctor in. Ut
-                                        eu norem tristique nibh, sit amet
-                                        euismod felis. Quisque aliquet nulla
-                                        justo, Sed et sapien elit. Aliquam
-                                        laoreet odio nunc, id imperdiet mauris
-                                        auctor in.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class='separator-post'></div>
-
-                            <div class='post-comments'>
+                            {{!-- <div class='post-comments'>
                                 <h3>comments</h3>
 
                                 <ul class='comments-list'>
@@ -388,9 +280,119 @@
                                     </form>
                                 </div>
 
+                            </div> --}}
+                        </div>
+					{{/with}}
+                    </div>
+
+					<div class='separator-post'></div>
+
+					<div class='post-author'>
+                        <div class='avatar'>
+                            <a href='#'><img
+                                    src='/images/temp-images/author-avatar.jpg'
+                                    alt='avatar'
+                                /></a>
+                        </div>
+                        <div class='detail'>
+                            <ul class='social-icons'>
+                                <li><a href='#'><i class='fa fa-facebook'></i></a></li>
+                                <li><a href='#'><i class='fa fa-twitter'></i></a></li>
+                                {{!-- <li><a href='#'><i class='fa fa-linkedin'></i></a></li> --}}
+                                {{!-- <li><a href='#'><i class='fa fa-google-plus'></i></a></li> --}}
+                            </ul>
+                            <h5><a href='#'>{{publisher.username}}</a></h5>
+                            <span class='type'>author</span>
+                            <p>
+                                Sed et sapien elit. Aliquam laoreet odio
+                                nunc, id imperdiet mauris auctor in. Ut
+                                eu norem tristique nibh, sit amet
+                                euismod felis. Quisque aliquet nulla
+                                justo, Sed et sapien elit. Aliquam
+                                laoreet odio nunc, id imperdiet mauris
+                                auctor in.
+                            </p>
+                        </div>
+                    </div>
+
+					<div class='separator-post'></div>
+
+					<div class='related-posts'>
+                        <h3>related posts</h3>
+                        <div class='row'>
+                            <div class='col-sm-4'>
+                                <div class='related-single'>
+                                    <h4><a href='#'>Vitae varius odio
+                                            dictum Lorem ipsum</a></h4>
+                                    <span>in
+                                        <a href='#'>"potato recipe"</a></span>
+                                </div>
+                            </div>
+
+                            <div class='col-sm-4'>
+                                <div class='related-single'>
+                                    <h4><a href='#'>Vitae varius odio
+                                            dictum Lorem ipsum</a></h4>
+                                    <span>in
+                                        <a href='#'>"potato recipe"</a></span>
+                                </div>
+                            </div>
+
+                            <div class='col-sm-4'>
+                                <div class='related-single'>
+                                    <h4><a href='#'>Vitae varius odio
+                                            dictum Lorem ipsum</a></h4>
+                                    <span>in
+                                        <a href='#'>"potato recipe"</a></span>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+					<div class='comment-form'>
+                        <h3 class='lined' id="leave-comment">Leave Comment</h3>
+
+                        <form action='/blogs/post-comment' method='post'>
+                            {{#if user}}
+                            <input type='hidden' name='name' value="{{user.username}}" />
+                            {{else}}
+                            <div class='row'>
+                                <div class='col-md-6'>
+                                    <input type='text' name='name' placeholder='Name' />
+                                </div>
+                            </div>
+                            {{/if}}
+                            <textarea name='comment' id='comment' cols='30' rows='10'
+                                placeholder='Message'></textarea>
+                            <input type='hidden' name='slug' value="{{blog.slug}}" />
+                            <input type='hidden' name='blogId' value="{{blog._id}}" />
+                            <button class='submit-comment'>Submit</button>
+                        </form>
+                    </div>
+
+                    <div class='recipe-comments'>
+                        <h3 class='lined'>Comments ({{comments.length}})</h3>
+                        <ul>
+                            {{#each comments}}
+                            <li>
+                                <div class='avatar'>
+                                    <a href='#leave-comment'><img src='/images/temp-images/recipe-comment1.jpg'
+                                            alt='avatar' /></a>
+                                </div>
+                                <div class='comment'>
+                                    <h5><a href='#leave-comment'>{{name}}</a></h5>
+                                    <span class='time'>({{createAt}} ago)</span>
+                                    <p>
+                                        {{comment}}
+                                    </p>
+                                    <a href='#leave-comment' class='reply-button'>Reply</a>
+                                </div>
+                            </li>
+                            {{/each}}
+                        </ul>
+
+					{{> pagination curPage=this.curCommentPage limitPage=this.limitCommentPage pageTurn=this.commentPageTurn numPages=this.numCommentPages url=(concat '/blogs/' this.blog.slug '?comment-page=')}}
+					</div>
                 </article>
                 <!--single post-->
 
@@ -446,71 +448,27 @@
 
                         <!--widget archives ends-->
                         <!--latest news widget-->
+                        {{#if popularList}}
+                        {{> widgetPopular typePopular="Popular Recipes" popularList=popularList }}
+                        {{else}}
+                        {{!-- Fall over content --}}
                         <div class='widget latest-news-widget'>
-                            <h2>Latest News</h2>
+                            <h2>Popular Recipes</h2>
                             <ul>
                                 <li>
                                     <div class='thumb'>
                                         <a href='#'>
-                                            <img
-                                                src='images/temp-images/widget-thumbnail.jpg'
-                                                alt='thumbnail'
-                                            />
+                                            <img src='/images/temp-images/widget-thumbnail.jpg' alt='thumbnail' />
                                         </a>
                                     </div>
                                     <div class='detail'>
                                         <a href='#'>Pimento Cheese Potato Skins</a>
-                                        <span class='post-date'>March 21,2015</span>
+                                        <span class='post-date'>Dec 26, 2021</span>
                                     </div>
                                 </li>
-
-                                <li>
-                                    <div class='thumb'>
-                                        <a href='#'>
-                                            <img
-                                                src='images/temp-images/widget-thumbnail.jpg'
-                                                alt='thumbnail'
-                                            />
-                                        </a>
-                                    </div>
-                                    <div class='detail'>
-                                        <a href='#'>Pimento Cheese Potato Skins</a>
-                                        <span class='post-date'>March 21,2015</span>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class='thumb'>
-                                        <a href='#'>
-                                            <img
-                                                src='images/temp-images/widget-thumbnail.jpg'
-                                                alt='thumbnail'
-                                            />
-                                        </a>
-                                    </div>
-                                    <div class='detail'>
-                                        <a href='#'>Pimento Cheese Potato Skins</a>
-                                        <span class='post-date'>March 21,2015</span>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class='thumb'>
-                                        <a href='#'>
-                                            <img
-                                                src='images/temp-images/widget-thumbnail.jpg'
-                                                alt='thumbnail'
-                                            />
-                                        </a>
-                                    </div>
-                                    <div class='detail'>
-                                        <a href='#'>Pimento Cheese Potato Skins</a>
-                                        <span class='post-date'>March 21,2015</span>
-                                    </div>
-                                </li>
-
                             </ul>
                         </div>
+                        {{/if}}
                         <!--latest news widget ends-->
                         <!--tags widget-->
                         <div class='widget tags-widget'>

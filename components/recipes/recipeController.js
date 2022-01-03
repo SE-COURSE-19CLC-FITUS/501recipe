@@ -59,6 +59,7 @@ exports.getRecipeBySlug = async function (req, res) {
   const curCommentPage = +req.query['comment-page'] || 1;
 
   const comments = await commentService.getRecipeComments(
+    'recipe',
     recipe._id,
     curCommentPage,
     COMMENT_PER_PAGE
@@ -69,7 +70,7 @@ exports.getRecipeBySlug = async function (req, res) {
   // Because page has index 1, so we have to decrease the curPage
   // So with limitPage is 4, we have turn 0: [1, 2, 3, 4], turn 1: [5, 6, 7, 8]
   const commentPageTurn = Math.floor((curCommentPage - 1) / limitCommentPage);
-  const numComments = await commentService.countComments(recipe._id);
+  const numComments = await commentService.countComments('recipe', recipe._id);
   const numCommentPages = Math.ceil(numComments / COMMENT_PER_PAGE);
 
   comments.sort((a, b) => new Date(b.createAt) - new Date(a.createAt));
@@ -98,37 +99,11 @@ exports.getRecipeBySlug = async function (req, res) {
 };
 
 exports.postComment = async (req, res, next) => {
-  const comment = await commentService.postComment(
+  await commentService.postComment(
+    'recipe',
     req.body.name,
     req.body.recipeId,
     req.body.comment
   );
-  res.redirect(`/blogs/${req.body.slug}#leave-comment`);
+  res.redirect(`/recipes/${req.body.slug}#leave-comment`);
 };
-
-// const timeSince = function (date) {
-//   let seconds = Math.floor((new Date() - date) / 1000);
-
-//   let interval = seconds / 31536000;
-
-//   if (interval > 1) {
-//     return Math.floor(interval) + ' years';
-//   }
-//   interval = seconds / 2592000;
-//   if (interval > 1) {
-//     return Math.floor(interval) + ' months';
-//   }
-//   interval = seconds / 86400;
-//   if (interval > 1) {
-//     return Math.floor(interval) + ' days';
-//   }
-//   interval = seconds / 3600;
-//   if (interval > 1) {
-//     return Math.floor(interval) + ' hours';
-//   }
-//   interval = seconds / 60;
-//   if (interval > 1) {
-//     return Math.floor(interval) + ' minutes';
-//   }
-//   return Math.floor(seconds) + ' seconds';
-// };

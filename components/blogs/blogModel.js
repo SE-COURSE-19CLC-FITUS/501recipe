@@ -22,7 +22,7 @@ const blogSchema = mongoose.Schema(
         return new Intl.DateTimeFormat(LOCALE, dateFormatOptions).format(date);
       },
     },
-		imageUrl: {
+    imageUrl: {
       type: String,
       validate: {
         validator: isURL,

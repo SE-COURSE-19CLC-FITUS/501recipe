@@ -11,7 +11,6 @@ class SubmitRecipe {
   async submit(req, res, next) {
     const { _id: userId, username } = req.user;
 
-    const content = req.body;
     const form = formidable({ multiples: true });
     form.parse(req, async (err, fields, files) => {
       let ingredients;

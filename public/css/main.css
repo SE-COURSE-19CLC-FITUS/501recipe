@@ -4970,6 +4970,12 @@ div.widget-measurements .default-btn {
   padding: 25px;
   color: #000000;
 }
+.comment-form form ::placeholder, .comment-form form input[value] {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-style: italic;
+  color: #000000;
+  font-size: 16px;
+}
 .comment-form form ::-webkit-input-placeholder {
   font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;

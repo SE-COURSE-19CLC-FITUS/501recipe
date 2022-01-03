@@ -56,5 +56,4 @@ exports.getBlogComments = (blogId, page, itemPerPage) =>
     .limit(itemPerPage)
     .lean();
 
-exports.countComments = blogId =>
-  Comment.find({ blogId: blogId }).count();
+exports.countComments = blogId => Comment.find({ blogId: blogId }).count();

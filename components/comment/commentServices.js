@@ -1,20 +1,21 @@
-'use strict'
+'use strict';
 const Comment = require('./commentModel');
 
-exports.postComment = (name, recipeId, comment) => {
+exports.postComment = (type, name, id, comment) => {
   return new Comment({
-    name: name,
-    recipeId: recipeId,
-    comment: comment,
+    type,
+    name,
+    id,
+    comment,
     createAt: new Date(),
   }).save();
 };
 
-exports.getRecipeComments = (recipeId, page, itemPerPage) =>
-  Comment.find({ recipeId: recipeId })
+exports.getRecipeComments = (type, id, page, itemPerPage) =>
+  Comment.find({ type: type, id: id })
     .skip((page - 1) * itemPerPage)
     .limit(itemPerPage)
     .lean();
 
-exports.countComments = recipeId =>
-  Comment.find({ recipeId: recipeId }).count();
+exports.countComments = (type, id) =>
+  Comment.find({ type: type, id: id }).count();

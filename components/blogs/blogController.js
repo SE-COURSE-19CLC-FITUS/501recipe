@@ -1,7 +1,5 @@
 'use strict';
 
-'use strict';
-
 const {
   BLOG_PER_PAGE,
   BLOG_PAGE_LIMIT,
@@ -30,7 +28,7 @@ exports.blogsInPage = async function (req, res) {
   if (Object.keys(filter).length === 0) {
     numBlogs = await blogService.countBlogs();
   } else {
-    numBlogs = recipes.length;
+    numBlogs = blogs.length;
   }
 
   // FIXME: Kinda boilerplate code. Should I add it to blogService?
@@ -55,6 +53,7 @@ exports.getBlogBySlug = async function (req, res) {
   const curCommentPage = +req.query['comment-page'] || 1;
 
   const comments = await commentService.getRecipeComments(
+    'blog',
     blog._id,
     curCommentPage,
     COMMENT_PER_PAGE
@@ -65,7 +64,7 @@ exports.getBlogBySlug = async function (req, res) {
   // Because page has index 1, so we have to decrease the curPage
   // So with limitPage is 4, we have turn 0: [1, 2, 3, 4], turn 1: [5, 6, 7, 8]
   const commentPageTurn = Math.floor((curCommentPage - 1) / limitCommentPage);
-  const numComments = await commentService.countComments(blog._id);
+  const numComments = await commentService.countComments('blog', blog._id);
   const numCommentPages = Math.ceil(numComments / COMMENT_PER_PAGE);
 
   comments.sort((a, b) => new Date(b.createAt) - new Date(a.createAt));
@@ -82,7 +81,6 @@ exports.getBlogBySlug = async function (req, res) {
   //     recipe.bookmark = 'Added to Bookmark';
   //   }
   // }
-
   res.render('blogs/views/detailBlog.hbs', {
     blog,
     comments,
@@ -94,37 +92,11 @@ exports.getBlogBySlug = async function (req, res) {
 };
 
 exports.postComment = async (req, res, next) => {
-  const comment = await commentService.postComment(
+  await commentService.postComment(
+    'blog',
     req.body.name,
-    req.body.recipeId,
+    req.body.blogId,
     req.body.comment
   );
   res.redirect(`/blogs/${req.body.slug}#leave-comment`);
 };
-
-// const timeSince = function (date) {
-//   let seconds = Math.floor((new Date() - date) / 1000);
-
-//   let interval = seconds / 31536000;
-
-//   if (interval > 1) {
-//     return Math.floor(interval) + ' years';
-//   }
-//   interval = seconds / 2592000;
-//   if (interval > 1) {
-//     return Math.floor(interval) + ' months';
-//   }
-//   interval = seconds / 86400;
-//   if (interval > 1) {
-//     return Math.floor(interval) + ' days';
-//   }
-//   interval = seconds / 3600;
-//   if (interval > 1) {
-//     return Math.floor(interval) + ' hours';
-//   }
-//   interval = seconds / 60;
-//   if (interval > 1) {
-//     return Math.floor(interval) + ' minutes';
-//   }
-//   return Math.floor(seconds) + ' seconds';
-// };

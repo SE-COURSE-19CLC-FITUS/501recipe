@@ -1,5 +1,5 @@
 <!--banner-->
-{{> banner titleBanner="Recipe listing page"}}
+{{> banner titleBanner="Blog listing page"}}
 <!--advance search form-->
 {{> advancedSearch}}
 <!--advance search form ends-->
@@ -14,11 +14,8 @@
 				{{#each blogs}}
                 <article class='post-single'>
                     <div class='post-visuals'>
-                        <a href='#'>
-                            <img
-                                src='images/temp-images/post-image-1.jpg'
-                                alt='image'
-                            />
+                        <a href='/blogs/{{slug}}'>
+                            <img src='{{imageUrl}}' alt='image' />
                         </a>
                     </div>
                     <div class='post-contents'>
@@ -255,71 +252,27 @@
                         <!--widget archives ends-->
 
                         <!--latest news widget-->
+                        {{#if popularList}}
+                        {{> widgetPopular typePopular="Popular Recipes" popularList=popularList }}
+                        {{else}}
+                        {{!-- Fall over content --}}
                         <div class='widget latest-news-widget'>
-                            <h2>Latest News</h2>
+                            <h2>Popular Recipes</h2>
                             <ul>
                                 <li>
                                     <div class='thumb'>
                                         <a href='#'>
-                                            <img
-                                                src='images/temp-images/widget-thumbnail.jpg'
-                                                alt='thumbnail'
-                                            />
+                                            <img src='/images/temp-images/widget-thumbnail.jpg' alt='thumbnail' />
                                         </a>
                                     </div>
                                     <div class='detail'>
                                         <a href='#'>Pimento Cheese Potato Skins</a>
-                                        <span class='post-date'>March 21,2015</span>
+                                        <span class='post-date'>Dec 26, 2021</span>
                                     </div>
                                 </li>
-
-                                <li>
-                                    <div class='thumb'>
-                                        <a href='#'>
-                                            <img
-                                                src='images/temp-images/widget-thumbnail.jpg'
-                                                alt='thumbnail'
-                                            />
-                                        </a>
-                                    </div>
-                                    <div class='detail'>
-                                        <a href='#'>Pimento Cheese Potato Skins</a>
-                                        <span class='post-date'>March 21,2015</span>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class='thumb'>
-                                        <a href='#'>
-                                            <img
-                                                src='images/temp-images/widget-thumbnail.jpg'
-                                                alt='thumbnail'
-                                            />
-                                        </a>
-                                    </div>
-                                    <div class='detail'>
-                                        <a href='#'>Pimento Cheese Potato Skins</a>
-                                        <span class='post-date'>March 21,2015</span>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class='thumb'>
-                                        <a href='#'>
-                                            <img
-                                                src='images/temp-images/widget-thumbnail.jpg'
-                                                alt='thumbnail'
-                                            />
-                                        </a>
-                                    </div>
-                                    <div class='detail'>
-                                        <a href='#'>Pimento Cheese Potato Skins</a>
-                                        <span class='post-date'>March 21,2015</span>
-                                    </div>
-                                </li>
-
                             </ul>
                         </div>
+                        {{/if}}
                         <!--latest news widget ends-->
 
                         <!--tags widget-->

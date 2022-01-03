@@ -61,5 +61,5 @@ exports.getRecipeComments = (recipeId, page, itemPerPage) =>
     .limit(itemPerPage)
     .lean();
 
-exports.countComments = recipeId =>
-  Comment.find({ recipeId: recipeId }).count();
+exports.countComments = (type, id) =>
+  Comment.find({ type: type, id: id }).count();
