@@ -52,7 +52,7 @@ exports.getBlogBySlug = async function (req, res) {
   // NOTE: Remember to convert page to number
   const curCommentPage = +req.query['comment-page'] || 1;
 
-  const comments = await commentService.getRecipeComments(
+  const comments = await commentService.getComments(
     'blog',
     blog._id,
     curCommentPage,
@@ -84,6 +84,7 @@ exports.getBlogBySlug = async function (req, res) {
   res.render('blogs/views/detailBlog.hbs', {
     blog,
     comments,
+		numComments,
     curCommentPage,
     limitCommentPage,
     commentPageTurn,

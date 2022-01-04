@@ -8,9 +8,9 @@ exports.RECIPE_PAGE_LIMIT = 3;
 
 exports.NUMBER_TOP_RECIPE = 10;
 
-exports.COMMENT_PER_PAGE = 2;
+exports.COMMENT_PER_PAGE = 6;
 
-exports.COMMENT_PAGE_LIMIT = 2;
+exports.COMMENT_PAGE_LIMIT = 3;
 
 exports.BLOG_PER_PAGE = 6;
 

@@ -11,11 +11,13 @@ exports.postComment = (type, name, id, comment) => {
   }).save();
 };
 
-exports.getRecipeComments = (type, id, page, itemPerPage) =>
+exports.getComments = (type, id, page, itemPerPage) =>
   Comment.find({ type: type, id: id })
     .skip((page - 1) * itemPerPage)
+		.sort({ createAt: 'desc' })
     .limit(itemPerPage)
     .lean();
 
 exports.countComments = (type, id) =>
   Comment.find({ type: type, id: id }).count();
+

@@ -40,20 +40,3 @@ exports.getTopBlogs = async () => {
     .limit(NUMBER_TOP_BLOG);
   return mongooseObject.multipleMongooseToObject(result);
 };
-
-exports.postComment = (name, blogId, comment) => {
-  return new Comment({
-    name: name,
-    blogId: blogId,
-    comment: comment,
-    createAt: new Date(),
-  }).save();
-};
-
-exports.getBlogComments = (blogId, page, itemPerPage) =>
-  Comment.find({ blogId: blogId })
-    .skip((page - 1) * itemPerPage)
-    .limit(itemPerPage)
-    .lean();
-
-exports.countComments = blogId => Comment.find({ blogId: blogId }).count();

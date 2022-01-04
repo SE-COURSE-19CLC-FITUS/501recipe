@@ -14,15 +14,20 @@
                 <article class='post-single'>
 					{{#with blog}}
 					<div id='blogId' style="display: none;">{{_id}}</div>
-                    <div class='post-visuals'>
-						{{#each imageUrl}}
-                        <a href='#'>
-                            <img
-                                src='{{this}}'
-                                alt='image'
-                            />
-                        </a>
-						{{/each}}
+					<div class='post-visuals'>
+                        <div class='wrapper-post-slider'>
+                            <div class='post-slider'>
+							{{#each imageUrl}}
+                                <div>
+                                    <a href='/blogs/{{../slug}}'>
+                                        <img src='{{this}}' alt='image' />
+                                    </a>
+                                </div>
+							{{/each}}
+                            </div>
+                            <span class='arrow-nav left-arrow'><i class='fa fa-angle-left'></i></span>
+                            <span class='arrow-nav right-arrow'><i class='fa fa-angle-right'></i></span>
+                        </div>
                     </div>
                     <div class='post-contents'>
                         <div class='post-contents-inner'>
@@ -32,7 +37,7 @@
 
                                 <li class='author'><a href='#'>{{publisher.username}}</a></li>
 
-                                <li class='comments'><a href='#'>{{../comments.length}} Comments</a></li>
+                                <li class='comments'><a href='#'>{{../numComments}} Comments</a></li>
                             </ul>
 							{{#each content}}
 							<p>{{text}}</p>
@@ -373,7 +378,7 @@
                     </div>
 
                     <div class='recipe-comments'>
-                        <h3 class='lined'>Comments ({{comments.length}})</h3>
+                        <h3 class='lined'>Comments ({{numComments}})</h3>
                         <ul>
                             {{#each comments}}
                             <li>
