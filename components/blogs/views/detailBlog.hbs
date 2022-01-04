@@ -365,12 +365,12 @@
                             {{else}}
                             <div class='row'>
                                 <div class='col-md-6'>
-                                    <input type='text' name='name' placeholder='Name' />
+                                    <input type='text' name='name' placeholder='Name' required />
                                 </div>
                             </div>
                             {{/if}}
                             <textarea name='comment' id='comment' cols='30' rows='10'
-                                placeholder='Message'></textarea>
+                                placeholder='Message' required></textarea>
                             <input type='hidden' name='slug' value="{{blog.slug}}" />
                             <input type='hidden' name='blogId' value="{{blog._id}}" />
                             <button class='submit-comment'>Submit</button>
