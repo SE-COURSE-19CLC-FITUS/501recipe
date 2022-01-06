@@ -34,7 +34,7 @@ class SubmitRecipe {
         tips = fields.tips.map(tip => ({ text: tip }));
       }
       let imageUrl = [];
-      if (files.fileUpload.length > 0) {
+      BUG: if (files.fileUpload.length > 0) {
         for (let i = 0; i < files.fileUpload.length; i++) {
           let file = files.fileUpload[i];
           await cloudinary.uploader.upload(
@@ -66,7 +66,6 @@ class SubmitRecipe {
         levelSkill: fields.skill,
         mealType: fields.mealType,
         publisher: { id: userId, username },
-        rating: 0,
         servings: fields.servings,
         tags: fields.tags.split(',').map(tag => ({
           text: tag,

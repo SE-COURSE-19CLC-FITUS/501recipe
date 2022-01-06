@@ -31,14 +31,20 @@ exports.getRecipeById = async recipeId => {
 };
 exports.getTopRecipes = async () => {
   const filter = {
-    rating: {
+    ratingOverall: {
+			// FIXME:
       $gte: 4.5,
     },
   };
   const result = await Recipe.find(filter)
-    .sort({ rating: -1 })
-    .limit(NUMBER_TOP_RECIPE);
+	.sort({ rating: -1 })
+	.limit(NUMBER_TOP_RECIPE);
 
   return mongooseObject.multipleMongooseToObject(result);
 };
 
+exports.updateRating = async (slug, ratingPoint) => {
+  const ratingPointName = ['one', 'two', 'three', 'four', 'five'];
+  const field = ratingPointName[ratingPoint - 1];
+  await Recipe.find({ slug: slug }).updateOne({ $inc: { [`rating.${field}`]: 1 } });
+};

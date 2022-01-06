@@ -2,7 +2,7 @@
     {{! Since we pass only "rating" as a primitive, so even we pass this, the
     rating will eventually discard in "loop" helper }}
     {{#loop_b this iter=5}}
-        <span class='rating-icons'>
+        <span class='rating-icons' data-index="{{this.index}}">
             <svg
                 class='icon-container'
                 width='25'

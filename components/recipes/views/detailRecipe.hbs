@@ -64,7 +64,7 @@
                         </div>
 
                         <div class='recipe-detail-body'>
-                            {{> ratingBox rating=rating}}
+                            {{> ratingBox rating=ratingOverall}}
                             <ul class='pre-tags'>
                                 {{!-- <li><span>Cuisine :
                                     </span>Chinese</li> --}}
@@ -490,4 +490,27 @@
             });
         }
     });
+
+	const ratingBox = document.querySelector('.rating-box');
+	ratingBox.addEventListener('mouseover', function(e) {
+		const curStar = e.target.closest('.rating-icons');
+		if (!curStar) return;
+		const { index } = curStar.dataset;
+		const allStars = ratingBox.querySelectorAll('.rating-icons');
+		allStars.forEach((star, i) => {
+			if (i <= index)
+				star.querySelector('path').classList.add('icon-svg');
+			else
+				star.querySelector('path').classList.remove('icon-svg');
+		});
+	});
+	ratingBox.addEventListener('click', function(e) {
+		const curStar = e.target.closest('.rating-icons');
+		if (!curStar) return;
+		const { index } = curStar.dataset;
+		const slugRegex = /(?<=recipes\/).*(?=\/)|(?<=recipes\/).*$/gm
+		const [slug] = window.location.pathname.match(slugRegex);
+		// Send POST then reload page
+		$.post('/recipes/rate', { slug, ratingPoint: +index + 1 }, () => window.location = window.location);
+	});
 </script>

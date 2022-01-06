@@ -64,13 +64,13 @@ exports.getRecipeBySlug = async function (req, res) {
     curCommentPage,
     COMMENT_PER_PAGE
   );
+  const numComments = await commentService.countComments('recipe', recipe._id);
 
   // FIXME: Kinda boilerplate code. Should I add it to recipeService?
   const limitCommentPage = COMMENT_PAGE_LIMIT;
   // Because page has index 1, so we have to decrease the curPage
   // So with limitPage is 4, we have turn 0: [1, 2, 3, 4], turn 1: [5, 6, 7, 8]
   const commentPageTurn = Math.floor((curCommentPage - 1) / limitCommentPage);
-  const numComments = await commentService.countComments('recipe', recipe._id);
   const numCommentPages = Math.ceil(numComments / COMMENT_PER_PAGE);
 
   comments.sort((a, b) => new Date(b.createAt) - new Date(a.createAt));
@@ -91,7 +91,7 @@ exports.getRecipeBySlug = async function (req, res) {
   res.render('recipes/views/detailRecipe.hbs', {
     recipe,
     comments,
-		numComments,
+    numComments,
     curCommentPage,
     limitCommentPage,
     commentPageTurn,
@@ -107,4 +107,10 @@ exports.postComment = async (req, res, next) => {
     req.body.comment
   );
   res.redirect(`/recipes/${req.body.slug}#leave-comment`);
+};
+
+exports.rateRecipe = async (req, res, next) => {
+  const { slug, ratingPoint } = req.body;
+  await recipeService.updateRating(slug, ratingPoint);
+  res.redirect(`/recipes/${slug}#leave-comment`);
 };
