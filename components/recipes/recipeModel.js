@@ -48,6 +48,7 @@ const recipeSchema = mongoose.Schema(
       min: [0, 'Must at least 1, got {VALUE}'],
       max: [5, 'Max is 5, got {VALUE}'],
     },
+    ratingOverall: { type: Number },
     servings: { type: Number, min: [1, 'Must at least 1, got {VALUE}'] },
     slug: {
       type: String,
