@@ -40,3 +40,6 @@ exports.getTopBlogs = async () => {
     .limit(NUMBER_TOP_BLOG);
   return mongooseObject.multipleMongooseToObject(result);
 };
+
+exports.getLatestNews = Blog.find().sort({datePublish:-1}).limit(3)
+

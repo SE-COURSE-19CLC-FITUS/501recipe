@@ -10,12 +10,20 @@ const {
 const recipeService = require('./recipeServices.js');
 const bookmarkService = require('../bookmarks/bookmarkService');
 const commentService = require('../comment/commentServices.js');
-const { timeSince } = require('../../helpers/index.js');
+const blogService = require('../blogs/blogServices')
+const {
+  timeSince
+} = require('../../helpers/index.js');
 
 exports.recipesInPage = async function (req, res) {
   // Pages have index 1, instead of 0
   let curPage = +req.query.page || 1;
-  let { mealType, keyword, ingredients, rating } = req.query;
+  let {
+    mealType,
+    keyword,
+    ingredients,
+    rating
+  } = req.query;
   let filter = {};
   if (ingredients && ingredients != '') {
     filter = {
@@ -29,7 +37,10 @@ exports.recipesInPage = async function (req, res) {
     filter.mealType = mealType;
   }
   if (keyword && keyword != '') {
-    filter.title = { $regex: keyword, $options: 'i' };
+    filter.title = {
+      $regex: keyword,
+      $options: 'i'
+    };
   }
   let sort = undefined;
   if (rating && rating != '0') {
@@ -57,8 +68,13 @@ exports.recipesInPage = async function (req, res) {
   const pageTurn = Math.floor((curPage - 1) / limitPage);
   const numPages = Math.ceil(numRecipes / RECIPE_PER_PAGE);
 
+  const popularRecipe = await recipeService.getPopularRecipe;
+  const latestNews = await blogService.getLatestNews;
+
   res.render('recipes/views/recipes.hbs', {
     recipes,
+    popularRecipe,
+    latestNews,
     curPage,
     limitPage,
     pageTurn,
@@ -112,18 +128,16 @@ exports.getRecipeBySlug = async function (req, res) {
   });
 };
 
-exports.postComment = async (req, res, next) => {
-  await commentService.postComment(
-    'recipe',
-    req.body.name,
-    req.body.recipeId,
-    req.body.comment
-  );
-  res.redirect(`/recipes/${req.body.slug}#leave-comment`);
-};
-
 exports.rateRecipe = async (req, res, next) => {
-  const { slug, ratingPoint } = req.body;
+  const {
+    slug,
+    ratingPoint
+  } = req.body;
   await recipeService.updateRating(slug, ratingPoint);
   res.redirect(`/recipes/${slug}#leave-comment`);
 };
+
+exports.postComment = async (req, res, next) => {
+  const comment = await commentService.postComment(req.body.name, req.body.recipeId, req.body.comment);
+  res.redirect(`/recipes/${req.body.slug}#leave-comment`);
+}

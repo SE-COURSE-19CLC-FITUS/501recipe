@@ -1,7 +1,6 @@
 'use strict';
 
 const Recipe = require('./recipeModel');
-const Comment = require('../comment/commentModel.js');
 const mongoose = require('mongoose');
 const mongooseObject = require('../../utils/mongooseUtil');
 const { NUMBER_TOP_RECIPE } = require('../../config/constants.js');
@@ -52,20 +51,12 @@ exports.getTopRecipes = async () => {
   return mongooseObject.multipleMongooseToObject(result);
 };
 
-exports.postComment = (name, recipeId, comment) => {
-  return new Comment({
-    name: name,
-    recipeId: recipeId,
-    comment: comment,
-    createAt: new Date(),
-  }).save();
+exports.updateRating = async (slug, ratingPoint) => {
+  const ratingPointName = ['one', 'two', 'three', 'four', 'five'];
+  const field = ratingPointName[ratingPoint - 1];
+  await Recipe.find({ slug: slug }).updateOne({
+    $inc: { [`rating.${field}`]: 1 },
+  });
 };
 
-exports.getRecipeComments = (recipeId, page, itemPerPage) =>
-  Comment.find({ recipeId: recipeId })
-    .skip((page - 1) * itemPerPage)
-    .limit(itemPerPage)
-    .lean();
-
-exports.countComments = (type, id) =>
-  Comment.find({ type: type, id: id }).count();
+exports.getPopularRecipe = Recipe.find().sort({ratingOverall:-1}).limit(3)

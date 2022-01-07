@@ -74,16 +74,7 @@
                                 <li><span>Date Publish: </span>{{datePublish}}</li>
                             </ul>
                             <div class='separator-post'></div>
-                            {{!-- <p>
-                                Rinse the chicken pieces in cold water and
-                                pat dry. Place the chicken in a large,
-                                resealable zip-top bag and pour in the
-                                marinade. Toss the chicken inside the bag to
-                                cover evenly with the marinade and
-                                refrigerate for 12 hours or as long as
-                                overnight icken pieces in cold water and pat
-                                dry.
-                            </p> --}}
+                            <p>{{descriptions}}</p>
                             <br />
                             <div class='ingredients-checkbox'>
                                 <div class='ingredients'>
@@ -371,8 +362,8 @@
                         <!--recipes search widget ends-->
 
                         <!--popular recipes widget-->
-                        {{#if popularList}}
-                        {{> widgetPopular typePopular="Popular Recipes" popularList=popularList }}
+                        {{#if popularRecipe}}
+                        {{> widgetPopular typePopular="Popular Recipes" popularList=popularRecipe }}
                         {{else}}
                         {{!-- Fall over content --}}
                         <div class='widget latest-news-widget'>
@@ -403,8 +394,8 @@
                         <!--advertisement widget ends-->
 
                         <!--latest news widget-->
-                        {{#if popularList}}
-                        {{> widgetPopular typePopular="Latest News" popularList=popularList }}
+                        {{#if latestNews}}
+                        {{> widgetPopular typePopular="Latest News" popularList=latestNews }}
                         {{else}}
                         {{!-- Fall over content --}}
                         <div class='widget latest-news-widget'>
@@ -477,7 +468,11 @@
             $.post('/bookmark/add', {
                 recipeId
             }, function (data) {
-                alert(data.message);
+                if(data.message) {
+                    alert(data.message);
+                } else {
+                    alert("Log in to add recipe!")
+                }
             });
         } else {
             console.log('remove from bookmark');
@@ -513,4 +508,21 @@
 		// Send POST then reload page
 		$.post('/recipes/rate', { slug, ratingPoint: +index + 1 }, () => window.location = window.location);
 	});
+</script>
+<script type="text/javascript">
+
+    document.getElementById('myBookmark').addEventListener('click',function(){
+        window.location.href = "/bookmark";
+    })
+    document.getElementById('myRecipe').addEventListener('click',function(){
+        window.location.href = "/myRecipes";
+    })
+    function handleDelete(id){
+        console.log('id',id)
+
+        $.post('myRecipes/delete',{id:id},function(data){
+            console.log('data',data)
+            window.location.href = "/myRecipes";
+        })
+    }
 </script>
