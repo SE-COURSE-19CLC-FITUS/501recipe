@@ -78,9 +78,9 @@ class SubmitRecipe {
       const result = await recipeService.saveRecipe(recipe);
       if (result) {
         //res.status(200).json({ message: 'Thêm thành công', success: true });
-        res.send('<p>successfull</p>');
+        res.render('recipes/views/successSubmit.hbs');
       } else {
-        //res.status(500).json({ message: 'Thêm thất bại', success: false });
+        next();
       }
     });
   }
