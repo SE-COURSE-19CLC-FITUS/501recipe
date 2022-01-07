@@ -1,0 +1,13 @@
+<div class='recipe-box'>
+	{{#with recipe}}
+    <div class='intro bg-color1'>
+        <div class='heading-recipe'>
+            <h3><a href='/recipes/{{slug}}'>{{title}}</a></h3>
+        </div>
+		{{> ratingBox rating=ratingOverall}}
+    </div>
+    <div class='image'>
+        <a href='#'><img src='{{imageUrl}}' alt='image'/></a>
+    </div>
+	{{/with}}
+</div>

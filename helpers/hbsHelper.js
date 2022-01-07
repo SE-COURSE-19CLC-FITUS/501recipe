@@ -4,10 +4,29 @@ const Handlebars = require('hbs');
 
 module.exports = function () {
   // Expression helper
+  Handlebars.registerHelper('concat', function (...str) {
+    return str.filter(item => typeof item === 'string').join('');
+  });
+
+  // Expression helper
   Handlebars.registerHelper('incAmount', function (num, amount) {
-    if (!isFinite(num)) return;
+    if (!isFinite(num) && !isFinite(amount)) return;
 
     return +num + +amount;
+  });
+
+  // Expression helper
+  Handlebars.registerHelper('decAmount', function (num, amount) {
+    if (!isFinite(num) && !isFinite(amount)) return;
+
+    return +num - +amount;
+  });
+
+  // Expression helper
+  Handlebars.registerHelper('mulAmount', function (num, amount) {
+    if (!isFinite(num) && !isFinite(amount)) return;
+
+    return +num * +amount;
   });
 
   // Expression helper
@@ -22,6 +41,28 @@ module.exports = function () {
     return op1 <= op2 ? ifClause : elseClause;
   });
 
+  // Block helper
+  Handlebars.registerHelper('lte_b', function (context, options) {
+    // Compare between 2 operands
+    const { op1, op2 } = options.hash;
+    if (op1 <= op2) {
+      return options.fn(context);
+    } else {
+      return options.inverse(context);
+    }
+  });
+
+  // Block helper
+  Handlebars.registerHelper('gte_b', function (context, options) {
+    // Compare between 2 operands
+    const { op1, op2 } = options.hash;
+    if (op1 >= op2) {
+      return options.fn(context);
+    } else {
+      return options.inverse(context);
+    }
+  });
+
   // Expression helper
   Handlebars.registerHelper('default', function (val, defaultVal) {
     // Don't accept "nullish" values
@@ -29,7 +70,7 @@ module.exports = function () {
   });
 
   // Block helper (Advanced)
-  Handlebars.registerHelper('loop', function (context, options) {
+  Handlebars.registerHelper('loop_b', function (context, options) {
     // To use this helper, the context passed in MUST be an object (can use "this" keyword) or null
 
     // If we pass null to helper, we only have "index" property
@@ -40,7 +81,7 @@ module.exports = function () {
 
     const iter = +options.hash.iter;
     let str = '';
-    // Deep clone context, just it with wisely!
+    // Deep clone context, just it wisely!
     let newContext = JSON.parse(JSON.stringify(context));
     for (let i = 0; i < iter; i++) {
       // If we pass a primitive value to helper, spread operator will discard it.

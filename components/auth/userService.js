@@ -29,8 +29,8 @@ exports.validPassword = (password, user) => {
 exports.register = async (username, email, password) => {
   const passwordHash = await bcrypt.hash(password, 10);
   return userModel.create({
-    username: username,
-    email: email,
+    username,
+    email,
     password: passwordHash,
   });
 };

@@ -44,57 +44,57 @@
 /*--------------------*/
 /* mixins
 /*--------------------*/
-.placeholder-lora ::-webkit-input-placeholder {
-  font-family: 'Lora', serif;
+.placeholder-roboto ::-webkit-input-placeholder {
+  font-family: 'Roboto Condensed', sans-serif;
 }
-.placeholder-lora :-moz-placeholder {
+.placeholder-roboto :-moz-placeholder {
   /* Firefox 18- */
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
-.placeholder-lora ::-moz-placeholder {
+.placeholder-roboto ::-moz-placeholder {
   /* Firefox 19+ */
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
-.placeholder-lora :-ms-input-placeholder {
-  font-family: 'Lora', serif;
+.placeholder-roboto :-ms-input-placeholder {
+  font-family: 'Roboto Condensed', sans-serif;
 }
-.placeholder-lora-italic ::-webkit-input-placeholder {
-  font-family: 'Lora', serif;
+.placeholder-roboto-italic ::-webkit-input-placeholder {
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
 }
-.placeholder-lora-italic :-moz-placeholder {
+.placeholder-roboto-italic :-moz-placeholder {
   /* Firefox 18- */
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
 }
-.placeholder-lora-italic ::-moz-placeholder {
+.placeholder-roboto-italic ::-moz-placeholder {
   /* Firefox 19+ */
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
 }
-.placeholder-lora-italic :-ms-input-placeholder {
-  font-family: 'Lora', serif;
+.placeholder-roboto-italic :-ms-input-placeholder {
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
 }
-.placeholder-lato-bold ::-webkit-input-placeholder {
-  font-family: 'Lato', sans-serif;
+.placeholder-roboto-bold ::-webkit-input-placeholder {
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   color: #514b49;
 }
-.placeholder-lato-bold :-moz-placeholder {
+.placeholder-roboto-bold :-moz-placeholder {
   /* Firefox 18- */
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   color: #514b49;
 }
-.placeholder-lato-bold ::-moz-placeholder {
+.placeholder-roboto-bold ::-moz-placeholder {
   /* Firefox 19+ */
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   color: #514b49;
 }
-.placeholder-lato-bold :-ms-input-placeholder {
-  font-family: 'Lato', sans-serif;
+.placeholder-roboto-bold :-ms-input-placeholder {
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   color: #514b49;
 }
@@ -125,41 +125,41 @@
   width: 50px;
 }
 /*--------------------*/
-/* font lora
+/* font roboto
 /*--------------------*/
-.font-lora {
-  font-family: 'Lora', serif;
+.font-roboto {
+  font-family: 'Roboto Condensed', sans-serif;
 }
-.font-lora-italic {
-  font-family: 'Lora', serif;
+.font-roboto-italic {
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
 }
-.lora-bold-italic {
-  font-family: 'Lora', serif;
+.roboto-bold-italic {
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 700;
 }
-.lora-normal-italic {
-  font-family: 'Lora', serif;
+.roboto-normal-italic {
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
 }
 /*--------------------*/
-/* font lato
+/* font roboto
 /*--------------------*/
-.font-lato {
-  font-family: 'Lato', sans-serif;
+.font-roboto {
+  font-family: 'Roboto Condensed', sans-serif;
 }
-.lato-bold {
-  font-family: 'Lato', sans-serif;
+.roboto-bold {
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
 }
-.lato-regular {
-  font-family: 'Lato', sans-serif;
+.roboto-regular {
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
 }
-.lato-black {
-  font-family: 'Lato', sans-serif;
+.roboto-black {
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 900;
 }
 /*--------------------*/
@@ -179,7 +179,7 @@
 /* font karla
 /*--------------------*/
 .font-karla {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 /*--------------------*/
 /* font montserrat
@@ -225,7 +225,7 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 700;
   color: #000000;
@@ -263,7 +263,7 @@ button {
   outline: none;
 }
 p {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 24px;
@@ -458,7 +458,7 @@ ul {
   padding-right: 18px;
   background: #6ebe3b;
   color: #ffffff;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-size: 16px;
 }
@@ -467,7 +467,7 @@ ul {
   line-height: 40px;
   text-align: center;
   display: inline-block;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-size: 16px;
   min-width: 193px;
@@ -500,7 +500,7 @@ ul {
   display: inline-block;
   height: 30px;
   line-height: 28px;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 700;
   padding: 0 15px;
@@ -513,7 +513,7 @@ ul {
 }
 .button-dark {
   background: #000000;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 700;
   font-size: 16px;
@@ -528,7 +528,7 @@ ul {
   color: #ffffff;
 }
 .read-more-angle {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 15px;
@@ -573,6 +573,7 @@ ul {
 }
 .wrapper-links {
   margin-bottom: 30px;
+  height: 40px;
 }
 .header-social-icons {
   display: inline-block;
@@ -589,23 +590,36 @@ ul {
 .header-social-icons li a:hover {
   color: #6ebe3b;
 }
+
+div.wrapper-greeting {
+	align-items: baseline;
+	display: inline-flex;
+	margin: 0 -5px;
+	transform: translate(-5px);
+}
+
+p.greeting {
+	display: inline-block;
+	margin: 0 10px;
+}
+
 span.sign-in-buttons {
-  border: 1px solid #000000;
-  display: inline-table;
+	border: 0.5px solid #000000;
+	display: inline-flex;
 }
 span.sign-in-buttons a {
-  padding: 6px 12px;
+	border: 0.5px solid #000000;
+	text-align: center;
   color: #28211f;
-  font-family: 'Lora', serif;
-  display: table-cell;
+  display: block;
+  font-family: 'Roboto Condensed', sans-serif;
+  padding: 6px 12px;
 }
 span.sign-in-buttons a:hover {
   background: #000000;
   color: #ffffff;
 }
-span.sign-in-buttons .login {
-  border-right: 1px solid #000000;
-}
+
 .nav-collapse > ul {
   margin-bottom: 0;
 }
@@ -614,7 +628,7 @@ span.sign-in-buttons .login {
   padding-top: 20px;
 }
 .nav-collapse ul {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 16px;
@@ -695,7 +709,7 @@ span.sign-in-buttons .login {
   color: #ffffff;
 }
 .submit-recipe {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
   color: #ffffff;
@@ -764,7 +778,7 @@ a.mean-expand {
 }
 .header-var1 .right-nav .submit-recipe {
   color: #000000;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 700;
   background: transparent !important;
@@ -783,7 +797,7 @@ a.mean-expand {
 /* header variation two
 /*--------------------*/
 .header-main .nav-collapse ul .submit-recipe {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   color: #ffffff;
   background: #6ebe3b;
@@ -811,7 +825,7 @@ a.mean-expand {
   box-shadow: 0 0 10px -2px #000000;
 }
 .submit-recipe-filled {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
   color: #ffffff !important;
@@ -828,7 +842,7 @@ a.mean-expand {
   background: #000000;
 }
 .submit-recipe-lined {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 700;
   color: #000000 !important;
@@ -853,7 +867,7 @@ a.mean-expand {
 }
 .wrapper-logo-banner .welcome-line p {
   margin-top: 5px;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-size: 16px;
   color: #000000;
@@ -886,7 +900,7 @@ a.mean-expand {
   display: inline-block;
   line-height: 66px;
   vertical-align: middle;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-size: 16px;
 }
@@ -973,6 +987,7 @@ a.mean-expand {
 /*-----------------------------------------------------------------------------------*/
 .slick-slider {
   margin-bottom: 0;
+  height: 100%;
 }
 .custom-margin {
   margin-bottom: 0;
@@ -987,24 +1002,28 @@ a.mean-expand {
 }
 .slider-left img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .custom-arrows {
-  display: table;
+  display: flex;
   position: absolute;
   top: 50%;
   margin-top: -32px;
   left: -39px;
 }
-.custom-arrows span {
-  display: table-cell;
+.left-arrow.slick-arrow, .right-arrow.slick-arrow {
+  align-items: center;
+  background: #3d3432;
+  cursor: pointer;
+  display: flex;
   height: 65px;
-  width: 39px;
+  justify-content: center;
   line-height: 65px;
   text-align: center;
-  cursor: pointer;
-  user-select: none;
   transition: 0.2s all ease-in-out;
-  background: #3d3432;
+  user-select: none;
+  width: 39px;
 }
 .custom-arrows span:hover {
   background: #28211f;
@@ -1027,7 +1046,7 @@ a.mean-expand {
 }
 .wrapper-home-slider h2 {
   margin-top: 0;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 30px;
@@ -1062,7 +1081,7 @@ a.mean-expand {
   background: #b6754b;
   color: #ffffff;
   text-transform: uppercase;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   font-size: 14px;
   display: inline-block;
@@ -1080,7 +1099,7 @@ a.mean-expand {
   margin-right: 10px;
   position: relative;
   display: inline-block;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   color: #5e676b;
   line-height: 24px;
@@ -1151,7 +1170,7 @@ a.mean-expand {
   height: 38px;
   line-height: 38px;
   text-transform: uppercase;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   color: #ffffff;
   display: inline-block;
@@ -1197,7 +1216,7 @@ a.mean-expand {
   text-transform: uppercase;
   background: #ffffff;
   display: inline-block;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   font-size: 14px;
   padding: 6px 13px;
@@ -1259,14 +1278,14 @@ a.mean-expand {
 }
 .wrapper-home-slider.variation-two .slide-detail-inner h2 {
   font-size: 30px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 900;
   font-style: normal;
   text-transform: uppercase;
   margin-bottom: 20px;
 }
 .wrapper-home-slider.variation-two .slide-detail-inner p {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   margin-bottom: 20px;
 }
 .wrapper-home-slider.variation-two .slide-detail-inner .read-more-bordered {
@@ -1327,7 +1346,7 @@ a.mean-expand {
   padding-bottom: 20px;
   padding-left: 25px;
   padding-right: 25px;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
   color: #000000;
@@ -1363,31 +1382,31 @@ a.mean-expand {
   margin: 0 0 0 0;
 }
 .search-bar .search-box-home ::-webkit-input-placeholder {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
 }
 .search-bar .search-box-home :-moz-placeholder {
   /* Firefox 18- */
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
 }
 .search-bar .search-box-home ::-moz-placeholder {
   /* Firefox 19+ */
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
 }
 .search-bar .search-box-home :-ms-input-placeholder {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
 }
 .search-bar .search-box-home .slider-search-left {
   color: #ffffff;
   font-size: 16px;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
   position: relative;
@@ -1434,7 +1453,7 @@ a.mean-expand {
   height: 66px;
   line-height: 66px;
   vertical-align: middle;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 16px;
@@ -1484,7 +1503,7 @@ a.mean-expand {
 }
 .search-option span {
   display: inline-block;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-size: 16px;
   color: #ffffff;
@@ -1556,7 +1575,7 @@ a.mean-expand {
   padding: 0 19px;
   background-color: #c1452b;
   color: #ffffff;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 700;
   font-size: 18px;
@@ -1583,7 +1602,7 @@ a.mean-expand {
   margin-left: 30px;
 }
 .container-tags ul li a {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
   color: #000000;
@@ -1626,7 +1645,7 @@ a.mean-expand {
 .full-image figure figcaption {
   position: absolute;
   bottom: 0;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
   width: 100%;
@@ -1644,6 +1663,7 @@ a.mean-expand {
 .recipe-box {
   display: flex;
   width: 100%;
+	height: fit-content;
 }
 .recipe-box:hover .image img {
   transform: scale(1.05);
@@ -1656,8 +1676,10 @@ a.mean-expand {
   overflow: hidden;
 }
 .recipe-box .image img {
-  width: 100%;
-  transition: 0.2s all ease-in-out;
+	object-fit: cover;
+	transition: 0.2s all ease-in-out;
+	width: 100%;
+	height: 184px;
 }
 .recipe-box p {
   margin-bottom: 0;
@@ -1675,7 +1697,7 @@ a.mean-expand {
 .intro h3 {
   margin-top: 30px;
   line-height: 30px;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 21px;
@@ -1782,7 +1804,7 @@ a.mean-expand {
 }
 .heading-var1 h2 {
   margin-top: 40px;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 700;
   font-size: 30px;
@@ -1840,7 +1862,7 @@ a.mean-expand {
 }
 .single-recipe .recipe-detail h3 {
   margin-top: 0;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 700;
   font-size: 21px;
@@ -1850,7 +1872,7 @@ a.mean-expand {
   color: #c1452b;
 }
 .single-recipe .recipe-detail p {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   color: #000000;
 }
 .single-recipe .read-more-bordered {
@@ -1867,7 +1889,7 @@ a.mean-expand {
 .hot-recipes-var2 h1,
 .hot-recipes-var2 h2,
 .hot-recipes-var2 h3 {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 900;
   font-style: normal;
   text-transform: uppercase;
@@ -1933,14 +1955,14 @@ a.mean-expand {
   display: none;
 }
 .hot-recipes-var2 .intro p {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 .hot-recipes-var2 .intro .short-separator {
   margin-bottom: 10px;
 }
 .hot-recipes-var2 .intro .read-more {
   display: inline-block;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 700;
   text-transform: capitalize;
@@ -2014,7 +2036,7 @@ a.mean-expand {
 }
 .good-food-intro .heading-small,
 .good-food-intro h2 {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 700;
   color: #000000;
@@ -2038,7 +2060,7 @@ a.mean-expand {
   bottom: -15px;
 }
 .good-food-intro .emphasis {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 21px;
@@ -2055,7 +2077,7 @@ a.mean-expand {
 }
 .good-food-list li {
   color: #68645d;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-size: 15px;
   display: block;
@@ -2109,7 +2131,7 @@ a.mean-expand {
 }
 .good-food-var1 .heading-small {
   font-size: 24px;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 700;
   color: #000000;
@@ -2122,7 +2144,7 @@ a.mean-expand {
   color: #5eaa2e;
 }
 .good-food-var1 p {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 /*-----------------------------------------------------------------------------------*/
 /* good food ends
@@ -2150,7 +2172,7 @@ a.mean-expand {
 .our-chefs .chef-single .chef-intro h4 {
   font-size: 21px;
   color: #ffffff;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
 }
@@ -2162,7 +2184,7 @@ a.mean-expand {
   opacity: 0.7;
 }
 .our-chefs .chef-single .chef-intro span {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   font-size: 13px;
   line-height: 30px;
@@ -2221,13 +2243,13 @@ a.mean-expand {
   width: 100%;
 }
 .homo-4-col p {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   margin-bottom: 15px;
 }
 .homo-4-col .chef-designation {
   display: inline-block;
   text-transform: uppercase;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   font-size: 13px;
 }
@@ -2312,7 +2334,7 @@ a.mean-expand {
 }
 .all-chefs .head-chef .right-side .type {
   text-transform: uppercase;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   font-size: 13px;
   color: #9d9a95;
@@ -2321,7 +2343,7 @@ a.mean-expand {
 }
 .all-chefs .head-chef .right-side .expertise {
   display: inline-block;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -2555,7 +2577,7 @@ a.mean-expand {
   color: #000000;
 }
 .chefs-card h2 {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 900;
   text-transform: uppercase;
   font-style: normal;
@@ -2573,7 +2595,7 @@ a.mean-expand {
   margin-bottom: 25px;
 }
 .chefs-card-inner p {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   margin-bottom: 25px;
 }
 .chefs-card-inner .read-more-bordered {
@@ -2614,7 +2636,7 @@ a.mean-expand {
 }
 .news-single .news-detail h4 {
   margin-top: 4px;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-size: 18px;
   line-height: 24px;
@@ -2642,7 +2664,7 @@ a.mean-expand {
 }
 .news-single .news-detail .more {
   text-transform: uppercase;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   font-size: 13px;
   color: #4b4841;
@@ -2714,11 +2736,11 @@ a.mean-expand {
   font-style: normal;
 }
 .homo-4-col.news-variation2 h2 {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 900;
 }
 .homo-4-col.news-variation2 h3 {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 30px;
@@ -2756,7 +2778,7 @@ a.mean-expand {
   bottom: 0;
 }
 .recipe-banner .banner-text h2 {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 700;
   font-size: 24px;
@@ -2838,7 +2860,7 @@ a.mean-expand {
   padding-bottom: 30px;
 }
 .widget-footer h2 {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-size: 21px;
   color: #ffffff;
@@ -2872,7 +2894,7 @@ a.mean-expand {
   padding-left: 15px;
   padding-right: 40px;
   font-size: 16px;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
   color: #cccccc;
@@ -2938,7 +2960,7 @@ a.mean-expand {
   opacity: 1;
   font-size: 14px;
   color: #999999;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   margin-bottom: 0;
 }
@@ -2995,7 +3017,7 @@ a.mean-expand {
   margin-bottom: 36px;
 }
 .banner h1 {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 900;
   font-size: 24px;
   font-style: normal;
@@ -3006,7 +3028,7 @@ a.mean-expand {
 }
 .banner .container-tags .tag-inner {
   background: #000000;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 16px;
@@ -3039,6 +3061,8 @@ a.mean-expand {
 }
 .post-single .post-visuals img {
   width: 100%;
+  height: 60vh;
+  object-fit: cover;
 }
 .post-single .post-visuals a:hover {
   opacity: 0.8;
@@ -3056,7 +3080,7 @@ a.mean-expand {
   font-style: normal;
   text-transform: uppercase;
   margin-bottom: 25px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
 }
 .post-single h2 a,
@@ -3074,7 +3098,7 @@ a.mean-expand {
   color: #c1452b;
 }
 .post-single h2 {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 900;
   font-size: 21px;
   margin-top: 12px;
@@ -3107,12 +3131,12 @@ a.mean-expand {
   color: #000000;
 }
 .post-single p {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   color: #3a3a3a;
   margin-bottom: 30px;
 }
 .post-single blockquote {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   line-height: 24px;
   font-size: 16px;
@@ -3129,7 +3153,7 @@ a.mean-expand {
   display: inline-block;
 }
 .post-single .post-tags li a {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 .post-single .post-tags li a:hover {
   color: #c1452b;
@@ -3143,7 +3167,7 @@ a.mean-expand {
 .post-single .prev-next-links {
   margin-bottom: 40px;
   text-transform: uppercase;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   color: #000000;
 }
@@ -3164,7 +3188,7 @@ a.mean-expand {
 }
 .post-single .read-more-arrow {
   text-transform: uppercase;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   color: #000000;
   margin: 28px 0 20px;
@@ -3180,7 +3204,7 @@ a.mean-expand {
   width: 100%;
 }
 .post-single.post-quotes p {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   line-height: 30px;
   font-size: 18px;
@@ -3196,7 +3220,7 @@ a.mean-expand {
 .post-single.post-quotes .quote-writer {
   display: inline-block;
   text-transform: uppercase;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   margin-top: 15px;
   margin-bottom: 34px;
@@ -3217,6 +3241,7 @@ a.mean-expand {
 }
 .wrapper-post-slider {
   position: relative;
+  height: fit-content;
 }
 .wrapper-post-slider:hover .arrow-nav {
   opacity: 1;
@@ -3224,7 +3249,9 @@ a.mean-expand {
 .wrapper-post-slider .arrow-nav {
   opacity: 0;
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   width: 29px;
   height: 37px;
   line-height: 37px;
@@ -3252,14 +3279,16 @@ a.mean-expand {
   margin-right: 10px;
 }
 .page-nav li a {
-  display: inline-block;
-  width: 38px;
-  height: 38px;
-  line-height: 36px;
-  border: 1px solid #e4d9d1;
+  align-items: center;
   background: #ffffff;
-  font-family: 'Lora', serif;
+  border: 1px solid #e4d9d1;
+  display: inline-flex;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 600;
+  height: 38px;
+  justify-content: center;
+  line-height: 36px;
+  width: 38px;
 }
 .page-nav li a:hover {
   background: transparent;
@@ -3322,7 +3351,7 @@ a.mean-expand {
 }
 .post-author .detail h5 {
   margin-top: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 900;
   font-size: 16px;
   margin-bottom: 15px;
@@ -3365,7 +3394,7 @@ a.mean-expand {
 .comments-list li .detail .comment-date {
   margin-bottom: 15px;
   display: inline-block;
-  font-family: 'Karla', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   color: #000000;
 }
 .comments-list li .detail .comment-date i {
@@ -3380,7 +3409,7 @@ a.mean-expand {
 .comment-reply {
   text-transform: uppercase;
   color: #000000;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
 }
 .comment-reply:hover {
@@ -3395,7 +3424,7 @@ a.mean-expand {
   float: left;
   line-height: 42px;
   text-transform: uppercase;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   color: #000000;
 }
@@ -3404,7 +3433,7 @@ a.mean-expand {
   background: #6ebe3b;
   color: #ffffff;
   border: none;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 700;
   font-size: 16px;
@@ -3463,7 +3492,7 @@ a.mean-expand {
   margin-bottom: 45px;
 }
 .side-bar .widget h2 {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 700;
   font-size: 18px;
@@ -3488,18 +3517,18 @@ a.mean-expand {
   position: relative;
 }
 .side-bar .search-bar-widget .search-field ::-webkit-input-placeholder {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 .side-bar .search-bar-widget .search-field :-moz-placeholder {
   /* Firefox 18- */
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 .side-bar .search-bar-widget .search-field ::-moz-placeholder {
   /* Firefox 19+ */
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 .side-bar .search-bar-widget .search-field :-ms-input-placeholder {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 .side-bar .search-bar-widget .search-field input {
   width: 100%;
@@ -3536,7 +3565,7 @@ a.mean-expand {
   display: inline-block;
   text-transform: uppercase;
   color: #000000;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 .side-bar .widget li a:hover {
   color: #c1452b;
@@ -3563,7 +3592,7 @@ a.mean-expand {
   border: 1px solid #e7e3e1;
   padding: 4px 17px;
   text-transform: capitalize;
-  font-family: 'Karla', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 .side-bar .tags-widget li a:hover {
   background: #6ebe3b;
@@ -3597,7 +3626,7 @@ a.mean-expand {
 }
 .latest-news-widget .post-date {
   display: block;
-  font-family: 'Karla', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   color: #514b49;
 }
 .recipe-search .search-bar-widget {
@@ -3618,28 +3647,28 @@ a.mean-expand {
   color: #ffffff;
 }
 .recipe-search .search-bar-widget ::-webkit-input-placeholder {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
 }
 .recipe-search .search-bar-widget :-moz-placeholder {
   /* Firefox 18- */
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
 }
 .recipe-search .search-bar-widget ::-moz-placeholder {
   /* Firefox 19+ */
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
 }
 .recipe-search .search-bar-widget :-ms-input-placeholder {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
 }
 .recipe-search .search-bar-widget input[type='search'] {
   background-color: #000000;
   color: #ffffff;
   border-color: #000000;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
 }
 .recipe-search .search-bar-widget button {
@@ -3664,7 +3693,7 @@ a.mean-expand {
   align-items: center;
 }
 .recipe-search .category-list ul li a {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-size: 16px;
   text-transform: capitalize;
@@ -3716,12 +3745,12 @@ a.mean-expand {
   color: #ffffff;
 }
 .widget-get-social ul li .count {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
 }
 .widget-get-social ul li .count-type {
   opacity: 0.7;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
 }
 .widget-get-social ul li:last-child {
@@ -3737,7 +3766,7 @@ a.mean-expand {
   background: #dd4b39;
 }
 div.widget-measurements {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-size: 15px;
   color: #000000;
@@ -3781,7 +3810,7 @@ div.widget-measurements .default-btn {
   transition: 0.2s all ease-in-out;
   background: rgba(0, 0, 0, 0.8);
   color: #ffffff;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
@@ -3852,7 +3881,7 @@ div.widget-measurements .default-btn {
   margin-right: 8%;
 }
 .recipe-of-day .recipe-contents .tag {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 700;
   color: #ffffff;
@@ -3861,7 +3890,7 @@ div.widget-measurements .default-btn {
   padding: 6px 13px;
 }
 .recipe-of-day .recipe-contents h2 {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 900;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -3877,7 +3906,7 @@ div.widget-measurements .default-btn {
   margin-bottom: 20px;
 }
 .recipe-of-day .recipe-contents p {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 .recipe-of-day .recipe-content-inner {
   padding: 25px 20px;
@@ -3891,7 +3920,7 @@ div.widget-measurements .default-btn {
   color: #c1452b;
 }
 .read-more {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 700;
   text-transform: capitalize;
@@ -3944,7 +3973,7 @@ div.widget-measurements .default-btn {
 .tab-container ul li a {
   display: inline-block;
   text-transform: uppercase;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   color: #736a65;
   border-bottom: 3px solid transparent;
@@ -3960,7 +3989,7 @@ div.widget-measurements .default-btn {
 }
 .tab-container ul li.active a,
 .tab-container ul li:hover a {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 900;
   color: #000000;
   border-color: #6ebe3b;
@@ -4005,7 +4034,7 @@ div.widget-measurements .default-btn {
   line-height: 21px;
   margin-top: 0;
   font-size: 14px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   font-style: normal;
@@ -4102,7 +4131,7 @@ div.widget-measurements .default-btn {
   padding: 10px 0;
 }
 .boxed-recipes .outer-detail .post-meta li {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   font-size: 13px;
   color: #000000;
@@ -4118,7 +4147,7 @@ div.widget-measurements .default-btn {
 }
 .boxed-recipes .detail h3 {
   margin-top: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 900;
   font-size: 16px;
   text-transform: uppercase;
@@ -4169,7 +4198,7 @@ div.widget-measurements .default-btn {
   background-color: #000000;
 }
 .advance-search label {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   color: #000000;
   text-transform: capitalize;
@@ -4181,7 +4210,7 @@ div.widget-measurements .default-btn {
   border-color: #e4d9d1;
 }
 .advance-search .selectric p {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
   color: #000000;
@@ -4199,7 +4228,7 @@ div.widget-measurements .default-btn {
   font-family: FontAwesome;
 }
 .advance-search .selectric-items .selectric-scroll {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
 }
@@ -4267,7 +4296,7 @@ div.widget-measurements .default-btn {
   padding: 30px;
 }
 .contact-container h3 {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 16px;
@@ -4287,7 +4316,7 @@ div.widget-measurements .default-btn {
 }
 .contact-container p,
 .contact-container .contact-options {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-size: 15px;
   color: #514b49;
@@ -4328,24 +4357,24 @@ div.widget-measurements .default-btn {
   padding-right: 35px;
 }
 #contact-form ::-webkit-input-placeholder {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   color: #514b49;
 }
 #contact-form :-moz-placeholder {
   /* Firefox 18- */
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   color: #514b49;
 }
 #contact-form ::-moz-placeholder {
   /* Firefox 19+ */
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   color: #514b49;
 }
 #contact-form :-ms-input-placeholder {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   color: #514b49;
 }
@@ -4391,7 +4420,7 @@ div.widget-measurements .default-btn {
 #contact-form button {
   background: #6ebe3b;
   color: #ffffff;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 16px;
@@ -4416,7 +4445,7 @@ div.widget-measurements .default-btn {
 .error-container .error {
   display: block;
   color: #c1452b;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-size: 14px;
   text-transform: capitalize;
 }
@@ -4429,7 +4458,7 @@ div.widget-measurements .default-btn {
   margin-top: 20px;
   display: block;
   color: #6ebe3b;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-size: 14px;
   text-transform: capitalize;
 }
@@ -4459,7 +4488,7 @@ div.widget-measurements .default-btn {
 }
 .recipe-set .single-recipe-detail .custom-arrows.wider span {
   position: absolute;
-  display: block !important;
+  display: flex !important;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -4624,7 +4653,7 @@ div.widget-measurements .default-btn {
   display: inline-block;
 }
 .slider-recipe-detail .recipe-specs li .count {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   font-size: 24px;
 }
@@ -4633,7 +4662,7 @@ div.widget-measurements .default-btn {
   font-size: 21px;
 }
 .slider-recipe-detail .recipe-specs li .text {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 .wrapper-slider-nav {
   position: relative;
@@ -4660,7 +4689,7 @@ div.widget-measurements .default-btn {
   margin-bottom: 10px;
 }
 .recipe-detail-body p {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-size: 15px;
   line-height: 26px;
 }
@@ -4684,7 +4713,7 @@ div.widget-measurements .default-btn {
 }
 .pre-tags li {
   display: inline-block;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   font-size: 16px;
   margin-right: 30px;
@@ -4694,7 +4723,7 @@ div.widget-measurements .default-btn {
 }
 .print-button {
   display: inline-block;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-size: 16px;
 }
@@ -4722,7 +4751,7 @@ div.widget-measurements .default-btn {
   padding-left: 24px;
 }
 .ingredients-checkbox .ingredients label {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-size: 15px;
   vertical-align: middle;
@@ -4763,7 +4792,7 @@ div.widget-measurements .default-btn {
 }
 .nutrition-detail {
   display: flex;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
 }
 .nutrition-detail span {
@@ -4820,7 +4849,7 @@ div.widget-measurements .default-btn {
 }
 .tags-icons span {
   font-size: 16px;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
 }
@@ -4837,7 +4866,7 @@ div.widget-measurements .default-btn {
 .tags-icons .details-tags ul:before {
   content: 'Tags : ';
   font-size: 16px;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
 }
@@ -4847,7 +4876,7 @@ div.widget-measurements .default-btn {
 .tags-icons .details-tags a {
   padding: 7px 9px;
   border: 1px solid #e4d9d1;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
 }
 .tags-icons .details-tags a:hover {
@@ -4862,7 +4891,7 @@ div.widget-measurements .default-btn {
 .tags-icons .details-social-icons ul:before {
   content: 'Share : ';
   font-size: 16px;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
 }
@@ -4891,7 +4920,7 @@ div.widget-measurements .default-btn {
   margin-left: 107px;
 }
 .recipe-comments h5 {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 18px;
@@ -4903,7 +4932,7 @@ div.widget-measurements .default-btn {
   color: #c1452b;
 }
 .recipe-comments .time {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-size: 12px;
   color: #aaa6a5;
@@ -4926,7 +4955,7 @@ div.widget-measurements .default-btn {
 }
 .recipe-comments .comment .reply-button {
   float: right;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
 }
 .recipe-comments .comment .reply-button:before {
@@ -4943,28 +4972,34 @@ div.widget-measurements .default-btn {
   padding: 25px;
   color: #000000;
 }
+.comment-form form ::placeholder, .comment-form form input[value] {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-style: italic;
+  color: #000000;
+  font-size: 16px;
+}
 .comment-form form ::-webkit-input-placeholder {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   color: #000000;
   font-size: 16px;
 }
 .comment-form form :-moz-placeholder {
   /* Firefox 18- */
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   color: #000000;
   font-size: 16px;
 }
 .comment-form form ::-moz-placeholder {
   /* Firefox 19+ */
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   color: #000000;
   font-size: 16px;
 }
 .comment-form form :-ms-input-placeholder {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   color: #000000;
   font-size: 16px;
@@ -4996,7 +5031,7 @@ div.widget-measurements .default-btn {
 .comment-form button {
   height: 42px;
   background: #6ebe3b;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-size: 16px;
   color: #ffffff;
   padding: 0 35px;
@@ -5019,6 +5054,8 @@ div.widget-measurements .default-btn {
 }
 .slider-detail2 img {
   width: 100%;
+  height: 60vh;
+  object-fit: cover;
 }
 .recipe-set .slider-recipe-detail2 {
   position: relative;
@@ -5028,7 +5065,7 @@ div.widget-measurements .default-btn {
   right: 35px;
   top: 35px;
   display: inline-block;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 700;
   font-size: 16px;
@@ -5055,7 +5092,7 @@ div.widget-measurements .default-btn {
 }
 .recipe-specs-2 li {
   min-width: 144px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   flex: 1;
   text-align: center;
@@ -5082,7 +5119,7 @@ div.widget-measurements .default-btn {
   border-right: 1px solid #e4d9d1;
   padding-top: 3px;
   padding-bottom: 10px;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 16px;
@@ -5119,7 +5156,7 @@ div.widget-measurements .default-btn {
   padding-bottom: 50px;
 }
 .steps-detail .single-detail p {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 26px;
@@ -5135,13 +5172,17 @@ div.widget-measurements .default-btn {
 }
 .recipe-steps .accordion dt .arrow {
   position: absolute;
-  top: 13px;
-  left: 22px;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .recipe-steps .accordion dt .arrow i {
   position: absolute;
-  top: 6px;
-  left: 0;
+  width: 1px;
+  height: 1px;
+  display: block;
 }
 .recipe-steps .accordion dt .arrow i.stand {
   -webkit-transition: transform 300ms ease-in-out;
@@ -5153,8 +5194,8 @@ div.widget-measurements .default-btn {
   -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   -o-transform: rotate(90deg);
-  transform: rotate(90deg);
-  left: -1px;
+  transform: rotate(90deg) translateX(100%);
+  left: 10px;
 }
 .recipe-steps .accordion dt.current {
   background: none;
@@ -5166,6 +5207,7 @@ div.widget-measurements .default-btn {
   -ms-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   transform: rotate(0deg);
+  left: 0px;
 }
 .boxed-recipes .icon-svg {
   fill: #6ebe3b;
@@ -5210,7 +5252,7 @@ div.widget-measurements .default-btn {
 .listing .detail h4 {
   line-height: 30px;
   margin-top: 0;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 900;
   font-size: 16px;
   text-transform: uppercase;
@@ -5365,14 +5407,14 @@ div.widget-measurements .default-btn {
 /* shortcodes
 /*-----------------------------------------------------------------------------------*/
 .shortcodes-wrapper h2 {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 900;
   font-size: 24px;
   text-transform: uppercase;
   font-style: normal;
 }
 .shortcodes-wrapper h3 {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   font-size: 18px;
   font-style: normal;
@@ -5393,7 +5435,7 @@ div.widget-measurements .default-btn {
 }
 .wrapper-columns {
   margin-bottom: 40px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 26px;
@@ -5407,7 +5449,7 @@ div.widget-measurements .default-btn {
 .typography h4,
 .typography h5,
 .typography h6 {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   text-transform: none;
   font-style: normal;
@@ -5450,14 +5492,14 @@ div.widget-measurements .default-btn {
   padding: 25px;
 }
 .tab-container.tab-shortcode .tab-content p {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 26px;
 }
 .accordion dt {
   background: #dddddd;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   line-height: 26px;
@@ -5472,7 +5514,7 @@ div.widget-measurements .default-btn {
   margin-bottom: 0;
 }
 .accordion dd {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-size: 16px;
   background: #ffffff;
@@ -5484,7 +5526,7 @@ div.widget-measurements .default-btn {
   display: block;
 }
 .alert {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   padding: 18px 20px;
   margin-bottom: 24px;
@@ -5515,7 +5557,7 @@ div.widget-measurements .default-btn {
 }
 .default-btn {
   display: inline-block;
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 16px;
@@ -5604,6 +5646,7 @@ div.widget-measurements .default-btn {
 }
 .wrapper-slider-detail {
   position: relative;
+  height: fit-content;
 }
 .wrapper-slider-detail .top-slider .shortcode-arrows.wider {
   position: absolute;
@@ -5730,7 +5773,7 @@ div.widget-measurements .default-btn {
   padding: 10px;
 }
 .submit-recipe-form label {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
   font-size: 16px;
   color: #514b49;
@@ -5755,14 +5798,14 @@ div.widget-measurements .default-btn {
   vertical-align: middle;
   text-transform: capitalize;
   margin-right: 20px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-weight: 700;
 }
 .submit-recipe-form .selectric-wrapper {
   margin-bottom: 20px;
 }
 .submit-recipe-form .recipe-submit-btn {
-  font-family: 'Lora', serif;
+  font-family: 'Roboto Condensed', sans-serif;
   font-style: italic;
   font-weight: 400;
   font-size: 16px;

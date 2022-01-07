@@ -5,7 +5,7 @@
         <meta http-equiv='X-UA-Compatible' content='IE=edge' />
         <meta name='viewport' content='width=device-width,initial-scale=1' />
 
-        <title>Food &amp; Health</title>
+        <title>Regs-cipe Cookbook</title>
         <!--google fonts-->
         <link
             href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic'
@@ -27,6 +27,9 @@
             rel='stylesheet'
             type='text/css'
         />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
         <!--jquery ui stylesheet-->
         <link rel='stylesheet' href='/css/jquery-ui.css' />
 
@@ -62,7 +65,7 @@
                         <div class='col-lg-2'>
                             <div class='logo-wrapper'>
                                 <a href='/'><img
-                                        src='images/logo.png'
+                                        src='/images/logo.png'
                                         alt='logo'
                                     /></a>
                             </div>
@@ -76,15 +79,12 @@
                                     <li><a href='#'><i class='fa fa-google-plus'></i></a></li>
                                 </ul> }}
                                     {{#if user}}
-                                        <div>Hi,
-                                            {{user.username}}&ensp;<span
-                                                class='sign-in-buttons'
-                                            >
-                                                <a
-                                                    class='login'
-                                                    href='/logout'
-                                                >Logout</a>
-                                            </span></div>
+                                        <div class='wrapper-greeting'>
+											<p class='greeting'>Hi, {{user.username}}</p>
+											<span class='sign-in-buttons'>
+                                                <a class='logout' href='/logout'>Logout</a>
+                                            </span>
+										</div>
                                     {{else}}
                                         <span class='sign-in-buttons'>
                                             <a
@@ -157,16 +157,13 @@
                 <div class='footer-inner'>
                     <div class='text-center'>
                         <a class='logo-footer wow animated zoomIn' href='/'><img
-                                src='images/logo2.png'
+                                src='/images/logo.png'
                                 alt='Logo'
                             /></a>
                         <p class='wow animated flipInX'>
-                            Lorem ipsum dolor sit amet, consetetur sadipscing
-                            elitr, sed diam nonumy eirmod tempor invidunt ut
-                            labore et dolore
+                            With the main objective is user experiences, Regs-cipe Cookbook always tries to give the best recipes to users
                             <br />
-                            magna aliquyam erat, with an extra ordinary design
-                            and quality development features in low
+                            and maintain a secure and friendly community for sharing cooking tips.
                         </p>
 
                     </div>
@@ -180,10 +177,7 @@
                                     >
                                         <h2>Newsletter Signup</h2>
 
-                                        <form
-                                            class='subs-form'
-                                            action='#'
-                                            method='post'
+                                        <form class="subs-form"
                                         >
                                             <div class='email-field'>
                                                 <input
@@ -245,12 +239,12 @@
                         </div>
                     </div>
                     <div class='footer-copyright text-center'>
-                        <p>&copy; Copyright 2015 All Rights Reserved by
-                            <a href='#'>Majestic Themes</a>
+                        <p>&copy; Copyright 2021. All Rights Reserved by
+                            <a href='#'>501st Legions</a>
                         </p>
                     </div>
                     <div class='corner-image wow animated fadeInRight'>
-                        <img src='images/footer-corner-image.jpg' alt='image' />
+                        <img src='/images/footer-corner-image.jpg' alt='image' />
                     </div>
                 </div>
             </div>

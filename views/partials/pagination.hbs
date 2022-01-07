@@ -1,0 +1,20 @@
+{{!-- FIXME: Improve the algorithm :))) --}}
+<ul class='page-nav'>
+{{!-- Compare: pageTurn >= 1 --}}
+{{#gte_b this op1=this.pageTurn op2=1}}
+	<li><a href='{{this.url}}{{mulAmount this.limitPage this.pageTurn}}'><i class='fa fa-arrow-left'></i></a></li>
+{{/gte_b}}
+{{!-- Loop: i < limitPage, i = 0, 1,... --}}
+{{#loop_b this iter=this.limitPage}}
+	{{!-- Because we have page index of 0, so we have to index + 1 --}}
+	{{!-- Compare: (limitPage * pageTurn) + (index + 1) <= numPages --}}
+	{{#lte_b this op1=(incAmount (mulAmount this.limitPage this.pageTurn) (incAmount this.index 1)) op2=this.numPages}}
+	{{!-- Compare: curPage == (limitPage * pageTurn) + (index + 1) --}}
+	<li {{{eq this.curPage (incAmount (mulAmount this.limitPage this.pageTurn) (incAmount this.index 1)) 'class="current"' ''}}}><a href='{{this.url}}{{incAmount (mulAmount this.limitPage this.pageTurn) (incAmount this.index 1)}}'>{{incAmount (mulAmount this.limitPage this.pageTurn) (incAmount this.index 1)}}</a></li>
+	{{/lte_b}}
+{{/loop_b}}
+{{!-- Compare: (limitPage * (pageTurn + 1)) + 1 <= numPages --}}
+{{#lte_b this op1=(incAmount (mulAmount this.limitPage (incAmount this.pageTurn 1)) 1) op2=this.numPages}}
+	<li><a href='{{this.url}}{{incAmount (mulAmount this.limitPage (incAmount this.pageTurn 1)) 1}}'><i class='fa fa-arrow-right'></i></a></li>
+{{/lte_b}}
+</ul>

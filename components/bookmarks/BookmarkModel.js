@@ -1,3 +1,5 @@
+'use strict';
+
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const BookmarkSchema = new Schema({
@@ -9,4 +11,4 @@ const BookmarkSchema = new Schema({
   ],
 });
 
-module.exports = mongoose.model('Bookmark', BookmarkSchema);
+module.exports = mongoose.model('Bookmark', BookmarkSchema, 'bookmarks');
