@@ -65,7 +65,6 @@ const recipeSchema = mongoose.Schema(
 				return "" + parseFloat(val).toFixed(1);
 			}
     },
-    ratingOverall: { type: Number },
     servings: { type: Number, min: [1, 'Must at least 1, got {VALUE}'] },
     slug: {
       type: String,
