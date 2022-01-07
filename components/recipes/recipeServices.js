@@ -31,7 +31,7 @@ exports.getRecipeById = async recipeId => {
 };
 exports.getTopRecipes = async () => {
   const filter = {
-    rating: {
+    ratingOverall: {
       $gte: 4.5,
     },
   };

@@ -46,9 +46,18 @@
                                         {{> ratingBox rating=this.rating}}
                                     </div>
                                 </div>
+                                
                             </div>
+                            
+                            {{#if this.isUser}}
+                                <div style='padding-left:85%;margin-top:-4%'>
+                                    
+                                <button type="button" class="btn btn-danger"id="deleteButton"onclick="handleDelete('{{_id}}')">Delete</button>
+                                </div>
+                            {{/if}}
+                            
                         {{/each}}
-
+                        
                         <!--recipe of the day-->
                         <!--<div class="recipe-of-day">
                             <img src="images/temp-images/recipe-of-the-day.jpg" alt="Recipe of the day">
@@ -194,4 +203,12 @@
     document.getElementById('myRecipe').addEventListener('click',function(){
         window.location.href = "/myRecipes";
     })
+    function handleDelete(id){
+        console.log('id',id)
+        
+        $.post('myRecipes/delete',{id:id},function(data){
+            console.log('data',data)
+            window.location.href = "/myRecipes";
+        })
+    }
 </script>
