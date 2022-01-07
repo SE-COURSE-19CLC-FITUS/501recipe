@@ -1,7 +1,7 @@
 'use strict';
 
 const Recipe = require('./recipeModel');
-const Comment = require('./commentModel');
+const Comment = require('../comment/commentModel.js');
 const mongoose = require('mongoose');
 const mongooseObject = require('../../utils/mongooseUtil');
 const { NUMBER_TOP_RECIPE } = require('../../config/constants.js');
@@ -57,5 +57,5 @@ exports.getRecipeComments = (recipeId, page, itemPerPage) =>
     .limit(itemPerPage)
     .lean();
 
-exports.countComments = recipeId =>
-  Comment.find({ recipeId: recipeId }).count();
+exports.countComments = (type, id) =>
+  Comment.find({ type: type, id: id }).count();

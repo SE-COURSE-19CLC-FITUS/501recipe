@@ -13,6 +13,7 @@ const indexRouter = require('./routes/index.js');
 const usersRouter = require('./routes/users.js');
 const authRouter = require('./components/auth');
 const recipeRouter = require('./components/recipes/recipeRoutes.js');
+const blogRouter = require('./components/blogs/blogRoutes.js');
 const submitRecipeRouter = require('./components/recipes/submitRecipeRouter.js');
 const bookmarkRouter = require('./components/bookmarks/bookmarkRoutes.js');
 const myRecipesRouter = require('./components/recipes/userRecipeRouter.js');
@@ -62,6 +63,7 @@ app.use(function (req, res, next) {
 app.use('/', indexRouter);
 app.use('/', authRouter);
 app.use('/', recipeRouter);
+app.use('/', blogRouter);
 app.use('/', auth, submitRecipeRouter);
 app.use('/users', usersRouter);
 app.use('/bookmark', auth, bookmarkRouter);

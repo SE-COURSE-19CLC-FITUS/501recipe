@@ -48,10 +48,10 @@
                                     <ul class='recipe-specs-2'>
                                         {{!-- <li><span>Yield :
                                             </span>5 Grills</li> --}}
-                                        <li><span>Servings :
-                                            </span>{{servings}}</li>
-                                        <li><span>Cooking Time :
-                                            </span>{{timeCook}}</li>
+                                        <li><span>Servings: </span>{{servings}}</li>
+                                        <li><span>Cooking Time: </span>{{timeCook}}</li>
+										<li><span>Meal Type: </span>{{mealType}}</li>
+										<li><span>Skill Level: </span>{{levelSkill}}</li>
                                         {{!-- <li><span>Cook Time :
                                             </span>40m</li>
                                         <li><span>Ready In :
@@ -70,8 +70,7 @@
                                     </span>Chinese</li> --}}
                                 {{!-- <li><span>Course :
                                     </span>Side Dish</li> --}}
-                                <li><span>Meal Type: </span>{{mealType}}</li>
-                                <li><span>Skill Level: </span>{{levelSkill}}</li>
+                                <li><span>Chef: </span>{{publisher.username}}</li>
                                 <li><span>Date Publish: </span>{{datePublish}}</li>
                             </ul>
                             <div class='separator-post'></div>
@@ -243,9 +242,9 @@
                                             <ul>
                                                 <li><a href='#'><i class='fa fa-facebook'></i></a></li>
                                                 <li><a href='#'><i class='fa fa-twitter'></i></a></li>
-                                                <li><a href='#'><i class='fa fa-google-plus'></i></a></li>
-                                                <li><a href='#'><i class='fa fa-pinterest'></i></a></li>
-                                                <li><a href='#'><i class='fa fa-plus'></i></a></li>
+                                                {{!-- <li><a href='#'><i class='fa fa-google-plus'></i></a></li> --}}
+                                                {{!-- <li><a href='#'><i class='fa fa-pinterest'></i></a></li> --}}
+                                                {{!-- <li><a href='#'><i class='fa fa-plus'></i></a></li> --}}
                                             </ul>
                                         </div>
                                     </div>
@@ -272,7 +271,7 @@
                                             <ul class='chef-social-links'>
                                                 <li><a href='#'><i class='fa fa-facebook'></i></a></li>
                                                 <li><a href='#'><i class='fa fa-twitter'></i></a></li>
-                                                <li><a href='#'><i class='fa fa-google-plus'></i></a></li>
+                                                {{!-- <li><a href='#'><i class='fa fa-google-plus'></i></a></li> --}}
                                             </ul>
                                         </div>
                                     </div>

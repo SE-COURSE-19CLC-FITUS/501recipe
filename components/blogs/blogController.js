@@ -1,51 +1,45 @@
 'use strict';
 
 const {
-  RECIPE_PER_PAGE,
-  RECIPE_PAGE_LIMIT,
+  BLOG_PER_PAGE,
+  BLOG_PAGE_LIMIT,
   COMMENT_PER_PAGE,
   COMMENT_PAGE_LIMIT,
 } = require('../../config/constants.js');
 
-const recipeService = require('./recipeServices.js');
+const blogService = require('./blogServices.js');
 const bookmarkService = require('../bookmarks/bookmarkService');
 const commentService = require('../comment/commentServices.js');
 const { timeSince } = require('../../helpers/index.js');
 
-exports.recipesInPage = async function (req, res) {
+exports.blogsInPage = async function (req, res) {
   // Pages have index 1, instead of 0
   let curPage = +req.query.page || 1;
-  let { mealType, keyword } = req.query;
+  let { keyword } = req.query;
   let filter = {};
-  if (mealType) {
-    filter.mealType = mealType;
-  }
+
   if (keyword) {
     filter.title = { $regex: keyword, $options: 'i' };
   }
 
-  const recipes = await recipeService.findByPage(
-    filter,
-    curPage,
-    RECIPE_PER_PAGE
-  );
+  const blogs = await blogService.findByPage(filter, curPage, BLOG_PER_PAGE);
 
-  let numRecipes;
+  let numBlogs;
   if (Object.keys(filter).length === 0) {
-    numRecipes = await recipeService.countRecipes();
+    numBlogs = await blogService.countBlogs();
   } else {
-    numRecipes = recipes.length;
+    numBlogs = blogs.length;
   }
 
-  // FIXME: Kinda boilerplate code. Should I add it to recipeService?
-  const limitPage = RECIPE_PAGE_LIMIT;
+  // FIXME: Kinda boilerplate code. Should I add it to blogService?
+  const limitPage = BLOG_PAGE_LIMIT;
   // Because page has index 1, so we have to decrease the curPage
   // So with limitPage is 4, we have turn 0: [1, 2, 3, 4], turn 1: [5, 6, 7, 8]
   const pageTurn = Math.floor((curPage - 1) / limitPage);
-  const numPages = Math.ceil(numRecipes / RECIPE_PER_PAGE);
+  const numPages = Math.ceil(numBlogs / BLOG_PER_PAGE);
 
-  res.render('recipes/views/recipes.hbs', {
-    recipes,
+  res.render('blogs/views/blogs.hbs', {
+    blogs,
     curPage,
     limitPage,
     pageTurn,
@@ -53,24 +47,24 @@ exports.recipesInPage = async function (req, res) {
   });
 };
 
-exports.getRecipeBySlug = async function (req, res) {
-  const recipe = await recipeService.findBySlug(req.params.slug);
+exports.getBlogBySlug = async function (req, res) {
+  const blog = await blogService.findBySlug(req.params.slug);
   // NOTE: Remember to convert page to number
   const curCommentPage = +req.query['comment-page'] || 1;
 
   const comments = await commentService.getRecipeComments(
-    'recipe',
-    recipe._id,
+    'blog',
+    blog._id,
     curCommentPage,
     COMMENT_PER_PAGE
   );
 
-  // FIXME: Kinda boilerplate code. Should I add it to recipeService?
+  // FIXME: Kinda boilerplate code. Should I add it to blogService?
   const limitCommentPage = COMMENT_PAGE_LIMIT;
   // Because page has index 1, so we have to decrease the curPage
   // So with limitPage is 4, we have turn 0: [1, 2, 3, 4], turn 1: [5, 6, 7, 8]
   const commentPageTurn = Math.floor((curCommentPage - 1) / limitCommentPage);
-  const numComments = await commentService.countComments('recipe', recipe._id);
+  const numComments = await commentService.countComments('blog', blog._id);
   const numCommentPages = Math.ceil(numComments / COMMENT_PER_PAGE);
 
   comments.sort((a, b) => new Date(b.createAt) - new Date(a.createAt));
@@ -79,17 +73,16 @@ exports.getRecipeBySlug = async function (req, res) {
     return comment;
   });
 
-  recipe.bookmark = 'Add to Bookmark';
-  if (req.user) {
-    const userId = req.user._id;
-    const bookmark = await bookmarkService.findBookmark(userId, recipe._id);
-    if (bookmark.length !== 0) {
-      recipe.bookmark = 'Added to Bookmark';
-    }
-  }
-
-  res.render('recipes/views/detailRecipe.hbs', {
-    recipe,
+  // blog.bookmark = 'Add to Bookmark';
+  // if (req.user) {
+  //   const userId = req.user._id;
+  //   const bookmark = await bookmarkService.findBookmark(userId, recipe._id);
+  //   if (bookmark.length !== 0) {
+  //     recipe.bookmark = 'Added to Bookmark';
+  //   }
+  // }
+  res.render('blogs/views/detailBlog.hbs', {
+    blog,
     comments,
     curCommentPage,
     limitCommentPage,
@@ -100,10 +93,10 @@ exports.getRecipeBySlug = async function (req, res) {
 
 exports.postComment = async (req, res, next) => {
   await commentService.postComment(
-    'recipe',
+    'blog',
     req.body.name,
-    req.body.recipeId,
+    req.body.blogId,
     req.body.comment
   );
-  res.redirect(`/recipes/${req.body.slug}#leave-comment`);
+  res.redirect(`/blogs/${req.body.slug}#leave-comment`);
 };

@@ -3,10 +3,9 @@
 const mongoose = require('mongoose');
 const slugGenerator = require('mongoose-slug-generator');
 const { LOCALE } = require('../../config/constants.js');
-const { isURL } = require('validator');
 mongoose.plugin(slugGenerator);
 
-const options = { toObject: { virtuals: true } };
+const options = { toObject: { virtuals: true }, toJSON: { virtuals: true } };
 
 const dateFormatOptions = {
   day: 'numeric',
@@ -45,7 +44,7 @@ const recipeSchema = mongoose.Schema(
     publisher: { id: mongoose.ObjectId, username: String },
     rating: {
       type: Number,
-      //min: [1, 'Must at least 1, got {VALUE}'],
+      min: [0, 'Must at least 1, got {VALUE}'],
       max: [5, 'Max is 5, got {VALUE}'],
     },
     servings: { type: Number, min: [1, 'Must at least 1, got {VALUE}'] },
