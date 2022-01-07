@@ -10,11 +10,21 @@ exports.list = () => Recipe.find({});
 
 exports.countRecipes = () => Recipe.find().count();
 
-exports.findByPage = (filter, page, itemPerPage) =>
+exports.findByPage = (filter, sort, page, itemPerPage) => {
   // Pages have index 1, instead of 0. So if page is 1, then we don't skip
-  Recipe.find(filter)
-    .skip((page - 1) * itemPerPage)
-    .limit(itemPerPage);
+  if (sort && sort != '0') {
+    const result = Recipe.find(filter)
+      .skip((page - 1) * itemPerPage)
+      .limit(itemPerPage)
+      .sort({ ratingOverall: sort });
+    return result;
+  } else {
+    const result = Recipe.find(filter)
+      .skip((page - 1) * itemPerPage)
+      .limit(itemPerPage);
+    return result;
+  }
+};
 
 exports.findBySlug = slug => Recipe.findOne({ slug: slug });
 

@@ -11,13 +11,13 @@
             </div>
             <div class='outer-advance-search'>
 
-                <form action='#' id='advance-search'>
+                <form action="/recipes?page=1&" id='advance-search'>
                     <fieldset>
                         <div class='inner-advance-search'>
 
                             <div class='form-field'>
-                                <label for='ingredient'>ingredient</label>
-                                <select
+                                <label for='keyword'>Food</label>
+                                {{!-- <select
                                     name='ingredient'
                                     id='ingredient'
                                     class='advance-selectable'
@@ -28,12 +28,13 @@
                                     <option value='ing3'>Cheese</option>
                                     <option value='ing4'>Cream</option>
                                     <option value='ing5'>Yeast</option>
-                                </select>
+                                </select> --}}
+                                <input name='keyword'></input>
                             </div>
 
                             <div class='form-field'>
-                                <label for='course'>course</label>
-                                <select
+                                <label for='ingredients'>Ingredients</label>
+                                {{!-- <select
                                     name='course'
                                     id='course'
                                     class='advance-selectable'
@@ -44,42 +45,43 @@
                                     <option value='ing3'>Cheese</option>
                                     <option value='ing4'>Cream</option>
                                     <option value='ing5'>Yeast</option>
-                                </select>
+                                </select> --}}
+                                <input name="ingredients"></input>
                             </div>
 
                             <div class='form-field'>
-                                <label for='cuisine'>cuisine</label>
+                                <label for='mealType'>Meal Type</label>
                                 <select
-                                    name='cuisine'
-                                    id='cuisine'
+                                    name='mealType'
+                                    id='mealType'
                                     class='advance-selectable'
                                 >
-                                    <option value='ing1' selected='selected'>Any
-                                        Cuisine</option>
-                                    <option value='ing2'>Butter</option>
-                                    <option value='ing3'>Cheese</option>
-                                    <option value='ing4'>Cream</option>
-                                    <option value='ing5'>Yeast</option>
+                                    <option value='0' selected='selected'>Any
+                                        meal type</option>
+                                    <option value='Breakfast'>Breakfast</option>
+                                    <option value='Starter'>Starter</option>
+                                    <option value='Lunch'>Lunch</option>
+                                    <option value='Dinner'>Dinner</option>
+                                    <option value='Dessert'>Dessert</option>
                                 </select>
                             </div>
 
                             <div class='form-field'>
-                                <label for='time'>Cooking Time</label>
+                                <label for='rating'>Rating</label>
                                 <select
-                                    name='time'
-                                    id='time'
+                                    name='rating'
+                                    id='rating'
                                     class='advance-selectable'
                                 >
-                                    <option value='ing1' selected='selected'>Any
-                                        Cooking Time</option>
-                                    <option value='ing2'>Butter</option>
-                                    <option value='ing3'>Cheese</option>
-                                    <option value='ing4'>Cream</option>
-                                    <option value='ing5'>Yeast</option>
+                                    <option value='0' selected='selected'>Any
+                                        Rating</option>
+                                    <option value='-1'>High to low</option>
+                                    <option value='1'>Low to high</option>
+                                    
                                 </select>
                             </div>
 
-                            <div class='form-field'>
+                            {{!-- <div class='form-field'>
                                 <label for='calories'>calories</label>
                                 <select
                                     name='calories'
@@ -93,7 +95,7 @@
                                     <option value='ing4'>Cream</option>
                                     <option value='ing5'>Yeast</option>
                                 </select>
-                            </div>
+                            </div> --}}
 
                             <button type='submit'><i
                                     class='fa fa-search'

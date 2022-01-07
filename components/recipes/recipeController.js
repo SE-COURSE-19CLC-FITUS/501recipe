@@ -15,17 +15,30 @@ const { timeSince } = require('../../helpers/index.js');
 exports.recipesInPage = async function (req, res) {
   // Pages have index 1, instead of 0
   let curPage = +req.query.page || 1;
-  let { mealType, keyword } = req.query;
+  let { mealType, keyword, ingredients, rating } = req.query;
   let filter = {};
-  if (mealType) {
+  if (ingredients && ingredients != '') {
+    filter = {
+      'ingredients.text': {
+        $regex: ingredients,
+        $options: 'i',
+      },
+    };
+  }
+  if (mealType && mealType != '0') {
     filter.mealType = mealType;
   }
-  if (keyword) {
+  if (keyword && keyword != '') {
     filter.title = { $regex: keyword, $options: 'i' };
+  }
+  let sort = undefined;
+  if (rating && rating != '0') {
+    sort = rating;
   }
 
   const recipes = await recipeService.findByPage(
     filter,
+    sort,
     curPage,
     RECIPE_PER_PAGE
   );
