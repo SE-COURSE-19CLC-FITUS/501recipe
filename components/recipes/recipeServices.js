@@ -32,19 +32,30 @@ exports.getRecipeById = async recipeId => {
 exports.getTopRecipes = async () => {
   const filter = {
     ratingOverall: {
-			// FIXME:
       $gte: 4.5,
     },
   };
   const result = await Recipe.find(filter)
-	.sort({ rating: -1 })
-	.limit(NUMBER_TOP_RECIPE);
+    .sort({ rating: -1 })
+    .limit(NUMBER_TOP_RECIPE);
 
   return mongooseObject.multipleMongooseToObject(result);
 };
 
-exports.updateRating = async (slug, ratingPoint) => {
-  const ratingPointName = ['one', 'two', 'three', 'four', 'five'];
-  const field = ratingPointName[ratingPoint - 1];
-  await Recipe.find({ slug: slug }).updateOne({ $inc: { [`rating.${field}`]: 1 } });
+exports.postComment = (name, recipeId, comment) => {
+  return new Comment({
+    name: name,
+    recipeId: recipeId,
+    comment: comment,
+    createAt: new Date(),
+  }).save();
 };
+
+exports.getRecipeComments = (recipeId, page, itemPerPage) =>
+  Comment.find({ recipeId: recipeId })
+    .skip((page - 1) * itemPerPage)
+    .limit(itemPerPage)
+    .lean();
+
+exports.countComments = (type, id) =>
+  Comment.find({ type: type, id: id }).count();

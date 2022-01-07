@@ -10,3 +10,10 @@ exports.getUserRecipes = async userId => {
   });
   return mongooseObject.multipleMongooseToObject(result);
 };
+
+exports.deleteUserRecipe = recipeId => {
+  Recipe.remove({ _id: new mongoose.Types.ObjectId(recipeId) }, function (err) {
+    if (err) return false;
+  });
+  return true;
+};

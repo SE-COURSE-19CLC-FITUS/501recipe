@@ -2,13 +2,13 @@
 
 const recipeService = require('./recipeServices');
 const mongoose = require('mongoose');
-const formidable = require('formidable'); // npm i formidable
-const cloudinary = require('cloudinary').v2; // npm i cloudinary
+const formidable = require('formidable'); //npm i formidable
+const cloudinary = require('cloudinary').v2; //npm i cloudinary
 class SubmitRecipe {
   show(req, res, next) {
     res.render('recipes/views/submitRecipe');
   }
-  submit(req, res, next) {
+  async submit(req, res, next) {
     const { _id: userId, username } = req.user;
 
     const form = formidable({ multiples: true });
@@ -34,24 +34,24 @@ class SubmitRecipe {
         tips = fields.tips.map(tip => ({ text: tip }));
       }
       let imageUrl = [];
-      BUG: if (files.fileUpload.length > 0) {
+      if (files.fileUpload.length > 0) {
         for (let i = 0; i < files.fileUpload.length; i++) {
           let file = files.fileUpload[i];
           await cloudinary.uploader.upload(
             file.filepath,
-            { public_id: `NMCNPM/${file.originalFilename}` }, // thay đổi đường dẫn và tên file
+            { public_id: `NMCNPM/${file.originalFilename}` }, //thay đổi đường dẫn và tên file
             function (error, result) {
-              // console.log(result);
+              //console.log(result);
               imageUrl.push(result.url);
             }
-          ); // result.url là link ảnh
+          ); //result.url là link ảnh
         }
       } else {
         await cloudinary.uploader.upload(
           files.fileUpload.filepath,
-          { public_id: `NMCNPM/${files.fileUpload.originalFilename}` }, // thay đổi đường dẫn và tên file
+          { public_id: `NMCNPM/${files.fileUpload.originalFilename}` }, //thay đổi đường dẫn và tên file
           function (error, result) {
-            // console.log(result);
+            //console.log(result);
             imageUrl.push(result.url);
           }
         );
@@ -66,6 +66,7 @@ class SubmitRecipe {
         levelSkill: fields.skill,
         mealType: fields.mealType,
         publisher: { id: userId, username },
+        rating: 0,
         servings: fields.servings,
         tags: fields.tags.split(',').map(tag => ({
           text: tag,
@@ -76,10 +77,10 @@ class SubmitRecipe {
       };
       const result = await recipeService.saveRecipe(recipe);
       if (result) {
-        // res.status(200).json({ message: 'Thêm thành công', success: true });
-        res.send('<p>successfull</p>');
+        //res.status(200).json({ message: 'Thêm thành công', success: true });
+        res.render('recipes/views/successSubmit.hbs');
       } else {
-        // res.status(500).json({ message: 'Thêm thất bại', success: false });
+        next();
       }
     });
   }

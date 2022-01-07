@@ -23,6 +23,7 @@ const getRatingOverall = function () {
 
 const recipeSchema = mongoose.Schema(
   {
+    _id: { type: mongoose.Types.ObjectId },
     datePublish: {
       type: Date,
       get: function (date) {
