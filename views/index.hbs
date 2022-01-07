@@ -618,102 +618,24 @@
             </span>
         </div>
         <div class='wrapper-latest-news'>
+            {{#each latestNews}}
             <article class='news-single'>
                 <div class='news-visuals'>
-                    <iframe
-                        src='https://player.vimeo.com/video/24922755'
-                    ></iframe>
+                    <img src="{{imageUrl.[0]}}" alt="Thumbnail">
                 </div>
                 <div class='news-detail'>
-                    <h4><a href='#'>News title will be appear here with text</a></h4>
+                    <h4><a href='/blogs/{{slug}}'>{{title}}</a></h4>
                     <ul class='news-post-meta post-meta sb-line'>
-                        <li class='author'><a href='#'>John Doe</a></li>
-                        <li class='date'>23/10/2015</li>
+                        <li class='author'><a href='#'>{{publisher.username}}</a></li>
+                        <li class='date'>{{datePublish}}</li>
                     </ul>
                     <p>
-                        Nam ornare arcu turpis, nec congue Curabitur quis
-                        euismod...
+                        {{content.[0].text}}
                     </p>
-                    <a class='more' href='#'>more</a>
+                    <a class='more' href='/blogs/{{slug}}'>more</a>
                 </div>
             </article>
-
-            <article class='news-single'>
-                <div class='news-visuals'>
-                    <div class='latest-news-slider'>
-                        <div>
-                            <a href='#'><img
-                                    src='images/temp-images/news2.jpg'
-                                    alt='image'
-                                /></a>
-                        </div>
-                        <div>
-                            <a href='#'><img
-                                    src='images/temp-images/news3.jpg'
-                                    alt='image'
-                                /></a>
-                        </div>
-                    </div>
-                </div>
-                <div class='news-detail'>
-                    <h4><a href='#'>News title will be appear here with text</a></h4>
-                    <ul class='news-post-meta post-meta sb-line'>
-                        <li class='author'><a href='#'>John Doe</a></li>
-                        <li class='date'>23/10/2015</li>
-                    </ul>
-                    <p>
-                        Nam ornare arcu turpis, nec congue Curabitur quis
-                        euismod...
-                    </p>
-                    <a class='more' href='#'>more</a>
-                </div>
-
-            </article>
-
-            <article class='news-single'>
-                <div class='news-visuals'>
-                    <a href='#'><img
-                            src='images/temp-images/news1.jpg'
-                            alt='news'
-                        /></a>
-                </div>
-                <div class='news-detail'>
-                    <h4><a href='#'>News title will be appear here with text</a></h4>
-                    <ul class='news-post-meta post-meta sb-line'>
-                        <li class='author'><a href='#'>John Doe</a></li>
-                        <li class='date'>23/10/2015</li>
-                    </ul>
-                    <p>
-                        Nam ornare arcu turpis, nec congue Curabitur quis
-                        euismod...
-                    </p>
-                    <a class='more' href='#'>more</a>
-                </div>
-
-            </article>
-
-            <article class='news-single'>
-                <div class='news-visuals'>
-                    <a href='#'><img
-                            src='images/temp-images/news1.jpg'
-                            alt='news'
-                        /></a>
-                </div>
-                <div class='news-detail'>
-                    <h4><a href='#'>News title will be appear here with text</a></h4>
-                    <ul class='news-post-meta post-meta sb-line'>
-                        <li class='author'><a href='#'>John Doe</a></li>
-                        <li class='date'>23/10/2015</li>
-                    </ul>
-                    <p>
-                        Nam ornare arcu turpis, nec congue Curabitur quis
-                        euismod...
-                    </p>
-                    <a class='more' href='#'>more</a>
-                </div>
-
-            </article>
-
+            {{/each}}
             <!--corner background image-->
             <div class='corner-image latest-news-bg'>
                 <img src='images/news-corner-bg.jpg' alt='image' />

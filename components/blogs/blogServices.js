@@ -29,17 +29,18 @@ exports.getBlogById = async blogId => {
   });
   return mongooseObject.mongooseToObject(result);
 };
-exports.getTopBlogs = async () => {
-  const filter = {
-    rating: {
-      $gte: 4.5,
-    },
-  };
-  const result = await Blog.find(filter)
-    .sort({ rating: -1 })
-    .limit(NUMBER_TOP_BLOG);
-  return mongooseObject.multipleMongooseToObject(result);
-};
+// exports.getTopBlogs = async () => {
+//   const filter = {
+//     rating: {
+//       $gte: 4.5,
+//     },
+//   };
+//   const result = await Blog.find(filter)
+//     .sort({ rating: -1 })
+//     .limit(NUMBER_TOP_BLOG);
+//   return mongooseObject.multipleMongooseToObject(result);
+// };
 
-exports.getLatestNews = Blog.find().sort({datePublish:-1}).limit(3)
+exports.getLatestNews = () => Blog.find().sort({datePublish:-1}).limit(3)
 
+exports.get4LatestNews = () => Blog.find().sort({datePublish:-1}).limit(4)

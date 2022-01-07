@@ -68,8 +68,8 @@ exports.recipesInPage = async function (req, res) {
   const pageTurn = Math.floor((curPage - 1) / limitPage);
   const numPages = Math.ceil(numRecipes / RECIPE_PER_PAGE);
 
-  const popularRecipe = await recipeService.getPopularRecipe;
-  const latestNews = await blogService.getLatestNews;
+  const popularRecipe = await recipeService.getPopularRecipe();
+  const latestNews = await blogService.getLatestNews();
 
   res.render('recipes/views/recipes.hbs', {
     recipes,
@@ -117,8 +117,13 @@ exports.getRecipeBySlug = async function (req, res) {
     }
   }
 
+  const popularRecipe = await recipeService.getPopularRecipe();
+  const latestNews = await blogService.getLatestNews();
+
   res.render('recipes/views/detailRecipe.hbs', {
     recipe,
+    popularRecipe,
+    latestNews,
     comments,
     numComments,
     curCommentPage,

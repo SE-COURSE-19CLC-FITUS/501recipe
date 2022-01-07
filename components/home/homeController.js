@@ -1,6 +1,7 @@
 'use strict';
 
 const recipeService = require('../recipes/recipeServices');
+const blogService = require('../blogs/blogServices');
 
 class Home {
   async index(req, res, next) {
@@ -18,8 +19,9 @@ class Home {
     //   top2: recipe[1],
     //   ...
     // };
+    const latestNews = await blogService.get4LatestNews();
 
-    res.render('index.hbs', { topRecipe });
+    res.render('index.hbs', { topRecipe, latestNews });
   }
 }
 module.exports = new Home();

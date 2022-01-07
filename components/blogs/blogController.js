@@ -10,6 +10,7 @@ const {
 const blogService = require('./blogServices.js');
 const bookmarkService = require('../bookmarks/bookmarkService');
 const commentService = require('../comment/commentServices.js');
+const recipeService = require('../recipes/recipeServices')
 const { timeSince } = require('../../helpers/index.js');
 
 exports.blogsInPage = async function (req, res) {
@@ -38,8 +39,13 @@ exports.blogsInPage = async function (req, res) {
   const pageTurn = Math.floor((curPage - 1) / limitPage);
   const numPages = Math.ceil(numBlogs / BLOG_PER_PAGE);
 
+  const popularRecipe = await recipeService.getPopularRecipe();
+  const latestNews = await blogService.getLatestNews();
+
   res.render('blogs/views/blogs.hbs', {
     blogs,
+    popularRecipe,
+    latestNews,
     curPage,
     limitPage,
     pageTurn,
@@ -81,9 +87,15 @@ exports.getBlogBySlug = async function (req, res) {
   //     recipe.bookmark = 'Added to Bookmark';
   //   }
   // }
+
+  const popularRecipe = await recipeService.getPopularRecipe();
+  const latestNews = await blogService.getLatestNews();
+
   res.render('blogs/views/detailBlog.hbs', {
     blog,
     comments,
+    popularRecipe,
+    latestNews,
 		numComments,
     curCommentPage,
     limitCommentPage,

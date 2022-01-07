@@ -38,14 +38,7 @@
 
                                 {{!-- <li class='comments'><a href='#'>12 Comments</a></li> --}}
                             </ul>
-                            {{!-- <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Proin eu vulputate arcu. Fusce
-                                consectetur varius nisi, in maximus eros egestas
-                                sed. Proin non purus erat. Proin sed mauris id
-                                metus pulvinar pretium. Etiam tristique metus
-                                lorem, scelerisque pharetra dui blandit sit amet
-                            </p> --}}
+                            <p>{{content.[0].text}}</p>
                             <a class='read-more-bordered' href='/blogs/{{slug}}'>Read More</a>
                         </div>
                     </div>
@@ -191,7 +184,7 @@
                 <!--sidebar-->
                 <aside>
                     <div class='side-bar'>
-                        <!--search widget-->
+                        {{!-- <!--search widget-->
                         <div class='widget search-bar-widget'>
                             <h2>Search</h2>
                             <form action='#'>
@@ -236,11 +229,11 @@
                             </ul>
                         </div>
 
-                        <!--widget archives ends-->
+                        <!--widget archives ends--> --}}
 
                         <!--latest news widget-->
-                        {{#if popularList}}
-                        {{> widgetPopular typePopular="Popular Recipes" popularList=popularList }}
+                        {{#if popularRecipe}}
+                        {{> widgetPopular typePopular="Popular Recipes" popularList=popularRecipe }}
                         {{else}}
                         {{!-- Fall over content --}}
                         <div class='widget latest-news-widget'>
@@ -259,6 +252,33 @@
                                 </li>
                             </ul>
                         </div>
+                        {{/if}}
+                        <!--latest news widget ends-->
+
+                        <!--latest news widget-->
+                        {{#if latestNews}}
+                            {{> widgetPopular typePopular="Latest News" popularList=latestNews }}
+                        {{else}}
+                            {{!-- Fall over content --}}
+                            <div class='widget latest-news-widget'>
+                                <h2>Latest News</h2>
+                                <ul>
+                                    <li>
+                                        <div class='thumb'>
+                                            <a href='#'>
+                                                <img
+                                                    src='/images/temp-images/widget-thumbnail.jpg'
+                                                    alt='thumbnail'
+                                                />
+                                            </a>
+                                        </div>
+                                        <div class='detail'>
+                                            <a href='#'>Pimento Cheese Potato Skins</a>
+                                            <span class='post-date'>Dec 26, 2021</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         {{/if}}
                         <!--latest news widget ends-->
 

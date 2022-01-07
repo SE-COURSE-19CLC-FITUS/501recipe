@@ -408,7 +408,7 @@
                 <!--sidebar-->
                 <aside>
                     <div class='side-bar'>
-                        <!--search widget-->
+                        {{!-- <!--search widget-->
                         <div class='widget search-bar-widget'>
                             <h2>Search</h2>
                             <form action='#'>
@@ -451,12 +451,12 @@
                                 <li><a href='#'>nov 2014</a>
                                     <span>(48)</span></li>
                             </ul>
-                        </div>
+                        </div> --}}
 
                         <!--widget archives ends-->
                         <!--latest news widget-->
-                        {{#if popularList}}
-                        {{> widgetPopular typePopular="Popular Recipes" popularList=popularList }}
+                        {{#if popularRecipe}}
+                        {{> widgetPopular typePopular="Popular Recipes" popularList=popularRecipe }}
                         {{else}}
                         {{!-- Fall over content --}}
                         <div class='widget latest-news-widget'>
@@ -475,6 +475,33 @@
                                 </li>
                             </ul>
                         </div>
+                        {{/if}}
+                        <!--latest news widget ends-->
+
+                        <!--latest news widget-->
+                        {{#if latestNews}}
+                            {{> widgetPopular typePopular="Latest News" popularList=latestNews }}
+                        {{else}}
+                            {{!-- Fall over content --}}
+                            <div class='widget latest-news-widget'>
+                                <h2>Latest News</h2>
+                                <ul>
+                                    <li>
+                                        <div class='thumb'>
+                                            <a href='#'>
+                                                <img
+                                                    src='/images/temp-images/widget-thumbnail.jpg'
+                                                    alt='thumbnail'
+                                                />
+                                            </a>
+                                        </div>
+                                        <div class='detail'>
+                                            <a href='#'>Pimento Cheese Potato Skins</a>
+                                            <span class='post-date'>Dec 26, 2021</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         {{/if}}
                         <!--latest news widget ends-->
                         <!--tags widget-->
