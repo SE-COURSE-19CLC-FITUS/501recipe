@@ -12,7 +12,6 @@ const CommentSchema = new Schema({
       message: '{VALUE} is not supported',
     },
   },
-  id: mongoose.Types.ObjectId,
   name: { type: String, default: 'Anonymous' },
 });
 

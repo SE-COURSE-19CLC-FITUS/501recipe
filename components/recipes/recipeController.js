@@ -143,6 +143,6 @@ exports.rateRecipe = async (req, res, next) => {
 };
 
 exports.postComment = async (req, res, next) => {
-  const comment = await commentService.postComment(req.body.name, req.body.recipeId, req.body.comment);
+  const comment = await commentService.postComment('recipe' , req.body.name, req.body.recipeId, req.body.comment);
   res.redirect(`/recipes/${req.body.slug}#leave-comment`);
 }
