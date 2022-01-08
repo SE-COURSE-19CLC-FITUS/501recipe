@@ -281,6 +281,29 @@
                         </div>
 						{{/with}}
 
+                        <div class='related-recipes'>
+                            <h3 class='lined'>Related Recipes</h3>
+                            <div class='boxed-recipes text-center'>
+                                {{! LOOP 3 times for 3 recipes }}
+                                {{!-- {{#each ...}} --}}
+                                <!--single recipe-->
+                                <div class='recipe-single'>
+                                    <div class='recipe-image'>
+                                        <a href='#'><img src='/images/temp-images/main-recipe1.jpg' alt='image' /></a>
+                                    </div>
+                                    <div class='outer-detail'>
+                                        <div class='detail'>
+                                            <h3><a href='#'>Pasto Pizza with
+                                                    fillas Cheese Toppings</a></h3>
+                                            <div class='short-separator'></div>
+                                            {{> ratingBox rating=rating}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--single recipe ends-->
+                                {{!-- {{/end}} --}}
+                            </div>
+                        </div>
 
                         <div class='comment-form'>
                             <h3 class='lined' id="leave-comment">Leave Comment</h3>
@@ -421,10 +444,10 @@
                                 </li>
 
                             </ul>
-                        </div>
+                        </div> --}}
                         <div id="bookmark">
                             <button type="button" class="btn btn-light" id='bookmark'>{{recipe.bookmark}}</button>
-                        </div> --}}
+                        </div>
                         <!--get social ends-->
                     </div>
                 </aside>
