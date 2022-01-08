@@ -2630,6 +2630,7 @@ a.mean-expand {
 }
 .news-single img {
   width: 100%;
+  height: 100%;
 }
 .news-single .news-detail {
   padding: 21px 25px 25px;
