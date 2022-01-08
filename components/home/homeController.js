@@ -21,7 +21,9 @@ class Home {
     // };
     const latestNews = await blogService.get4LatestNews();
 
-    res.render('index.hbs', { topRecipe, latestNews });
+    const bannerRecipe = await recipeService.getTopNRecipes(5);
+
+    res.render('index.hbs', { topRecipe, latestNews, bannerRecipe });
   }
 }
 module.exports = new Home();

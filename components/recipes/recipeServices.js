@@ -59,4 +59,6 @@ exports.updateRating = async (slug, ratingPoint) => {
   });
 };
 
-exports.getPopularRecipe = () => Recipe.find().sort({ratingOverall:-1}).limit(3)
+exports.getPopularRecipe = () => Recipe.find().sort({ ratingOverall: -1 }).limit(3).lean()
+
+exports.getTopNRecipes = (n) => Recipe.find().sort({ratingOverall:-1}).limit(n).lean()
