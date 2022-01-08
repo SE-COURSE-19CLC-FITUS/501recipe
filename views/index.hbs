@@ -3,13 +3,12 @@
     <div class='container'>
         <div class='home-slider'>
             <div class='slider-box'>
-				{{#with topRecipe}}
                 <!--left slider-->
                 <div class='slider-left'>
                     <div class='custom-margin' id='sync1'>
-                        <div><a href='#'><img src='{{top1.imageUrl}}' alt='slide'/></a></div>
-
-                        <div><a href='#'><img src='{{top2.imageUrl}}' alt='slide'/></a></div>
+                        {{#each bannerRecipe}}
+                        <div><a href='#'><img src='{{imageUrl.[0]}}' alt='slide'/></a></div>
+                        {{/each}}
                     </div>
                     <span class='custom-arrows'>
                         <span class='left-arrow'><i
@@ -25,63 +24,32 @@
                 <!--right slider-->
                 <div class='slider-right'>
                     <div class='custom-margin' id='sync2'>
+                        {{#each bannerRecipe}}
                         <div>
                             <div class='slide-detail fbox'>
                                 <div class='box1 box'>
-                                    <h2><a href='/recipes/{{top1.slug}}'>{{top1.title}}</a></h2>
+                                    <h2><a href='/recipes/{{slug}}'>{{title}}</a></h2>
 
-                                    <a class='food-category' href='/recipes?page=1&mealType={{top1.mealType}}'>{{top1.mealType}}</a>
+                                    <a class='food-category' href='/recipes?page=1&mealType={{mealType}}'>{{mealType}}</a>
                                     <ul class='post-meta slider-rating'>
-                                        <li class='author'><a href='#'>{{top1.publisher.username}}</a></li>
-                                        <li class='type'><a href='#'>{{top1.levelSkill}}</a></li>
-                                        <li class='time'>{{top1.timeCook}}</li>
+                                        <li class='author'><a href='#'>{{publisher.username}}</a></li>
+                                        <li class='type'><a href='#'>{{levelSkill}}</a></li>
+                                        <li class='time'>{{timeCook}}</li>
                                     </ul>
-                                    {{!-- <p>
-                                        Nam ornare arcu turpis, nec congue nibh
-                                        tempor at. Curabitur quis euismod
-                                        mauris. Nulla porttitor orci eget semper
-                                        vulputate. Nam ornare arcu turpis, nec
-                                        congue nibh tempor at. Curabitur quis
-                                        euismod mauris. Nulla porttitor orci
-                                        eget.
-                                    </p> --}}
+                                    <p>
+                                        {{descriptions}}
+                                    </p>
                                 </div>
                                 <div class='rating-slider box2 box'>
-                                    {{> ratingBox rating=top1.ratingOverall}}
+                                    {{> ratingBox rating=ratingOverall}}
                                 </div>
                             </div>
                         </div>
-
-                        <div>
-                            <div class='slide-detail fbox'>
-                                <div class='box1 box'>
-                                    <h2><a href='/recipes/{{top2.slug}}'>{{top2.title}}</a></h2>
-
-                                    <a class='food-category' href='/recipes?page=1&mealType={{top2.mealType}}'>{{top2.mealType}}</a>
-                                    <ul class='post-meta slider-rating'>
-                                        <li class='author'><a href='#'>{{top2.publisher.username}}</a></li>
-                                        <li class='type'><a href='#'>{{top2.levelSkill}}</a></li>
-                                        <li class='time'>{{top2.timeCook}}</li>
-                                    </ul>
-                                    {{!-- <p>
-                                        Nam ornare arcu turpis, nec congue nibh
-                                        tempor at. Curabitur quis euismod
-                                        mauris. Nulla porttitor orci eget semper
-                                        vulputate. Nam ornare arcu turpis, nec
-                                        congue nibh tempor at. Nulla porttitor
-                                        orci eget.
-                                    </p> --}}
-                                </div>
-                                <div class='rating-slider box2 box'>
-                                    {{> ratingBox rating=top2.ratingOverall}}
-                                </div>
-                            </div>
-                        </div>
+                        {{/each}}
 
                     </div>
                 </div>
                 <!--right slider ends-->
-				{{/with}}
             </div>
             <div class='corner-image slider'>
                 <img src='images/slider-bg-corner.png' alt='image' />
