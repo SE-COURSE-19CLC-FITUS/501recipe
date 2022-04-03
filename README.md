@@ -26,6 +26,5 @@ A small community for home chefs sharing their best recipes, building with NodeJ
 Figma: https://www.figma.com/file/7u8pMRELjeydYYxmHX3nq3/501st-Recipe?node-id=0%3A1
 
 ## TODOS:
-
-- [ ]: Migrate from npm to yarn.
-- [ ]: Remove secrets from .env file.
+- [ ] Migrate from npm to yarn.
+- [ ] Remove secrets from .env file.
