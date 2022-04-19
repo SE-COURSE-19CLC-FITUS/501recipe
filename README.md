@@ -1,6 +1,8 @@
 # Regs-cipe Cookbook
 A small community for home chefs sharing their best recipes, built with NodeJS.
 
+![Heroku](https://pyheroku-badge.herokuapp.com/?app=recipes-501st&style=flat-square)
+
 ## Tech stacks:
 
 <p align="center">
@@ -43,3 +45,9 @@ href="https://www.figma.com/file/7u8pMRELjeydYYxmHX3nq3/501st-Recipe?node-id=0%3
 
 - [ ] Migrate from npm to yarn.
 - [ ] Remove secrets from .env file.
+
+## Contributors:
+
+<a href="https://github.com/SE-COURSE-19CLC-FITUS/501recipe/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=SE-COURSE-19CLC-FITUS/501recipe" />
+</a>
