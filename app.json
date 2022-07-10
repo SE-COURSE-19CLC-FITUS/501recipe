@@ -1,0 +1,26 @@
+{
+  "name": "Regs-cipe Cookbook",
+  "description": "A small community for home chefs sharing their best recipes, built with NodeJS",
+  "keywords": ["express", "recipes", "cloudinary"],
+  "logo": "https://user-images.githubusercontent.com/64480713/178150728-1930ae67-3794-4088-9523-c113e99c54f0.png",
+  "repository": "https://github.com/SE-COURSE-19CLC-FITUS/501recipe",
+  "success_url": "/",
+  "website": "https://github.com/SE-COURSE-19CLC-FITUS/501recipe",
+  "env": {
+    "MONGODB_URI": {
+      "description": "An URI to connect to your database"
+    },
+    "SESSION_SECRET": {
+      "description": "A secret used to sign the session ID cookie"
+    },
+    "CLOUDINARY_NAME": {
+      "description": "The name of your Cloudinary account. Used to build the public URL for all your media assets"
+    },
+    "CLOUDINARY_API_KEY": {
+      "description": "Used together with the API secret to communicate with the Cloudinary API and sign requests"
+    },
+    "CLOUDINARY_API_SECRET": {
+      "description": "Used together with the API key to communicate with the Cloudinary API and sign requests"
+    }
+  }
+}

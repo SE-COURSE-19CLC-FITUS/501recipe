@@ -224,11 +224,9 @@ yarn dev
 
 ### :triangular_flag_on_post: Deployment
 
-To deploy this project run
+To deploy this project on Heroku
 
-```bash
-yarn deploy
-```
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 <!-- Usage -->
 
