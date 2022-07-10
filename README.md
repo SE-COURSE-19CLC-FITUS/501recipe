@@ -243,7 +243,7 @@ TODO
 
 ## :compass: Roadmap
 
-- [ ] Migrate from npm to yarn.
+- [x] Migrate from npm to yarn.
 - [ ] Remove secrets from .env file.
 
 <!-- Contributing -->
