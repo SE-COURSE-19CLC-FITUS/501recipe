@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="public/images/logo.png" alt="logo" width="200" height="auto" />
+  <img src="https://user-images.githubusercontent.com/64480713/178150728-1930ae67-3794-4088-9523-c113e99c54f0.png" alt="logo" width="200" height="auto" />
   <h1>Regs-cipe Cookbook</h1>
 
   <p>
@@ -75,7 +75,7 @@
 ### :camera: Screenshots
 
 <div align="center">
-  <img src="https://placehold.co/600x400?text=Your+Screenshot+here" alt="screenshot" />
+  <img src="https://user-images.githubusercontent.com/64480713/178151011-bcd9b290-3586-4643-8bf7-6d32e12af6a5.png" alt="screenshot" />
 </div>
 
 <!-- TechStack -->
@@ -126,12 +126,9 @@
 
 ### :art: Color Reference
 
-| Color           | Hex                                                             |
-| --------------- | --------------------------------------------------------------- |
-| Primary Color   | ![#222831](http://via.placeholder.com/10/222831?text=+) #222831 |
-| Secondary Color | ![#393E46](http://via.placeholder.com/10/393E46?text=+) #393E46 |
-| Accent Color    | ![#00ADB5](http://via.placeholder.com/10/00ADB5?text=+) #00ADB5 |
-| Text Color      | ![#EEEEEE](http://via.placeholder.com/10/EEEEEE?text=+) #EEEEEE |
+| Color         | Hex                                                             |
+| ------------- | --------------------------------------------------------------- |
+| Primary Color | ![#6EBE3B](http://via.placeholder.com/10/6EBE3B?text=+) #6EBE3B |
 
 <!-- Env Variables -->
 
@@ -217,7 +214,15 @@ yarn install
 Start the server
 
 ```bash
-yarn dev
+yarn start
+```
+
+OR
+
+Run with `nodemon`:
+
+```bash
+yarn test
 ```
 
 <!-- Deployment -->
@@ -261,13 +266,10 @@ Please read the [Code of Conduct](https://github.com/SE-COURSE-19CLC-FITUS/501re
 
 ## :grey_question: FAQ
 
-- Question 1
+- Is this project still maintained?
 
-  - Answer 1
-
-- Question 2
-
-  - Answer 2
+  - Yes, but we will only update UI, docs, or dependencies. New features won't
+    be added frequently.
 
 <!-- License -->
 
