@@ -24,7 +24,7 @@
   <a href="https://github.com/SE-COURSE-19CLC-FITUS/501recipe/issues/">
     <img src="https://img.shields.io/github/issues/SE-COURSE-19CLC-FITUS/501recipe" alt="open issues" />
   </a>
-  <a href="https://github.com/SE-COURSE-19CLC-FITUS/501recipe/blob/master/LICENSE">
+  <a href="https://github.com/SE-COURSE-19CLC-FITUS/501recipe/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/SE-COURSE-19CLC-FITUS/501recipe.svg" alt="license" />
   </a>
 </p>
@@ -182,7 +182,7 @@ npm install --global yarn
 
 ### :gear: Installation
 
-Install 501recipe with npm
+Install 501recipe with Yarn
 
 ```bash
 yarn install 501recipe
@@ -260,7 +260,7 @@ Contributions are always welcome!
 
 ### :scroll: Code of Conduct
 
-Please read the [Code of Conduct](https://github.com/SE-COURSE-19CLC-FITUS/501recipe/blob/master/CODE_OF_CONDUCT.md)
+Please read the [Code of Conduct](https://github.com/SE-COURSE-19CLC-FITUS/501recipe/blob/main/CODE_OF_CONDUCT.md)
 
 <!-- FAQ -->
 
@@ -276,7 +276,7 @@ Please read the [Code of Conduct](https://github.com/SE-COURSE-19CLC-FITUS/501re
 ## :warning: License
 
 Distributed under Apache License 2.0 license. See
-[LICENSE](https://github.com/DuckyMomo20012/501recipe/blob/main/LICENSE)
+[LICENSE](https://github.com/SE-COURSE-19CLC-FITUS/501recipe/blob/main/LICENSE)
 for more information.
 
 <!-- Contact -->
