@@ -54,7 +54,6 @@
   - [Environment Variables](#key-environment-variables)
 - [Getting Started](#toolbox-getting-started)
   - [Prerequisites](#bangbang-prerequisites)
-  - [Installation](#gear-installation)
   - [Run Locally](#running-run-locally)
   - [Deployment](#triangular_flag_on_post-deployment)
 - [Roadmap](#compass-roadmap)
@@ -75,6 +74,7 @@
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/64480713/178151011-bcd9b290-3586-4643-8bf7-6d32e12af6a5.png" alt="screenshot" />
+  <img src="https://user-images.githubusercontent.com/64480713/178183250-4376b802-df1f-4074-8303-c150eeef03f7.png" alt="screenshot" />
 </div>
 
 <!-- TechStack -->
@@ -106,11 +106,11 @@
 
 ### :dart: Features
 
-- Add recipe to bookmark.
+- Add the recipe to the bookmark.
 - Authentication.
 - Filter recipes by tags.
 - Ingredient shopping list.
-- Post comment on recipes.
+- Post comments on recipes.
 - Rate recipes.
 - Reply to comments.
 - Search recipes by words.
@@ -178,17 +178,6 @@ This project uses [Yarn](https://yarnpkg.com/) as package manager:
 npm install --global yarn
 ```
 
-<!-- Installation -->
-
-### :gear: Installation
-
-Install 501recipe with yarn:
-
-```bash
-yarn install 501recipe
-cd 501recipe
-```
-
 <!-- Run Locally -->
 
 ### :running: Run Locally
@@ -208,7 +197,7 @@ cd 501recipe
 Install dependencies:
 
 ```bash
-yarn install
+yarn
 ```
 
 Start the server:
@@ -224,6 +213,12 @@ Run with `nodemon`:
 ```bash
 yarn test
 ```
+
+---
+
+Access server:
+
+The server will run on: http://localhost:3000/
 
 <!-- Deployment -->
 
