@@ -57,7 +57,6 @@
   - [Installation](#gear-installation)
   - [Run Locally](#running-run-locally)
   - [Deployment](#triangular_flag_on_post-deployment)
-- [Usage](#eyes-usage)
 - [Roadmap](#compass-roadmap)
 - [Contributing](#wave-contributing)
   - [Code of Conduct](#scroll-code-of-conduct)
@@ -134,7 +133,8 @@
 
 ### :key: Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file
+To run this project, you will need to add the following environment variables to
+your .env file.
 
 `MONGODB_URI`: An URI to connect to your database.
 
@@ -172,7 +172,7 @@ variables.
 
 ### :bangbang: Prerequisites
 
-This project uses [Yarn](https://yarnpkg.com/) as package manager
+This project uses [Yarn](https://yarnpkg.com/) as package manager:
 
 ```bash
 npm install --global yarn
@@ -182,7 +182,7 @@ npm install --global yarn
 
 ### :gear: Installation
 
-Install 501recipe with Yarn
+Install 501recipe with yarn:
 
 ```bash
 yarn install 501recipe
@@ -193,25 +193,25 @@ cd 501recipe
 
 ### :running: Run Locally
 
-Clone the project
+Clone the project:
 
 ```bash
-git clone https://github.com/DuckyMomo20012/501recipe.git
+git clone https://github.com/SE-COURSE-19CLC-FITUS/501recipe.git
 ```
 
-Go to the project directory
+Go to the project directory:
 
 ```bash
 cd 501recipe
 ```
 
-Install dependencies
+Install dependencies:
 
 ```bash
 yarn install
 ```
 
-Start the server
+Start the server:
 
 ```bash
 yarn start
@@ -229,15 +229,9 @@ yarn test
 
 ### :triangular_flag_on_post: Deployment
 
-To deploy this project on Heroku
+To deploy this project on Heroku:
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
-<!-- Usage -->
-
-## :eyes: Usage
-
-TODO
 
 <!-- Roadmap -->
 
@@ -260,7 +254,7 @@ Contributions are always welcome!
 
 ### :scroll: Code of Conduct
 
-Please read the [Code of Conduct](https://github.com/SE-COURSE-19CLC-FITUS/501recipe/blob/main/CODE_OF_CONDUCT.md)
+Please read the [Code of Conduct](https://github.com/SE-COURSE-19CLC-FITUS/501recipe/blob/main/CODE_OF_CONDUCT.md).
 
 <!-- FAQ -->
 
@@ -286,13 +280,13 @@ for more information.
 Duong Vinh - [@duckymomo20012](https://twitter.com/duckymomo20012) -
 tienvinh.duong4@gmail.com
 
-Project Link: [https://github.com/SE-COURSE-19CLC-FITUS/501recipe](https://github.com/SE-COURSE-19CLC-FITUS/501recipe)
+Project Link: [https://github.com/SE-COURSE-19CLC-FITUS/501recipe](https://github.com/SE-COURSE-19CLC-FITUS/501recipe).
 
 <!-- Acknowledgments -->
 
 ## :gem: Acknowledgements
 
-Here are useful resources and libraries that we have used in our projects.
+Here are useful resources and libraries that we have used in our projects:
 
 - [Awesome Readme Template](https://github.com/Louis3797/awesome-readme-template):
   A detailed template to bootstrap your README file quickly.
