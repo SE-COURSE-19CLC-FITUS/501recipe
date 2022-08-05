@@ -56,6 +56,7 @@
   - [Prerequisites](#bangbang-prerequisites)
   - [Run Locally](#running-run-locally)
   - [Deployment](#triangular_flag_on_post-deployment)
+  - [UI Prototype Design](#framed_picture-ui-prototype-design)
 - [Roadmap](#compass-roadmap)
 - [Contributing](#wave-contributing)
   - [Code of Conduct](#scroll-code-of-conduct)
@@ -134,31 +135,39 @@
 ### :key: Environment Variables
 
 To run this project, you will need to add the following environment variables to
-your .env file.
+your `.env` file:
 
-`MONGODB_URI`: An URI to connect to your database.
+- **App configs:**
 
-`SESSION_SECRET`: A secret used to sign the session ID cookie. Read more:
-[expressjs/session](https://github.com/expressjs/session#secret).
+  `SESSION_SECRET`: A secret used to sign the session ID cookie. Read more:
+  [expressjs/session](https://github.com/expressjs/session#secret).
 
-`CLOUDINARY_NAME`: The name of your Cloudinary account. Used to build the public
-URL for all your media assets.
+- **Cloudinary configs:**
 
-`CLOUDINARY_API_KEY`: Used together with the API secret to communicate with the
-Cloudinary API and sign requests.
+  `CLOUDINARY_NAME`: The name of your [Cloudinary](https://cloudinary.com/)
+  account. Used to build the public URL for all your media assets.
 
-`CLOUDINARY_API_SECRET`: Used together with the API key to communicate with the
-Cloudinary API and sign requests.
+  `CLOUDINARY_API_KEY`: Used together with the API secret to communicate with
+  the [Cloudinary](https://cloudinary.com/) API and sign requests.
+
+  `CLOUDINARY_API_SECRET`: Used together with the API key to communicate with
+  the [Cloudinary](https://cloudinary.com/) API and sign requests.
+
+- **MongoDB configs:**
+
+  `MONGODB_URI`: An URI to connect to your database.
 
 E.g:
 
 ```
-MONGODB_URI = 'mongodb+srv://{username}:{password}@501cluster.evfgb.mongodb.net/test?retryWrites=true&w=majority'
 
 SESSION_SECRET = my-secret-key
+
 CLOUDINARY_NAME='diy3d...'
 CLOUDINARY_API_KEY='5578258...'
 CLOUDINARY_API_SECRET='8fxUY5Zn...'
+
+MONGODB_URI = 'mongodb+srv://{username}:{password}@501cluster.evfgb.mongodb.net/test?retryWrites=true&w=majority'
 ```
 
 You can also checkout file `.env.example` to see all required environment
@@ -206,7 +215,7 @@ Start the server:
 yarn start
 ```
 
-OR
+OR:
 
 Run with `nodemon`:
 
@@ -227,6 +236,18 @@ The server will run on: http://localhost:3000/
 To deploy this project on Heroku:
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+<!-- UI Prototype Design -->
+
+### :framed_picture: UI Prototype Design
+
+Our web UI prototype design using [Figma](https://www.figma.com/):
+
+<a href="https://www.figma.com/file/7u8pMRELjeydYYxmHX3nq3/501st-Recipe">
+  <img
+  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
+  height="32px" alt="figma" title="UI Design"/>
+</a>
 
 <!-- Roadmap -->
 
