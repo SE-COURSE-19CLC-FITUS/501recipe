@@ -126,9 +126,9 @@
 
 ### :art: Color Reference
 
-| Color         | Hex                                                             |
-| ------------- | --------------------------------------------------------------- |
-| Primary Color | ![#6EBE3B](http://via.placeholder.com/10/6EBE3B?text=+) #6EBE3B |
+| Color         | Hex                                                              |
+| ------------- | ---------------------------------------------------------------- |
+| Primary Color | ![#6EBE3B](https://placehold.jp/6EBE3B/6EBE3B/10x10.png) #6EBE3B |
 
 <!-- Env Variables -->
 
@@ -160,7 +160,7 @@ your `.env` file:
 E.g:
 
 ```
-
+# .env
 SESSION_SECRET = my-secret-key
 
 CLOUDINARY_NAME='diy3d...'
@@ -170,7 +170,7 @@ CLOUDINARY_API_SECRET='8fxUY5Zn...'
 MONGODB_URI = 'mongodb+srv://{username}:{password}@501cluster.evfgb.mongodb.net/test?retryWrites=true&w=majority'
 ```
 
-You can also checkout file `.env.example` to see all required environment
+You can also check out the file `.env.example` to see all required environment
 variables.
 
 <!-- Getting Started -->
