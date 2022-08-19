@@ -220,7 +220,7 @@ OR:
 Run with `nodemon`:
 
 ```bash
-yarn test
+yarn dev
 ```
 
 ---
